@@ -7,7 +7,7 @@
 
 **Curso:** Ciência da Computação <br>
 **Professor:** David Fernandes de Oliveira <br>
-**Aluno:** Micael Levi &horbar; 21554923 <br>
+**Aluno:** Micael Levi ― 21554923 <br>
 
 ----------------------------------------
 
