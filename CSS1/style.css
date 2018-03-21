@@ -1,0 +1,9 @@
+p {
+  background-color: #d2d2d2;
+  padding: 10px 50px 10px 50px;  /* <top> <right> <bottom> <left>  */
+  border: 10px solid black; /* <width> <style> <color */
+  border-top-right-radius: 80px;
+  border-bottom-left-radius: 80px;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
