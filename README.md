@@ -12,5 +12,8 @@
 ----------------------------------------
 
 ## Exercícios Resolvidos
-- [exercício 1](./HTML/exercicio1)
-- [exercício 2](./HTML/exercicio2)
+
+| HTML5 | CSS3 | JS  |
+|:-----:|:----:|:---:|
+| [`1` ~ slide 65](./HTML/exercicio1)  | [`1` ~ slide 71](./CSS1/)
+| [`2` ~ slide 104](./HTML/exercicio2) |
