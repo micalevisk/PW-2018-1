@@ -1,0 +1,25 @@
+body {
+  background-color: #232E07;
+  background-image: url('linus.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+div.about {
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 15px solid #A9A800;
+  border-radius: 20px;
+  padding: 0px 20px;
+  /*https://www.w3schools.com/css/css_positioning.asp*/
+  /*position: relative;*/
+  width: 500px;
+  /* none|h-offset v-offset blur spread color |inset|initial|inherit; */
+  box-shadow: 4px 4px 2px 0px,
+              4px 2px 8px 0px inset;
+
+}
+
+.about > h1 {
+  text-align: center;
+}
