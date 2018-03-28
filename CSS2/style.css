@@ -15,15 +15,14 @@ div.content {
   background: rgba(255, 255, 255, 0.5);
   border: 15px solid rgba(169, 168, 0, 0.7);
   border-radius: 20px;
-  padding: 0px 20px;
-  width: 500px;
-  max-width: 500%;
+  padding: 1%;
+  width: 40%;
+  max-width: 500px;
   /* none|h-offset v-offset blur spread color |inset|initial|inherit; */
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5),
               4px 2px 8px 0px rgba(0, 0, 0, 0.5) inset;
   position: fixed;
-  left: 220px;
-  top: 600px;
+  margin: 25% 10% 10% 10%;
 }
 
 .content {
@@ -32,7 +31,7 @@ div.content {
            transition: width 0.5s;
 }
 .content:hover {
-  width: 380px;
+  width: 25%;
   cursor: none; /* esconder cursor */
   /* desabilitar a seleção do texto */
   -webkit-user-select: none; /* Safari */
