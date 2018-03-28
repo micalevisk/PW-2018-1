@@ -1,25 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono');
+
 body {
   background-color: #232E07;
   background-image: url('linus.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center;
+  background-position: 50%;
+  background-size: 80%; /* width in percent of the parent */
 }
 
-div.about {
-  background-color: rgba(255, 255, 255, 0.6);
-  border: 15px solid #A9A800;
+div.content {
+  font-size: 14px;
+  font-family: 'IBM Plex Mono', monospace;
+  background: rgba(255, 255, 255, 0.5);
+  border: 15px solid rgba(169, 168, 0, 0.7);
   border-radius: 20px;
   padding: 0px 20px;
-  /*https://www.w3schools.com/css/css_positioning.asp*/
-  /*position: relative;*/
   width: 500px;
+  max-width: 500%;
   /* none|h-offset v-offset blur spread color |inset|initial|inherit; */
-  box-shadow: 4px 4px 2px 0px,
-              4px 2px 8px 0px inset;
-
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5),
+              4px 2px 8px 0px rgba(0, 0, 0, 0.5) inset;
+  position: fixed;
+  left: 220px;
+  top: 600px;
 }
 
-.about > h1 {
+.content {
+  text-align: justify;
+   -webkit-transition: width 0.5s; /* Safari */
+           transition: width 0.5s;
+}
+.content:hover {
+  width: 380px;
+  cursor: none; /* esconder cursor */
+  /* desabilitar a seleção do texto */
+  -webkit-user-select: none; /* Safari */
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome and Opera */
+}
+
+.content > h1 {
   text-align: center;
 }
