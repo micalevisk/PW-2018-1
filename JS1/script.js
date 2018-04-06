@@ -1,4 +1,4 @@
-let inicioTabela = `
+const inicioTabela = `
   <div>
     <table border="1px">
     <tr>
@@ -6,7 +6,7 @@ let inicioTabela = `
     </tr>
 `;
 
-let fimTabela = '</table></div>';
+const fimTabela = '</table></div>';
 
 
 for (let i=1; i < 11; ++i) {
