@@ -1,0 +1,30 @@
+div {
+  float: left;
+  padding: 10px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+
+  box-shadow: 10px 1px 2px #999;
+  -webkit-box-shadow: 1px 1px 2px #999;
+  -moz-box-shadow: 1px 1px 2px #999;
+
+  border-collapse: separate;
+  border-color: white;
+  border-radius:6px;
+  -moz-border-radius:6px;
+}
+
+td, th {
+  border: white;
+  text-align: center;
+  vertical-align: middle;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #EAEAEA;
+}
