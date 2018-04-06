@@ -15,8 +15,8 @@ for (let i=1; i < 11; ++i) {
   for (let j=1; j < 11; ++j) {
     meioTabela += `
       <tr>
-      <td>${i}x${j}</td>
-      <td>${i*j}</td>
+      <td><code>${i}x${j}</code></td>
+      <td><code>${i*j}</code></td>
      </tr>`;
   }
 
