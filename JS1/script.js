@@ -1,6 +1,6 @@
 const inicioTabela = `
   <div>
-    <table border="1px">
+    <table>
     <tr>
       <th colspan="2">Produtos de {valor}</th>
     </tr>
