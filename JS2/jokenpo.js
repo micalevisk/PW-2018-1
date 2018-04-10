@@ -31,7 +31,7 @@ function rodada(numRodada) {
     || numEscolhaUser < 0
     || numEscolhaUser >= qtdOpcoes ) return {next:false};
 
-  const numEscolhaBot = 2;//getRandom(opcoes.length);
+  const numEscolhaBot = getRandom(opcoes.length);
 
   printEscolha('você escolheu', numEscolhaUser);
   printEscolha('o computador escolheu', numEscolhaBot);
