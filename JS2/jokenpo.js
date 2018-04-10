@@ -5,7 +5,7 @@ const incrementoCircular = (i, n) => (i+1)%n;
 
 
 const opcoes = ['Papel', 'Pedra', 'Tesoura']; // prioridade da esquerda pra direita
-const cores  = ['#c0dd95', '#e55c00', '#4ba2ca'];
+const cores  = ['#8fb15c', '#e55c00', '#4ba2ca'];
 
 const listagemOpcoes = opcoes.map((curr, i) => [`%c${i+1} - ${opcoes[i]}`, `font-weight:bold;color:${cores[i]}`])
 const printEscolha = (text, numChoice) => console.log(text + ' %c' + opcoes[numChoice], `color:${cores[numChoice]};`);
