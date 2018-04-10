@@ -32,7 +32,6 @@ function rodada(numRodada) {
   const numEscolhaBotNormalizada  = incrementoCircular(numEscolhaBot, qtdOpcoes);
 
   const numResultado =  numEscolhaUserNormalizada - numEscolhaBotNormalizada;
-  console.log(numEscolhaUserNormalizada, numEscolhaBotNormalizada);
   console.log(resultados[numResultado]);
 
   return {next:true, points:(numResultado < 0)};
