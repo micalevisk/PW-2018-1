@@ -1,7 +1,5 @@
-function someFn(valInicial) {
-  let val = valInicial | 0;
-  return valIncremento => (val += valIncremento);
-}
+const someFn = valInicial =>
+  valIncremento => valInicial += valIncremento;
 
 // Resultado esperado
 // const adicionar = someFn('1');
