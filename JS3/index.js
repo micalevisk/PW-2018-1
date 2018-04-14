@@ -1,5 +1,5 @@
 const someFn = valInicial =>
-  valIncremento => valInicial += valIncremento;
+  valIncremento => valInicial = (valInicial|0) + valIncremento;
 
 // Resultado esperado
 // const adicionar = someFn('1');
