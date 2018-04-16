@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercíco 4 de JS</title>
+
+    <style>
+      label {
+        display: inline-block;
+        padding: 4px;
+        width: 190px;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="circulo">
+      <label for="valraio">Informe o raio</label>
+      <input type="text" name="valraio">
+      <input type="submit" value="OK" name="calcular"><br>
+      <label for="area">Área do círculo</label>
+      <input type="text" name="area" readonly> <br>
+      <label for="circunferencia">Circunferência</label>
+      <input type="text" name="circunferencia" readonly>
+    </form>
+
+    <script type="text/javascript">
+      const formCirculo = document.circulo;
+
+      formCirculo.calcular.onclick = function() {
+        const raio = formCirculo.valraio.value;
+
+        formCirculo.area.value = (Math.PI * raio * raio).toFixed(2);
+        formCirculo.circunferencia.value = (2 * Math.PI * raio).toFixed(2);
+
+        return false;
+      }
+    </script>
+  </body>
+</html>
