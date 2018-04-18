@@ -19,3 +19,4 @@
 | [`2` ~ slide 104](./HTML/exercicio2) | [`2` ~ slide 95](./CSS2/) | [`2` ~ slide 64](./JS2/) |
 |                                      | [`3` ~ slide 129](./CSS3/)| [`3` ~ slide 90](./JS3/) |
 |                                      |                           | [`4` ~ slide 120](./JS4/) |
+|                                      |                           | [`5` ~ slide 133](./JS5/) |
