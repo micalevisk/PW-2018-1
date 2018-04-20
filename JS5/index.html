@@ -34,11 +34,11 @@
     <form name="grafico">
       <label for="hb1">Informe a altura das barras:</label>
 
-      <input type="text" name="hb1" value="100">
-      <input type="text" name="hb2" value="150">
-      <input type="text" name="hb3" value="120">
-      <input type="text" name="hb4" value="80">
-      <input type="text" name="hb5" value="40">
+      <input type="text" name="b1" value="100">
+      <input type="text" name="b2" value="150">
+      <input type="text" name="b3" value="120">
+      <input type="text" name="b4" value="80">
+      <input type="text" name="b5" value="40">
       <br>
       <label for="largura">Informe a largura das barras:</label>
       <input type="text" name="wbarras" value="30">
@@ -75,31 +75,18 @@
     </table>
 
     <script type="text/javascript">
-      const getBarra = n => document.getElementById('b' + n);
+      const QTD_BARRAS = 5;
+      const PREFIXO_BARRA = 'b';
       const formGrafico = document.grafico;
 
+      const getBarra = n => document.getElementById(PREFIXO_BARRA + n);
+      const definirHeightEWidth = (numBarra, h, w) =>
+        Object.assign(getBarra(numBarra).style, {height: h + 'px', width: w + 'px'});
+
       formGrafico.desenhar.onclick = function() {
-        const [hb1, hb2, hb3, hb4, hb5] = [
-          formGrafico.hb1.value,
-          formGrafico.hb2.value,
-          formGrafico.hb3.value,
-          formGrafico.hb4.value,
-          formGrafico.hb5.value
-        ];
         const wbarras = formGrafico.wbarras.value;
-
-        getBarra(1).style.height = hb1 + 'px';
-        getBarra(2).style.height = hb2 + 'px';
-        getBarra(3).style.height = hb3 + 'px';
-        getBarra(4).style.height = hb4 + 'px';
-        getBarra(5).style.height = hb5 + 'px';
-
-        getBarra(1).style.width = wbarras + 'px';
-        getBarra(2).style.width = wbarras + 'px';
-        getBarra(3).style.width = wbarras + 'px';
-        getBarra(4).style.width = wbarras + 'px';
-        getBarra(5).style.width = wbarras + 'px';
-
+        for (let i=1; i <= QTD_BARRAS; ++i)
+          definirHeightEWidth(i, formGrafico[PREFIXO_BARRA + i].value, wbarras);
         return false;
       }
 
