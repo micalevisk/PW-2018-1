@@ -16,8 +16,6 @@
 
       td {
         vertical-align: bottom;
-        width: 30px;
-        height: 100px;
       }
 
       table {
@@ -88,12 +86,19 @@
           formGrafico.hb4.value,
           formGrafico.hb5.value
         ];
+        const wbarras = formGrafico.wbarras.value;
 
         getBarra(1).style.height = hb1 + 'px';
         getBarra(2).style.height = hb2 + 'px';
         getBarra(3).style.height = hb3 + 'px';
         getBarra(4).style.height = hb4 + 'px';
         getBarra(5).style.height = hb5 + 'px';
+
+        getBarra(1).style.width = wbarras + 'px';
+        getBarra(2).style.width = wbarras + 'px';
+        getBarra(3).style.width = wbarras + 'px';
+        getBarra(4).style.width = wbarras + 'px';
+        getBarra(5).style.width = wbarras + 'px';
 
         return false;
       }
