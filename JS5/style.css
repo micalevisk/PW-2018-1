@@ -16,5 +16,18 @@ table {
 }
 
 div {
+  height: 0;
   background-color: red;
+  -webkit-transition: width 1s, height 1s ease-out;
+     -moz-transition: width 1s, height 1s ease-out;
+       -o-transition: width 1s, height 1s ease-out;
+          transition: width 1s, height 1s ease-out;
+}
+
+div:hover {
+  background-color: blueviolet;
+  -webkit-transition: background-color 500ms ease-in;
+     -moz-transition: background-color 500ms ease-in;
+       -o-transition: background-color 500ms ease-in;
+          transition: background-color 500ms ease-in;
 }
