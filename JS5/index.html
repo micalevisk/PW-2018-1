@@ -71,13 +71,22 @@
         */
       }
 
-
-      formGrafico.desenhar.onclick = function() {
+      function atualizarGrafico() {
         const wbarras = formGrafico.wbarras.value;
         for (let i=1; i <= QTD_BARRAS; ++i)
-          definirHeightEWidth(i, formGrafico[PREFIXO_BARRA + i].value, wbarras);
+          definirHeightEWidth(i, formGrafico[PREFIXO_BARRA + i].value.trim(), wbarras);
+      }
+
+      formGrafico.desenhar.onclick = function() {
+        atualizarGrafico();
         return false;
       }
+
+      // ----- EXTRA
+      const inputsText = document.querySelectorAll('input[type=text]');
+      Array.from(inputsText).forEach(input => {
+        input.addEventListener('keyup', atualizarGrafico);
+      });
     </script>
   </body>
 </html>
