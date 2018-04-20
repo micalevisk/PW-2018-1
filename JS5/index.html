@@ -58,7 +58,10 @@
 
       const getBarra = n => document.getElementById(PREFIXO_BARRA + n);
       const definirHeightEWidth = (numBarra, h, w) =>
-        Object.assign(getBarra(numBarra).style, {height: h + 'px', width: w + 'px'});
+        // Assumindo que não existe outro estilo sobre as DIVs:
+        getBarra(numBarra).style.cssText = `height:${h}px; width:${w}px`;
+        // Não sobrescreve outros estilos:
+        // Object.assign(getBarra(numBarra).style, {height: h + 'px', width: w + 'px'});
 
       formGrafico.desenhar.onclick = function() {
         const wbarras = formGrafico.wbarras.value;
@@ -66,8 +69,6 @@
           definirHeightEWidth(i, formGrafico[PREFIXO_BARRA + i].value, wbarras);
         return false;
       }
-
-      formGrafico.desenhar.click();
     </script>
   </body>
 </html>
