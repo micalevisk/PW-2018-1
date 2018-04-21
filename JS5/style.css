@@ -16,7 +16,9 @@ table {
 }
 
 div {
-  height: 0;
+  --transparencia-relativa: 0; /* será definida de acordo com a altura da barra */
+
+  opacity: var(--transparencia-relativa, 1);
   background-color: red;
   -webkit-transition: width 1s, height 1s ease-out;
      -moz-transition: width 1s, height 1s ease-out;

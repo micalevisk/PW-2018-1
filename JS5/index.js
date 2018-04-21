@@ -5,7 +5,8 @@ const formGrafico = document.grafico;
 const getBarra = n => document.getElementById(PREFIXO_BARRA + n);
 const definirHeightEWidth = (numBarra, h, w) => {
   // Assumindo que não existe outro estilo sobre as DIVs:
-  getBarra(numBarra).style.cssText = `height:${h}px; width:${w}px`;
+  getBarra(numBarra).style.cssText = `height:${h}px; width:${w}px; --transparencia-relativa:${h/100}`;
+
   // Não sobrescreve outros estilos; 2 versões:
   /*
   Object.assign(getBarra(numBarra).style, {height: h + 'px', width: w + 'px'});
@@ -13,6 +14,7 @@ const definirHeightEWidth = (numBarra, h, w) => {
   /*
   getBarra(numBarra).style.setProperty('height', h + 'px');
   getBarra(numBarra).style.setProperty('width', w + 'px');
+  getBarra(numBarra).style.setProperty('--transparencia-relativa', h/100);
   */
 }
 
