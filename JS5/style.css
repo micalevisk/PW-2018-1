@@ -16,14 +16,18 @@ table {
 }
 
 div {
-  --transparencia-relativa: 0; /* será definida de acordo com a altura da barra */
-
-  opacity: var(--transparencia-relativa, 1);
   background-color: red;
   -webkit-transition: width 1s, height 1s ease-out;
      -moz-transition: width 1s, height 1s ease-out;
        -o-transition: width 1s, height 1s ease-out;
           transition: width 1s, height 1s ease-out;
+}
+
+@supports (--css: variables) {
+  div {
+    --transparencia-relativa: 0; /* será definida de acordo com a altura da barra */
+    opacity: var(--transparencia-relativa, 1);
+  }
 }
 
 div:hover {
