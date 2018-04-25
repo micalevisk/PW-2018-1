@@ -1,0 +1,17 @@
+Os 4 erros sintáticos são:
+
+--------------------------------------------------------------------------------
+[1] linha 04. Uso incorreto de comentário multilinha do HTML ("/* */").
+O correto seria deixar o comentário entre os símbolos "<!--" e "-->".
+
+--------------------------------------------------------------------------------
+[2] linha 08. O caractere usado foi o "=" mas deveria ser ":" para atribuir
+o valor para um atributo CSS, a fim de compor uma regra.
+
+--------------------------------------------------------------------------------
+[3] linha 09. Mesmo erro de sintaxe anterior.
+
+--------------------------------------------------------------------------------
+[4] linha 25. A palavra "that" não é uma palavra reservada da linguagem JS.
+O correto seria fazer o uso da palavra reservada "this" para referenciar o objeto
+vigente (`instituto`).
