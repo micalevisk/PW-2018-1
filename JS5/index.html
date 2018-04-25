@@ -1,34 +1,13 @@
+<!--
+aluno: Micael Levi L. C. <mllc@icomp.ufam.edu.br>
+matricula: 21554923
+-->
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>Exercíco 5 de JS</title>
-
-    <style>
-      label {
-        display: inline-block;
-        text-align: right;
-      }
-
-      input[type=text] {
-        width: 80px;
-      }
-
-      td {
-        vertical-align: bottom;
-        width: 30px;
-        height: 100px;
-      }
-
-      table {
-        margin-right: 3px;
-      }
-
-      div {
-        background-color: red;
-      }
-    </style>
-
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
@@ -36,11 +15,12 @@
     <form name="grafico">
       <label for="hb1">Informe a altura das barras:</label>
 
-      <input type="text" name="hb1" value="100">
-      <input type="text" name="hb2" value="150">
-      <input type="text" name="hb3" value="120">
-      <input type="text" name="hb4" value="80">
-      <input type="text" name="hb5" value="40">
+      <input type="text" name="b1" value="10">
+      <input type="text" name="b2" value="20">
+      <input type="text" name="b3" value="30">
+      <input type="text" name="b4" value="40">
+      <input type="text" name="b5" value="50">
+      <br>
       <br>
       <label for="largura">Informe a largura das barras:</label>
       <input type="text" name="wbarras" value="30">
@@ -75,30 +55,6 @@
         </td>
       </tr>
     </table>
-
-    <script type="text/javascript">
-      const getBarra = n => document.getElementById('b' + n);
-      const formGrafico = document.grafico;
-
-      formGrafico.desenhar.onclick = function() {
-        const [hb1, hb2, hb3, hb4, hb5] = [
-          formGrafico.hb1.value,
-          formGrafico.hb2.value,
-          formGrafico.hb3.value,
-          formGrafico.hb4.value,
-          formGrafico.hb5.value
-        ];
-
-        getBarra(1).style.height = hb1 + 'px';
-        getBarra(2).style.height = hb2 + 'px';
-        getBarra(3).style.height = hb3 + 'px';
-        getBarra(4).style.height = hb4 + 'px';
-        getBarra(5).style.height = hb5 + 'px';
-
-        return false;
-      }
-
-      formGrafico.desenhar.click();
-    </script>
+    <script src="index.js"></script>
   </body>
 </html>

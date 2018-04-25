@@ -1,0 +1,39 @@
+label {
+  display: inline-block;
+  text-align: right;
+}
+
+input[type=text] {
+  width: 80px;
+}
+
+td {
+  vertical-align: bottom;
+}
+
+table {
+  margin-right: 3px;
+}
+
+div {
+  background-color: red;
+  -webkit-transition: width 1s, height 1s ease-out;
+     -moz-transition: width 1s, height 1s ease-out;
+       -o-transition: width 1s, height 1s ease-out;
+          transition: width 1s, height 1s ease-out;
+}
+
+@supports (--css: variables) {
+  div {
+    --transparencia-relativa: 0; /* será definida de acordo com a altura da barra */
+    opacity: var(--transparencia-relativa, 1);
+  }
+}
+
+div:hover {
+  background-color: blueviolet;
+  -webkit-transition: background-color 500ms ease-in;
+     -moz-transition: background-color 500ms ease-in;
+       -o-transition: background-color 500ms ease-in;
+          transition: background-color 500ms ease-in;
+}
