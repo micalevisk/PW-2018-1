@@ -5,11 +5,12 @@ Os 4 erros sintáticos são:
 O correto seria deixar o comentário entre os símbolos "<!--" e "-->".
 
 --------------------------------------------------------------------------------
-[2] linha 08. O caractere usado foi o "=" mas deveria ser ":" para atribuir
+[2] linha 08 e 09. O caractere usado foi o "=" mas deveria ser ":" para atribuir
 o valor para um atributo CSS, a fim de compor uma regra.
 
 --------------------------------------------------------------------------------
-[3] linha 09. Mesmo erro de sintaxe anterior.
+[3] linha 17. A tag `strong` não foi fechada. Como ela não é uma tag do tipo void,
+é preciso inserir a tag de fechamento `</strong>`.
 
 --------------------------------------------------------------------------------
 [4] linha 25. A palavra "that" não é uma palavra reservada da linguagem JS.
