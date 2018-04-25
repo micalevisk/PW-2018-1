@@ -1,0 +1,39 @@
+$ git log
+commit 3eb5c1e53c7768ae715b6037c27353133c570131
+Author: Micael-lab21 <mllc@icomp.ufam.edu.br>
+Date:   Wed Apr 25 08:43:35 2018 -0400
+
+    questão 4 resolvida
+
+commit f35c791a3c8b8bc006a1a66999d5fe81b2fe979c
+Author: Micael-lab21 <mllc@icomp.ufam.edu.br>
+Date:   Wed Apr 25 08:33:57 2018 -0400
+
+    questão 3 resolvida
+
+commit e41fb0780a223e252624082aea9d9488bc919de8
+Author: Micael-lab21 <mllc@icomp.ufam.edu.br>
+Date:   Wed Apr 25 08:29:10 2018 -0400
+
+    rollback
+
+commit e45adb6e2311b8f56567f3ccdf5f9bd3536fa9ef
+Author: Micael-lab21 <mllc@icomp.ufam.edu.br>
+Date:   Wed Apr 25 08:27:33 2018 -0400
+
+    valor do `type` do CSS foi alterado
+
+
+
+--------------------------------------------------------------------------------
+[a] O comando `git status` é utilizado para consultar o estado corrente do
+diretório de trabalho (working directory/tree) e do repository. Assim, pode-se
+verificar os arquivos alterados, apagados, adicionados, etc. Além de se ter o
+retorno sobre em qual ramo (branch) se está trabalhando.
+
+
+--------------------------------------------------------------------------------
+[b] O arquivo `.gitignore` lista todos os arquivos ou padrões que serão usados
+pelo Git para ele não monitorá-los. Normalmente é utilizado para não monitorar
+arquivos gerados pela máquina local, IDEs, etc. Pois estes provavelmente não
+serão úteis para outras pessoas ou máquinas que acessarão o repositório remoto.
