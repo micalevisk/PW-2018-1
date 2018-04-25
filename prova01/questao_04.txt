@@ -1,0 +1,29 @@
+O hoisting, ou "içamento", presente na linguagem JavaScript, é a propriedade que
+o interpretor da linguagem possui de "ajustar" o código para que todas as funções
+e variáveis (declaradas com `var`) sejam posicionadas no início do escopo onde
+foram declaradas. Assim, torna-se possível a invocação de funções acima do código
+que as defines, bem como a ausência de erros ao acessar variáveis que, a priori,
+não foram declaradas.
+
+Exemplo:
+
+
+foo(); // "bar"
+console.log(minhaVar); // undefined
+//          ^^^^^^^^-- não gera erro de acesso
+
+/*
+...
+*/
+
+function foo() {
+  console.log('bar');
+}
+
+var minhaVar = 123;
+
+var foo = function() {
+  console.log('barz');
+}
+
+foo(); // "barz"
