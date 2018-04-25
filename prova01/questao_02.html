@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Esfera</title>
+    <style type="text/css">
+      label {
+        width: 200px;
+        margin: 2px;
+        display: inline-block;
+        text-align: right;
+      }
+      [type=submit] {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="esfera">
+      <label for="raio">Raio da Esfera</label>
+      <input type="text" name="raio" value="10">
+      <input type="submit" name="calcular" value="Calcular!"><br>
+      <label for="area">Área</label>
+      <input type="text" name="area" value="" disabled><br>
+      <label for="volume">Volume</label>
+      <input type="text" name="volume" value="" disabled>
+    </form>
+
+    <script type="text/javascript">
+      const formEsfera = document.forms.esfera;
+
+      formEsfera.calcular.onclick = function (e) {
+        const raio = formEsfera.raio.value;
+
+        formEsfera.area.value = (4 * Math.PI * raio * raio).toFixed(2);
+        formEsfera.volume.value = ( (4 * Math.PI * Math.pow(raio, 3))/3 ).toFixed(2);
+
+        return false;
+      }
+    </script>
+  </body>
+</html>
