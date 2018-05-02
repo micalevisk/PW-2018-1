@@ -1,0 +1,37 @@
+#tabuleiro {
+  border: 2px solid black;
+  position: relative;
+  overflow: hidden;
+}
+
+.arvore-normal {
+  background-image: url(obstacles.png);
+  background-position: 0px -28px;
+  background-repeat: no-repeat;
+  height: 35px;
+  width: 30px;
+}
+
+.para-esquerda {
+  background-image: url(skier.png);
+  background-position: -25px -41px;
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 24px;
+}
+
+.para-frente {
+  background-image: url(skier.png);
+  background-position: -65px -4px;
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 18px;
+}
+
+.para-direita {
+  background-image: url(skier.png);
+  background-position: -25px -4px;
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 24px;
+}
