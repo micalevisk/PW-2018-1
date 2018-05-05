@@ -15,8 +15,8 @@ import Arvore from './models/Arvore.js';
   let skier;
   let tabuleiro;
   let gameLoop;
-  // ------------------------------------------------------------------ //
 
+  const infoBox = {
 
   function Skier() {
     this.direcao = 1; // para-frente
@@ -39,39 +39,17 @@ import Arvore from './models/Arvore.js';
         this.element
             .style.left = (parseInt(this.element.style.left, 10) - 1) + "px";
 
-      else if (this.direcao === 2) // para-direita
-        this.element
-            .style.left = (parseInt(this.element.style.left, 10) + 1) + "px";
-    }
+  }.init();
+  // ------------------------------------------------------------------ //
+
+  function setInnerHTMLbyDataset(el, text) {
+    el.innerHTML = `<b>${el.dataset['label']}</b> ${text}`;
   }
 
-  function Tabuleiro() {
-    this.element = document.getElementById("tabuleiro");
-    this.element.style.width  = TAMX + "px";
-    this.element.style.height = TAMY + "px";
+  function initInfoBox() {
+    infoBox.setFPS(FPS);
+    infoBox.setAndado(0);
   }
-
-  function Arvore(tipo) {
-    this.element = document.createElement("div");
-    this.element.className = tipo;
-    this.element.style.position = "relative";
-    this.element.style.top = TAMY + "px";
-    this.element.style.left = Math.floor(Math.random() * TAMX) + "px";
-    this.element.style.zIndex = 2000;
-
-    tabuleiro.element.appendChild(this.element);
-
-    this.subir = function () {
-      this.element
-          .style.top = (parseInt(this.element.style.top, 10) - 1) + "px";
-    }
-
-    this.remover = function () {
-      if (parseInt(this.element.style.top, 10) < 0)
-        tabuleiro.element.removeChild(this.element); // FIXME
-    }
-  }
-
 
   function initEventListeners() {
     // movimentar o skier
@@ -84,8 +62,6 @@ import Arvore from './models/Arvore.js';
   }
 
 
-  function run() {
-    skier.andar();
 
     let random = Math.floor(Math.random() * 100);
 
@@ -106,6 +82,7 @@ import Arvore from './models/Arvore.js';
     skier = new Skier();
     tabuleiro = new Tabuleiro();
 
+    initInfoBox();
     initEventListeners();
     gameLoop = setInterval(run, 1000/FPS);
   }());
