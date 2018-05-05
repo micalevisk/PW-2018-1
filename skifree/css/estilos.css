@@ -57,7 +57,10 @@ a:active {
   margin: 10px;
   overflow: hidden;
   position: relative;
-  overflow: hidden;
+}
+
+#tabuleiro > div {
+  position: absolute;
 }
 
 
