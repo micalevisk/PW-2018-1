@@ -12,13 +12,13 @@ export default function Arvore(tabuleiro, tipo, initialPosTop, zIndex = 200) {
 }
 
 Arvore.prototype.subir = function () {
-    const top = parseInt(this.element.style.top) - 1;
+  const top = parseInt(this.element.style.top) - 1;
 
   if (top < -this.element.clientHeight) return false;
 
-    this.element.style.top = top + 'px';
-    return true;
-  }
+  this.element.style.top = top + 'px';
+  return true;
+}
 
 // função construtora https://goo.gl/Wo5JS4
 // alterando o prototype https://goo.gl/rmn2Rf
