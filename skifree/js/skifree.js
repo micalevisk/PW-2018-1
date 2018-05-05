@@ -77,10 +77,11 @@ import Arvore from './models/Arvore.js';
       arvores.push( new Arvore(tabuleiro, 'arvore-normal', TAMY) );
     }
 
-    arvores.forEach(arvore => {
-      // TODO: remover a árvore da DOM quando ela ultrapassar a borda superior
-      arvore.subir();
-      arvore.remover();
+    arvores.forEach((arvore, idx) => {
+      if (!arvore.subir()) {
+        // tabuleiro.element.removeChild(arvore.element);
+        arvores.splice(idx, 1);
+      }
     });
   }
 
