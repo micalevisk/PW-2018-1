@@ -6,8 +6,10 @@ export default function Arvore(tabuleiro, tipo, initialPosTop, zIndex = 200) {
   this.element.style.zIndex = zIndex;
   this.element.style.top = initialPosTop + 'px';
 
-  const maxLeft = tabuleiro.getWidth() - this.element.clientWidth;
-  const maxTop  = -this.element.clientHeight;
+  this.element.style.left = Math.floor(
+    Math.random() * (tabuleiro.getWidth() - this.element.clientWidth)
+  ) + 'px';
+}
 
   this.element.style.left = Math.floor( Math.random() * maxLeft ) + 'px';
 
