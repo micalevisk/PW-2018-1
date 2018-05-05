@@ -46,7 +46,7 @@ import Arvore from './models/Arvore.js';
   }
 
   function initEventListeners() {
-    window.addEventListener("keydown", e => {
+    window.addEventListener('keydown', e => {
       if (e.keyCode === 38 || e.keyCode === 40) return false;
 
       if (e.keyCode === 32) {
