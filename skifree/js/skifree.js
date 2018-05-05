@@ -17,26 +17,21 @@ import Arvore from './models/Arvore.js';
 
   const infoBox = {
 
-  function Skier() {
-    this.direcao = 1; // para-frente
-    this.element = document.getElementById("skier");
+    element: document.getElementById('infoBox'),
 
-    this.element.style.position = "absolute";
-    this.element.style.top = "60px";
-    this.element.style.left = parseInt(TAMX/2) + "px";
+    init() {
+      this.fpsEl    = this.element.querySelector('#fps');
+      this.andadoEl = this.element.querySelector('#andado');
+      return this;
+    },
 
-    this.mudarDirecao = function (direcao) {
-      if ((this.direcao + direcao >= 0) && (this.direcao + direcao <= 2)) {
-        this.direcao += direcao;
-        this.element.className = direcoes[this.direcao];
-      }
-    };
+    setAndado(metros) {
+      setInnerHTMLbyDataset(this.andadoEl, metros.toFixed(2) + 'm');
+    },
 
-    this.andar = function () {
-      // TODO: não deixar passar dos extremos laterais
-      if (this.direcao === 0) // para-esquerda
-        this.element
-            .style.left = (parseInt(this.element.style.left, 10) - 1) + "px";
+    setFPS(fps) {
+      setInnerHTMLbyDataset(this.fpsEl, fps);
+    },
 
   }.init();
   // ------------------------------------------------------------------ //
