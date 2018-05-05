@@ -8,6 +8,47 @@ div {
   background-repeat: no-repeat;
 }
 
+kbd {
+	display: inline-block;
+	padding: 3px 5px;
+	font-size: 11px;
+	line-height: 10px;
+	color: #444d56;
+	vertical-align: middle;
+	background-color: #fafbfc;
+	border: solid 1px #c6cbd1;
+	border-bottom-color: #959da5;
+	border-radius: 3px;
+	box-shadow: inset 0 -1px 0 #959da5;
+}
+
+a:link {
+  color: #107d9c;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #12835d;
+}
+
+a:hover {
+  color: #2a109c;
+  text-decoration: underline;
+}
+
+a:active {
+  color: blue;
+}
+
+
+#infoBox {
+  font-family: monospace;
+  background-color: #c6ffec;
+  border: 1px solid black;
+  left: 430px;
+  padding: 3px;
+  position: absolute;
+}
 
 #tabuleiro {
   border-style: solid;
