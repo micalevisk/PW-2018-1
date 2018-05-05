@@ -54,6 +54,8 @@ a:active {
   background-color: white;
   border-style: solid;
   border-color: black;
+  margin: 10px;
+  overflow: hidden;
   position: relative;
   overflow: hidden;
 }
