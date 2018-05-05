@@ -9,8 +9,7 @@ import Arvore from './models/Arvore.js';
   const TAMX = 400; // largura do tabuleiro (em pixels)
   const TAMY = 600; // altura do tabuleiro (em pixels)
   let gameOver = false;
-  //                     0            1             2
-  let direcoes = ['para-esquerda','para-frente','para-direita'];
+  let jogoPausado = true;
   let arvores = [];
   let skier;
   let tabuleiro;
@@ -52,9 +51,15 @@ import Arvore from './models/Arvore.js';
   }
 
   function initEventListeners() {
-    // movimentar o skier
     window.addEventListener("keydown", e => {
       if (e.keyCode === 38 || e.keyCode === 40) return false;
+
+      if (e.keyCode === 32) {
+        jogoPausado = !jogoPausado;
+
+        skier.setAndando(!jogoPausado);
+        return;
+      }
 
       if (e.keyCode === 37 || e.key === 'a')      skier.mudarDirecao(-1);
       else if (e.keyCode === 39 || e.key === 'd') skier.mudarDirecao(+1);
@@ -62,7 +67,10 @@ import Arvore from './models/Arvore.js';
   }
 
 
+  function gameRunner() {
+    if (jogoPausado) return;
 
+    infoBox.setAndado( skier.andar() );
     let random = Math.floor(Math.random() * 100);
 
     if (random === 1) {
@@ -79,12 +87,12 @@ import Arvore from './models/Arvore.js';
 
 
   (function __init__() {
-    skier = new Skier();
-    tabuleiro = new Tabuleiro();
+    tabuleiro = new Tabuleiro(TAMX, TAMY, 5);
+    skier = new Skier(tabuleiro.getWidth(), parseInt(TAMX/2));
 
     initInfoBox();
     initEventListeners();
-    gameLoop = setInterval(run, 1000/FPS);
+    gameLoop = setInterval(gameRunner, 1000/FPS);
   }());
 
 }());
