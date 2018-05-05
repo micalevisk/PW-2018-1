@@ -17,6 +17,8 @@ export default function Skier(tabuleiroWidth, posLeft, posTop = 60) {
   };
 
   this.mudarDirecao = function (sentido) {
+    if (!this.andando) return;
+
     if ((this.direcao + sentido >= 0)
      && (this.direcao + sentido <= 2))
       this.element.className = DIRECOES[ (this.direcao += sentido) ];
