@@ -51,6 +51,7 @@ a:active {
 }
 
 #tabuleiro {
+  background-color: white;
   border-style: solid;
   border-color: black;
   position: relative;
