@@ -66,8 +66,8 @@ import Arvore from './models/Arvore.js';
     if (jogoPausado) return;
 
     infoBox.setAndado( skier.andar() );
-    let random = Math.floor(Math.random() * 100);
 
+    let random = Math.floor(Math.random() * 100);
     if (random === 1) {
       arvores.push( new Arvore(tabuleiro, 'arvore-normal', TAMY) );
     }
@@ -75,6 +75,7 @@ import Arvore from './models/Arvore.js';
     arvores.forEach((arvore, idx) => {
       if (!arvore.subir()) {
         // tabuleiro.element.removeChild(arvore.element);
+        arvore = arvore.element = null;
         arvores.splice(idx, 1);
       }
     });
