@@ -1,3 +1,7 @@
+import Tabuleiro from './models/Tabuleiro.js';
+import Skier from './models/Skier.js';
+import Arvore from './models/Arvore.js';
+
 (function () {
 
   // ------------------------------------------------------------------ //
