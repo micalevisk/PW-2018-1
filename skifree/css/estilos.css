@@ -2,6 +2,8 @@
   --skier-height: 30px;
 }
 
+* { margin: 0; padding: 0; }
+
 div {
   background-repeat: no-repeat;
 }
