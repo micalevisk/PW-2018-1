@@ -74,8 +74,7 @@ import Arvore from './models/Arvore.js';
     let random = Math.floor(Math.random() * 100);
 
     if (random === 1) {
-      let arvore = new Arvore('arvore-normal');
-      arvores.push(arvore);
+      arvores.push( new Arvore(tabuleiro, 'arvore-normal', TAMY) );
     }
 
     arvores.forEach(arvore => {
