@@ -11,15 +11,14 @@ export default function Arvore(tabuleiro, tipo, initialPosTop, zIndex = 200) {
   ) + 'px';
 }
 
-  this.element.style.left = Math.floor( Math.random() * maxLeft ) + 'px';
-
-
-  this.subir = function () {
+Arvore.prototype.subir = function () {
     const top = parseInt(this.element.style.top) - 1;
 
-    if (top < maxTop) return false;
+  if (top < -this.element.clientHeight) return false;
 
     this.element.style.top = top + 'px';
     return true;
   }
-}
+
+// função construtora https://goo.gl/Wo5JS4
+// alterando o prototype https://goo.gl/rmn2Rf
