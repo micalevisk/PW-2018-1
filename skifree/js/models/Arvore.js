@@ -1,8 +1,12 @@
-export default function Arvore(tabuleiro, tipo, initialPosTop, zIndex = 200) {
-  this.element = document.createElement('div');
-  this.element.className = tipo;
-  tabuleiro.element.appendChild(this.element);
+export default function Arvore(tabuleiro, tipo, initialPosTop, element, zIndex = 200) {
+  if (element) {
+    this.element = element;
+  } else {
+    this.element = document.createElement('div');
+    tabuleiro.element.appendChild(this.element);
+  }
 
+  this.element.className = tipo;
   this.element.style.zIndex = zIndex;
   this.element.style.top = initialPosTop + 'px';
 

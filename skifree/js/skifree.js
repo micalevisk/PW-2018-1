@@ -11,6 +11,7 @@ import Arvore from './models/Arvore.js';
   let gameOver = false;
   let jogoPausado = true;
   let arvores = [];
+  let arvoresElRemovidas = [];
   let skier;
   let tabuleiro;
   let gameLoop;
@@ -69,14 +70,16 @@ import Arvore from './models/Arvore.js';
 
     let random = Math.floor(Math.random() * 100);
     if (random === 1) {
-      arvores.push( new Arvore(tabuleiro, 'arvore-normal', TAMY) );
+      arvores.push(
+        new Arvore(tabuleiro, 'arvore-normal', TAMY,
+                   (arvoresElRemovidas.length > 0) ? arvoresElRemovidas.shift() : null) );
     }
 
     arvores.forEach((arvore, idx) => {
       if (!arvore.subir()) {
-        // tabuleiro.element.removeChild(arvore.element);
-        arvore = arvore.element = null;
+        arvoresElRemovidas.push(arvore.element);
         arvores.splice(idx, 1);
+        arvore = null;
       }
     });
   }
