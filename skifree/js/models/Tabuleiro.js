@@ -1,4 +1,4 @@
-export default function Tabuleiro(largura, altura, borda = '2') {
+function Tabuleiro(largura, altura, borda = '2') {
   this.element = document.getElementById('tabuleiro');
   this.element.style.width  = largura + 'px';
   this.element.style.height = altura + 'px';

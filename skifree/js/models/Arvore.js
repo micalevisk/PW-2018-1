@@ -1,4 +1,4 @@
-export default function Arvore(tabuleiro, tipo, initialPosTop, element, zIndex = 200) {
+function Arvore(tabuleiro, tipo, initialPosTop, element, zIndex = 200) {
   if (element) {
     this.element = element;
   } else {

@@ -6,23 +6,22 @@
     <link rel="stylesheet" href="css/estilos.css">
   </head>
   <body>
-    <div id="infoBox">
+    <panel id="infoBox">
       <p><code>
         by <a href="https://github.com/micalevisk/ProgWeb" target="_blank" rel="noopener">Micael Levi</a>
       </code></p>
       <p>Use <kbd>&larr;</kbd> e <kbd>&rarr;</kbd>  ou <kbd>A</kbd> e <kbd>D</kbd> para controlar o jogador.</p>
-      <p id="fps" data-label="FPS:"></p>
-      <p id="andado" data-label="Andou:"></p>
-    </div>
+      <p class="label" data-identifier="FPS: " id="fps"></p>
+      <p class="label" data-identifier="Andou: " id="andado"></p>
+    </panel>
     <div id="tabuleiro">
       <!-- TODO: adicionar botão de PLAY  -->
       <div id="skier"></div>
     </div>
 
-    <script type="module" src="js/skifree.js"></script>
-
-    <script nomodule> /* fallback para a ausência do suporte ao `module` */
-      document.body.innerHTML = '<a href="https://caniuse.com/#search=module">This browser does not support modules.</a>';
-    </script>
+    <script type="text/javascript" src="js/models/Arvore.js"></script>
+    <script type="text/javascript" src="js/models/Skier.js"></script>
+    <script type="text/javascript" src="js/models/Tabuleiro.js"></script>
+    <script type="text/javascript" src="js/skifree.js"></script>
   </body>
 </html>

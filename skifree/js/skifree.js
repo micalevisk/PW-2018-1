@@ -1,7 +1,3 @@
-import Tabuleiro from './models/Tabuleiro.js';
-import Skier from './models/Skier.js';
-import Arvore from './models/Arvore.js';
-
 (function () {
 
   // ------------------------------------------------------------------ //
@@ -27,19 +23,15 @@ import Arvore from './models/Arvore.js';
     },
 
     setAndado(metros) {
-      setInnerHTMLbyDataset(this.andadoEl, metros.toFixed(2) + 'm');
+      this.andadoEl.innerHTML = metros.toFixed(2) + 'm';
     },
 
     setFPS(fps) {
-      setInnerHTMLbyDataset(this.fpsEl, fps);
+      this.fpsEl.innerHTML = fps;
     },
 
   }.init();
   // ------------------------------------------------------------------ //
-
-  function setInnerHTMLbyDataset(el, text) {
-    el.innerHTML = `<b>${el.dataset['label']}</b> ${text}`;
-  }
 
   function initInfoBox() {
     infoBox.setFPS(FPS);
@@ -75,11 +67,11 @@ import Arvore from './models/Arvore.js';
                    (arvoresElRemovidas.length > 0) ? arvoresElRemovidas.shift() : null) );
     }
 
-    arvores.forEach((arvore, idx) => {
+    arvores.forEach(arvore => {
       if (!arvore.subir()) {
         arvoresElRemovidas.push(arvore.element);
-        arvores.splice(idx, 1);
         arvore = null;
+        arvores.shift();
       }
     });
   }

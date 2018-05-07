@@ -50,6 +50,11 @@ a:active {
   position: absolute;
 }
 
+.label::before {
+  content: attr(data-identifier);
+  font-weight: bold;
+}
+
 #tabuleiro {
   background-color: white;
   border-style: solid;

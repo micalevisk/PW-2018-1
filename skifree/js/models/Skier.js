@@ -1,7 +1,6 @@
-//                     0            1             2
 const DIRECOES = ['para-esquerda','para-frente','para-direita'];
 
-export default function Skier(tabuleiroWidth, posLeft, posTop = 60) {
+function Skier(tabuleiroWidth, posLeft, posTop = 60) {
   this.direcao = 1;
   this.andando = false;
   this.metrosAndados = 0;
