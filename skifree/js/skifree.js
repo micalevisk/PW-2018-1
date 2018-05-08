@@ -17,8 +17,12 @@
     element: document.getElementById('infoBox'),
 
     init() {
-      this.fpsEl    = this.element.querySelector('#fps');
-      this.andadoEl = this.element.querySelector('#andado');
+      [
+        this.fpsEl,
+        this.andadoEl,
+        this.vidasEL
+      ] = ['fps', 'andado', 'vidas'].map(id => this.element.querySelector('#' + id));
+
       return this;
     },
 
