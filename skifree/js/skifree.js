@@ -7,7 +7,7 @@
   let gameOver = false;
   let jogoPausado = true;
   let arvores = [];
-  let arvoresElRemovidas = [];
+  let arvoresRemovidas = [];
   let skier;
   let tabuleiro;
   let gameLoop;
@@ -62,17 +62,21 @@
 
     let random = Math.floor(Math.random() * 100);
     if (random === 1) {
-      arvores.push(
-        new Arvore(tabuleiro, 'arvore-normal', TAMY,
-                   (arvoresElRemovidas.length > 0) ? arvoresElRemovidas.shift() : null) );
+      let novaArvore;
+
+      if (arvoresRemovidas.length > 0) {
+        novaArvore = arvoresRemovidas.shift();
+        novaArvore.constructor(tabuleiro, 'arvore-normal', TAMY);
+      } else {
+        novaArvore = new Arvore(tabuleiro, 'arvore-normal', TAMY);
+      }
+
+      arvores.push(novaArvore);
     }
 
     arvores.forEach(arvore => {
-      if (!arvore.subir()) {
-        arvoresElRemovidas.push(arvore.element);
-        arvore = null;
-        arvores.shift();
-      }
+      if (!arvore.subir())
+        arvoresRemovidas.push( arvores.shift() );
     });
   }
 
