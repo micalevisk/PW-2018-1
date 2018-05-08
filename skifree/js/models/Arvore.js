@@ -1,7 +1,5 @@
-function Arvore(tabuleiro, tipo, initialPosTop, element, zIndex = 200) {
-  if (element) {
-    this.element = element;
-  } else {
+function Arvore(tabuleiro, tipo, initialPosTop, zIndex = 200) {
+  if (!this.element) {
     this.element = document.createElement('div');
     tabuleiro.element.appendChild(this.element);
   }
