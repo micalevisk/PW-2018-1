@@ -12,33 +12,25 @@
   let tabuleiro;
   let gameLoop;
 
-  const infoBox = {
+  const infoBox = (function () {
+      const element = document.getElementById('infoBox');
 
-    element: document.getElementById('infoBox'),
+      return {
+          fpsEl: element.querySelector('#fps'),
+          andadoEl: element.querySelector('#andado'),
+          vidasEl: element.querySelector('#vidas'),
 
-    init() {
-      [
-        this.fpsEl,
-        this.andadoEl,
-        this.vidasEL
-      ] = ['fps', 'andado', 'vidas'].map(id => this.element.querySelector('#' + id));
-
-      return this;
-    },
-
-    setAndado(metros) {
-      this.andadoEl.innerHTML = metros.toFixed(2) + 'm';
-    },
-
-    setFPS(fps) {
-      this.fpsEl.innerHTML = fps;
-    },
-
-    setVidas(vidasRestantes) {
-      this.vidasEL.innerHTML = vidasRestantes;
-    },
-
-  }.init();
+          setAndado(metros) {
+            this.andadoEl.innerHTML = metros.toFixed(2) + 'm';
+          },
+          setFPS(fps) {
+            this.fpsEl.innerHTML = fps;
+          },
+          setVidas(vidasRestantes) {
+            this.vidasEl.innerHTML = vidasRestantes;
+          }
+      };
+  }());
   // ------------------------------------------------------------------ //
 
   function initInfoBox() {
