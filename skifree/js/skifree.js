@@ -30,12 +30,17 @@
       this.fpsEl.innerHTML = fps;
     },
 
+    setVidas(vidasRestantes) {
+      this.vidasEL.innerHTML = vidasRestantes;
+    },
+
   }.init();
   // ------------------------------------------------------------------ //
 
   function initInfoBox() {
     infoBox.setFPS(FPS);
     infoBox.setAndado(0);
+    infoBox.setVidas(3);
   }
 
   function initEventListeners() {
