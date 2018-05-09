@@ -13,23 +13,23 @@
   let gameLoop;
 
   const infoBox = (function () {
-      const element = document.getElementById('infoBox');
+    const element = document.getElementById('infoBox');
 
-      return {
-          fpsEl: element.querySelector('#fps'),
-          andadoEl: element.querySelector('#andado'),
-          vidasEl: element.querySelector('#vidas'),
+    return {
+        fpsEl: element.querySelector('#fps'),
+        andadoEl: element.querySelector('#andado'),
+        vidasEl: element.querySelector('#vidas'),
 
-          setAndado(metros) {
-            this.andadoEl.innerHTML = metros.toFixed(2) + 'm';
-          },
-          setFPS(fps) {
-            this.fpsEl.innerHTML = fps;
-          },
-          setVidas(vidasRestantes) {
-            this.vidasEl.innerHTML = vidasRestantes;
-          }
-      };
+        setAndado(metros) {
+          this.andadoEl.innerHTML = metros.toFixed(2) + 'm';
+        },
+        setFPS(fps) {
+          this.fpsEl.innerHTML = fps;
+        },
+        setVidas(vidasRestantes) {
+          this.vidasEl.innerHTML = vidasRestantes;
+        }
+    };
   }());
   // ------------------------------------------------------------------ //
 
