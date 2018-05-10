@@ -4,6 +4,7 @@
   const FPS  = 60;
   const TAMX = 400; // largura do tabuleiro (em pixels)
   const TAMY = 600; // altura do tabuleiro (em pixels)
+  const QTD_INICIAL_VIDAS_SKIER = 3;
   let gameOver = false;
   let jogoPausado = true;
   let arvores = [];
@@ -36,7 +37,7 @@
   function initInfoBox() {
     infoBox.setFPS(FPS);
     infoBox.setAndado(0);
-    infoBox.setVidas(3);
+    infoBox.setVidas(QTD_INICIAL_VIDAS_SKIER);
   }
 
   function initEventListeners() {
@@ -84,7 +85,7 @@
 
   (function __init__() {
     tabuleiro = new Tabuleiro(TAMX, TAMY, 5);
-    skier = new Skier(tabuleiro.getWidth(), parseInt(TAMX/2));
+    skier = new Skier(tabuleiro.getWidth(), parseInt(TAMX/2), QTD_INICIAL_VIDAS_SKIER);
 
     initInfoBox();
     initEventListeners();
