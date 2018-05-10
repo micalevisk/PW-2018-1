@@ -5,3 +5,12 @@
   height: 34px;
   width: 30px;
 }
+
+/* obstacles:2 */
+.pedra {
+  background-image: url("../img/obstacles.png");
+  background-position: -28px -50px;
+  height: 13px;
+  width: 30px;
+}
+
