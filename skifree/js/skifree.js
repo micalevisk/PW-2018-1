@@ -42,12 +42,13 @@
 
   function initEventListeners() {
     window.addEventListener('keydown', e => {
+      e.preventDefault();
       if (e.keyCode === 38 || e.keyCode === 40) return false;
 
       if (e.keyCode === 32) {
         jogoPausado = !jogoPausado;
 
-        skier.iniciar(); // Necessário apenas no primeiro evento
+        if (!skier.iniciou) skier.iniciar();
         skier.setAndando(!jogoPausado);
         return;
       }
