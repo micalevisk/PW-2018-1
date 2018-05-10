@@ -13,7 +13,7 @@ function Skier(tabuleiroWidth, posLeft, qtdVidas, posTop = 60) {
 
 
   this.setAndando = function (andando) {
-    this.andando = andando;
+    return this.andando = andando;
   };
 
   this.perderVida = function (qtdVidasPerdidas = 1) {
