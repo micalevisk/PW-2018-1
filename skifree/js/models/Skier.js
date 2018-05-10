@@ -1,9 +1,10 @@
 const DIRECOES = ['para-esquerda','para-frente','para-direita'];
 
-function Skier(tabuleiroWidth, posLeft, posTop = 60) {
+function Skier(tabuleiroWidth, posLeft, qtdVidas, posTop = 60) {
   this.direcao = 1;
   this.andando = false;
   this.metrosAndados = 0;
+  this.vidasRestantes = qtdVidas;
 
   this.element = document.getElementById('skier');
   this.element.style.position = 'absolute';
@@ -11,8 +12,16 @@ function Skier(tabuleiroWidth, posLeft, posTop = 60) {
   this.element.style.left = posLeft + 'px';
 
 
-  this.setAndando = function(andando) {
+  this.setAndando = function (andando) {
     this.andando = andando;
+  };
+
+  this.perderVida = function (qtdVidasPerdidas = 1) {
+    return this.vidasRestantes -= qtdVidasPerdidas;
+  };
+
+  this.ganharVida = function (qtdVidasGanhas = 1) {
+    return this.vidasRestantes += qtdVidasGanhas;
   };
 
   this.mudarDirecao = function (sentido) {
