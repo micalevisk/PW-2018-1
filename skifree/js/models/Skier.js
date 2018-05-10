@@ -1,3 +1,4 @@
+const PARADO   = ['parado-esquerda', 'parado-direita'];
 const DIRECOES = ['para-esquerda','para-frente','para-direita'];
 
 function Skier(tabuleiroWidth, posLeft, qtdVidas, posTop = 60) {
