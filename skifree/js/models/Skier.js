@@ -53,13 +53,17 @@ function Skier(tabuleiroWidth, posLeft, qtdVidas, posTop = 60) {
 
     const valueLeft = parseInt(this.element.style.left);
 
-    if ((this.direcao === 0)
-     && (valueLeft > 0))
-      this.element.style.left = (valueLeft - 1) + 'px';
+    if (this.direcao === 0)
+      if (valueLeft > 0)
+        this.element.style.left = (valueLeft - 1) + 'px';
+      else
+        this.mudarDirecao(+1);
 
-    else if ((this.direcao === 2)
-          && (valueLeft < tabuleiroWidth - this.element.clientWidth))
-      this.element.style.left = (valueLeft + 1) + 'px';
+    else if (this.direcao === 2)
+      if (valueLeft < tabuleiroWidth - this.element.clientWidth)
+        this.element.style.left = (valueLeft + 1) + 'px';
+      else
+        this.mudarDirecao(-1);
 
     // TODO: retornar quantidade de metros andados
     return this.metrosAndados += 0.05;
