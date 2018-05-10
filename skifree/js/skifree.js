@@ -47,6 +47,7 @@
       if (e.keyCode === 32) {
         jogoPausado = !jogoPausado;
 
+        skier.iniciar(); // Necessário apenas no primeiro evento
         skier.setAndando(!jogoPausado);
         return;
       }
