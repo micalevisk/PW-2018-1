@@ -1,16 +1,116 @@
+:root {
+  --img-obstacles: url("../img/obstacles.png");
+}
+
 /* obstacles:1 */
 .arvore-normal {
-  background-image: url("../img/obstacles.png");
+  background-image: var(--img-obstacles);
   background-position: 0px -28px;
   height: 34px;
   width: 30px;
 }
 
 /* obstacles:2 */
-.pedra {
-  background-image: url("../img/obstacles.png");
+.rocha {
+  background-image: var(--img-obstacles);
   background-position: -28px -50px;
   height: 13px;
+  width: 25px;
+}
+
+/* obstacles:6 */
+.neve-pequena {
+  background-image: var(--img-obstacles);
+  background-position: -142px -55px;
+  height: 8px;
+  width: 44px;
+}
+
+/* obstacles:7 */
+.neve-grande {
+  background-image: var(--img-obstacles);
+  background-position: -186px -30px;
+  height: 33px;
+  width: 66px;
+}
+
+/* obstacles:9 */
+.cogumelo {
+  background-color: yellow;
+  background-image: var(--img-obstacles);
+  background-position: -270px -51px;
+  height: 12px;
+  width: 10px;
+}
+
+/* obstacles:10 */
+.arvore-2 {
+  background-image: var(--img-obstacles);
+  background-position: -280px -30px;
+  height: 33px;
   width: 30px;
 }
 
+/* obstacles:11 */
+.arvore-3 {
+  background-image: var(--img-obstacles);
+  background-position: -310px -30px;
+  height: 33px;
+  width: 27px;
+}
+
+/* obstacles:12 */
+.arbusto {
+  background-image: var(--img-obstacles);
+  background-position: -1px -102px;
+  height: 27px;
+  width: 23px;
+}
+
+/* obstacles:13 */
+.arbusto-chamas-1 {
+  background-image: var(--img-obstacles);
+  background-position: -24px -102px;
+  height: 27px;
+  width: 23px;
+}
+
+/* obstacles:15 */
+.arbusto-chamas-2 {
+  background-image: var(--img-obstacles);
+  background-position: -48px -102px;
+  height: 27px;
+  width: 23px;
+}
+
+/* obstacles:16 */
+.arbusto-chamas-3 {
+  background-image: var(--img-obstacles);
+  background-position: -71px -102px;
+  height: 27px;
+  width: 24px;
+}
+
+/* obstacles:17 */
+.arvore-4 {
+  background-image: var(--img-obstacles);
+  background-position: -96px -66px;
+  height: 63px;
+  width: 33px;
+}
+
+/* obstacles:22 */
+.placa-start {
+  background-image: var(--img-obstacles);
+  background-position: 0px -134px;
+  height: 29px;
+  width: 43px;
+}
+
+/* obstacles:27 */
+.placa-finish {
+  background-image: var(--img-obstacles);
+  background-position: -100px -134px;
+  height: 29px;
+  width: 50px;
+}
