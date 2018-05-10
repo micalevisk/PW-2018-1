@@ -83,7 +83,7 @@
 }
 
 /* skier:20 */
-.bigfoot-1 {
+.yeti-1 {
   background-image: var(--img-skier);
   background-position: 0px -112px;
   height: 43px;
@@ -91,7 +91,7 @@
 }
 
 /* skier:21 */
-.bigfoot-2 {
+.yeti-2 {
   background-image: var(--img-skier);
   background-position: -33px -112px;
   height: 43px;
@@ -99,7 +99,7 @@
 }
 
 /* skier:22 */
-.bigfoot-3-direita {
+.yeti-3-direita {
   background-image: var(--img-skier);
   background-position: -63px -112px;
   height: 43px;
@@ -107,7 +107,7 @@
 }
 
 /* skier:23 */
-.bigfoot-4-direita {
+.yeti-4-direita {
   background-image: var(--img-skier);
   background-position: -90px -112px;
   height: 43px;
@@ -115,7 +115,7 @@
 }
 
 /* skier:24 */
-.bigfoot-tentando-1 {
+.yeti-tentando-1 {
   background-image: var(--img-skier);
   background-position: -122px -112px;
   height: 43px;
@@ -123,7 +123,7 @@
 }
 
 /* skier:25 */
-.bigfoot-tentando-2 {
+.yeti-tentando-2 {
   background-image: var(--img-skier);
   background-position: -156px -112px;
   height: 43px;
@@ -131,7 +131,7 @@
 }
 
 /* skier:26 */
-.bigfoot-comendo-1 {
+.yeti-comendo-1 {
   background-image: var(--img-skier);
   background-position: -186px -112px;
   height: 43px;
@@ -139,7 +139,7 @@
 }
 
 /* skier:27 */
-.bigfoot-comendo-2 {
+.yeti-comendo-2 {
   background-image: var(--img-skier);
   background-position: -218px -112px;
   height: 43px;
@@ -147,7 +147,7 @@
 }
 
 /* skier:28 */
-.bigfoot-comendo-3 {
+.yeti-comendo-3 {
   background-image: var(--img-skier);
   background-position: -242px -112px;
   height: 43px;
@@ -155,7 +155,7 @@
 }
 
 /* skier:29 */
-.bigfoot-comendo-4 {
+.yeti-comendo-4 {
   background-image: var(--img-skier);
   background-position: 0px -158px;
   height: 43px;
@@ -163,7 +163,7 @@
 }
 
 /* skier:30 */
-.bigfoot-3-esquerda {
+.yeti-3-esquerda {
   background-image: var(--img-skier);
   background-position: -63px -158px;
   height: 43px;
