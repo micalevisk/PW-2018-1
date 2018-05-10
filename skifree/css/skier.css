@@ -1,0 +1,171 @@
+:root {
+  --img-skier: url("../img/skier.png");
+}
+
+/* skier:1 */
+.parado-direita {
+  background-image: var(--img-skier);
+  background-position: 0px -6px;
+  height: 28px;
+  width: 25px;
+}
+
+/* skier:2 */
+.para-direita {
+  background-image: var(--img-skier);
+  background-position: -25px -4px;
+  height: 30px;
+  width: 24px;
+}
+
+/* skier:4 */
+.para-frente {
+  background-image: var(--img-skier);
+  background-position: -66px -4px;
+  height: 30px;
+  width: 17px;
+}
+
+/* skier:5 */
+.pulando {
+  background-image: var(--img-skier);
+  background-position: -84px 0px;
+  height: 34px;
+  width: 34px;
+}
+
+/* skier:8 */
+.parado-bracos-abertos-direita {
+  background-image: var(--img-skier);
+  background-position: -180px 0px;
+  height: 34px;
+  width: 30px;
+}
+
+/* skier:10 */
+.caido-soterrado {
+  background-image: var(--img-skier);
+  background-position: -240px 0px;
+  height: 33px;
+  width: 34px;
+}
+
+/* skier:11 */
+.parado-esquerda {
+  background-image: var(--img-skier);
+  background-position: 0px -43px;
+  height: 28px;
+  width: 25px;
+}
+
+/* skier:12 */
+.para-esquerda {
+  background-image: var(--img-skier);
+  background-position: -25px -41px;
+  height: 30px;
+  width: 24px;
+}
+
+/* skier:15 */
+.caido-sentado {
+  background-image: var(--img-skier);
+  background-position: 0px -85px;
+  height: 24px;
+  width: 33px;
+}
+
+/* skier:14 */
+.parado-bracos-abertos-esquerda {
+  background-image: var(--img-skier);
+  background-position: -180px -38px;
+  height: 33px;
+  width: 30px;
+}
+
+/* skier:20 */
+.bigfoot-1 {
+  background-image: var(--img-skier);
+  background-position: 0px -112px;
+  height: 43px;
+  width: 33px;
+}
+
+/* skier:21 */
+.bigfoot-2 {
+  background-image: var(--img-skier);
+  background-position: -33px -112px;
+  height: 43px;
+  width: 30px;
+}
+
+/* skier:22 */
+.bigfoot-3-direita {
+  background-image: var(--img-skier);
+  background-position: -63px -112px;
+  height: 43px;
+  width: 28px;
+}
+
+/* skier:23 */
+.bigfoot-4-direita {
+  background-image: var(--img-skier);
+  background-position: -90px -112px;
+  height: 43px;
+  width: 32px;
+}
+
+/* skier:24 */
+.bigfoot-tentando-1 {
+  background-image: var(--img-skier);
+  background-position: -122px -112px;
+  height: 43px;
+  width: 35px;
+}
+
+/* skier:25 */
+.bigfoot-tentando-2 {
+  background-image: var(--img-skier);
+  background-position: -156px -112px;
+  height: 43px;
+  width: 31px;
+}
+
+/* skier:26 */
+.bigfoot-comendo-1 {
+  background-image: var(--img-skier);
+  background-position: -186px -112px;
+  height: 43px;
+  width: 33px;
+}
+
+/* skier:27 */
+.bigfoot-comendo-2 {
+  background-image: var(--img-skier);
+  background-position: -218px -112px;
+  height: 43px;
+  width: 25px;
+}
+
+/* skier:28 */
+.bigfoot-comendo-3 {
+  background-image: var(--img-skier);
+  background-position: -242px -112px;
+  height: 43px;
+  width: 29px;
+}
+
+/* skier:29 */
+.bigfoot-comendo-4 {
+  background-image: var(--img-skier);
+  background-position: 0px -158px;
+  height: 43px;
+  width: 29px;
+}
+
+/* skier:30 */
+.bigfoot-3-esquerda {
+  background-image: var(--img-skier);
+  background-position: -63px -158px;
+  height: 43px;
+  width: 28px;
+}
