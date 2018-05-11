@@ -43,11 +43,15 @@ a:active {
 
 #infoBox {
   font-family: monospace;
-  background-color: #c6ffec;
-  border: 1px solid black;
-  left: 430px;
-  padding: 3px;
+  background: white;
+  left: 432px;
   position: absolute;
+	border-radius: 4px;
+	margin-bottom: 20px;
+	padding: 10px;
+  box-shadow: 0 2px 5px #32325a1a;
+}
+
 }
 
 .label::before {
