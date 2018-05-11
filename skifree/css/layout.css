@@ -52,6 +52,10 @@ a:active {
   box-shadow: 0 2px 5px #32325a1a;
 }
 
+#infoBox p {
+	color: #6B7C93;
+	font-size: .875em;
+	line-height: 1.4em;
 }
 
 .label::before {
