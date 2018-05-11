@@ -1,5 +1,9 @@
 * { margin: 0; padding: 0; }
 
+body {
+  background: #eceff3;
+}
+
 div {
   background-repeat: no-repeat;
 }
