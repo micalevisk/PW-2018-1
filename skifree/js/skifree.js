@@ -43,7 +43,6 @@
   function initEventListeners() {
     window.addEventListener('keydown', e => {
       e.preventDefault();
-      if (e.keyCode === 38 || e.keyCode === 40) return false;
 
       if (e.keyCode === 32) {
         jogoPausado = !jogoPausado;
