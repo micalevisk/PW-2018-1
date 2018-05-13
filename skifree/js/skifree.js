@@ -11,6 +11,18 @@
   let skier;
   let tabuleiro;
   let gameLoop;
+  const probEObstaculo = [
+    { prob: 2,  tipo: 'arvore-normal', zIndex: 3 },
+    { prob: 3,  tipo: 'arvore-2', zIndex: 3 },
+    { prob: 7,  tipo: 'arvore-3', zIndex: 3 },
+    { prob: 11, tipo: 'rocha' },
+    { prob: 13, tipo: 'arvore-grande', zIndex: 3 },
+    // { prob: 17, tipo: 'cachorro' }, // animado
+    { prob: 29, tipo: 'neve-grande' },
+    { prob: 31, tipo: 'neve-pequena' },
+    { prob: 37, tipo: 'arbusto', zIndex: 3 },
+    // { prob: 41, tipo: 'arbusto-chamas-1' }, // animado
+  ];
 
   const infoBox = (function () {
     const element = document.getElementById('infoBox');
