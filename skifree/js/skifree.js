@@ -56,6 +56,12 @@
     });
   }
 
+  function gerarObstaculos(qtd, { tabuleiro, tipo, zIndex, tolerancia, initialTop = TAMY }) {
+    for (let i = 1; i <= qtd; ++i) {
+      const novo = obstaculos.alloc({ tipo, zIndex });
+      novo.spawn(tabuleiro, tolerancia || i, initialTop / i);
+    }
+  }
 
   function gameRunner() {
     if (jogoPausado) return;
