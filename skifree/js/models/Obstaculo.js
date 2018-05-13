@@ -1,19 +1,24 @@
-function Arvore(tabuleiro, tipo, initialPosTop, zIndex = 200) {
+function Obstaculo({ tipo, zIndex = 1, onCollision }) {
   if (!this.element) {
     this.element = document.createElement('div');
-    tabuleiro.element.appendChild(this.element);
   }
 
+  this.onCollision = onCollision;
   this.element.className = tipo;
   this.element.style.zIndex = zIndex;
-  this.element.style.top = initialPosTop + 'px';
+}
 
+
+Obstaculo.prototype.spawn = function (tabuleiro, tolerancia, initialTop) {
+  tabuleiro.element.appendChild(this.element);
+
+  this.element.style.top = initialTop + 'px';
   this.element.style.left = Math.floor(
-    Math.random() * (tabuleiro.getWidth() - this.element.clientWidth)
+    Math.random() * (tabuleiro.getWidth() - this.element.clientWidth + tolerancia)
   ) + 'px';
 }
 
-Arvore.prototype.subir = function () {
+Obstaculo.prototype.subir = function () {
   const top = parseInt(this.element.style.top) - 1;
 
   if (top < -this.element.clientHeight) return false;
