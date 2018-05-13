@@ -92,7 +92,7 @@
       if (random === prob) {
         gerarObstaculos(1, { tabuleiro, tipo, zIndex, tolerancia: random });
         return true;
-    }
+      }
     });
   }
 
