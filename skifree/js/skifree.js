@@ -7,8 +7,7 @@
   const QTD_INICIAL_VIDAS_SKIER = 3;
   let gameOver = false;
   let jogoPausado = true;
-  let arvores = [];
-  let arvoresRemovidas = [];
+  const obstaculos = new ObjectPool(Obstaculo);
   let skier;
   let tabuleiro;
   let gameLoop;
@@ -63,18 +62,18 @@
 
     infoBox.setAndado( skier.andar() );
 
-    let random = Math.floor(Math.random() * 100);
-    if (random === 1) {
-      let novaArvore;
+    let random = Math.floor(Math.random() * 1000);
 
-      if (arvoresRemovidas.length > 0) {
-        novaArvore = arvoresRemovidas.shift();
-        novaArvore.constructor(tabuleiro, 'arvore-normal', TAMY);
-      } else {
-        novaArvore = new Arvore(tabuleiro, 'arvore-normal', TAMY);
+    obstaculos.forEach((obstaculo, idx) => {
+      if (!obstaculo.subir()) {
+        obstaculos.freeAt(idx); // "libera" o elemento alocado
       }
+    });
 
-      arvores.push(novaArvore);
+    probEObstaculo.find(({ prob, tipo, zIndex }) => {
+      if (random === prob) {
+        gerarObstaculos(1, { tabuleiro, tipo, zIndex, tolerancia: random });
+        return true;
     }
 
     arvores.forEach(arvore => {
