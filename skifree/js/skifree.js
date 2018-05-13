@@ -81,10 +81,6 @@
         gerarObstaculos(1, { tabuleiro, tipo, zIndex, tolerancia: random });
         return true;
     }
-
-    arvores.forEach(arvore => {
-      if (!arvore.subir())
-        arvoresRemovidas.push( arvores.shift() );
     });
   }
 
