@@ -70,7 +70,7 @@
 
   function gerarObstaculos(qtd, { tabuleiro, tipo, zIndex, tolerancia, initialTop = TAMY }) {
     for (let i = 1; i <= qtd; ++i) {
-      const novo = obstaculos.alloc({ tipo, zIndex });
+      const novo = obstaculos.alloc({ tipo, zIndex: qtd - i + zIndex|0 });
       novo.spawn(tabuleiro, tolerancia || i, initialTop / i);
     }
   }
