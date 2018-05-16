@@ -14,8 +14,8 @@ Obstaculo.prototype.spawn = function (tabuleiro, tolerancia, initialTop) {
 
   this.element.style.top = initialTop + 'px';
   this.element.style.left = Math.floor(
-    Math.random() * (tabuleiro.getWidth() - this.element.clientWidth + tolerancia)
-  ) + 'px';
+    Math.random() * (tabuleiro.getWidth() - this.element.clientWidth + 1 + tolerancia)
+  ) + this.element.clientWidth + 'px';
 }
 
 Obstaculo.prototype.subir = function () {
