@@ -157,15 +157,47 @@
 /* skier:29 */
 .yeti-comendo-4 {
   background-image: var(--img-skier);
-  background-position: 0px -158px;
-  height: 43px;
+  background-position: 0px -159px;
+  height: 42px;
   width: 29px;
 }
 
 /* skier:30 */
 .yeti-3-esquerda {
   background-image: var(--img-skier);
-  background-position: -63px -158px;
-  height: 43px;
+  background-position: -63px -159px;
+  height: 42px;
   width: 28px;
+}
+
+/* skier:31 */
+.cachorro-1 {
+  background-image: var(--img-skier);
+  background-position: 0px -208px;
+  height: 14px;
+  width: 21px;
+}
+
+/* skier:32 */
+.cachorro-2 {
+  background-image: var(--img-skier);
+  background-position: -23px -208px;
+  height: 14px;
+  width: 21px;
+}
+
+/* skier:33 */
+.cachorro-3 {
+  background-image: var(--img-skier);
+  background-position: -47px -204px;
+  height: 18px;
+  width: 19px;
+}
+
+/* skier:34 */
+.cachorro-4 {
+  background-image: var(--img-skier);
+  background-position: -67px -204px;
+  height: 18px;
+  width: 19px;
 }
