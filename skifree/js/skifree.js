@@ -103,9 +103,6 @@
 
     initInfoBox();
     initEventListeners();
-    // <§
-    // __test_gen_arvores();
-    // §>
     gameLoop = setInterval(gameRunner, 1000/FPS);
   }());
 
