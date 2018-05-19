@@ -103,6 +103,8 @@
 
     initInfoBox();
     initEventListeners();
+    gerarObstaculos(4, { tabuleiro, tipo: probEObstaculo[6].tipo, zIndex: probEObstaculo[6].zIndex, initialTop: TAMY-100 });
+    gerarObstaculos(2, { tabuleiro, tipo: probEObstaculo[4].tipo, zIndex: probEObstaculo[4].zIndex, initialTop: TAMY-100 });
     gameLoop = setInterval(gameRunner, 1000/FPS);
   }());
 
