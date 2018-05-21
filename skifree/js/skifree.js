@@ -22,6 +22,7 @@
     { prob: 31, tipo: 'neve-pequena' },
     { prob: 37, tipo: 'arbusto', zIndex: 3 },
     // { prob: 41, tipo: 'arbusto-chamas-1' }, // animado
+    { prob: 43, tipo: 'cogumelo', zIndex: 3 },
   ];
 
   const infoBox = (function () {
