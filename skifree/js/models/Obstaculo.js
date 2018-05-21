@@ -44,5 +44,9 @@ Obstaculo.prototype.subir = function () {
   return true;
 }
 
+Obstaculo.prototype.sairDoTabuleiro = function () {
+  this.element.style.top = - this.element.clientHeight;
+}
+
 // função construtora https://goo.gl/Wo5JS4
 // alterando o prototype https://goo.gl/rmn2Rf
