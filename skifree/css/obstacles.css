@@ -4,6 +4,10 @@
 
 /* obstacles:1 */
 .arvore-normal {
+  --diff-min-top: 2;
+  --diff-max-top: 18;
+  --diff-min-left: -1;
+  --diff-max-left: 15;
   background-image: var(--img-obstacles);
   background-position: 0px -28px;
   height: 34px;
@@ -12,6 +16,10 @@
 
 /* obstacles:2 */
 .rocha {
+  --diff-min-top: -20;
+  --diff-max-top: -6;
+  --diff-min-left: -11;
+  --diff-max-left: 16;
   background-image: var(--img-obstacles);
   background-position: -28px -50px;
   height: 13px;
@@ -36,7 +44,10 @@
 
 /* obstacles:9 */
 .cogumelo {
-  background-color: yellow;
+  --diff-min-top: -21;
+  --diff-max-top: -7;
+  --diff-min-left: 10;
+  --diff-max-left: 2;
   background-image: var(--img-obstacles);
   background-position: -270px -51px;
   height: 12px;
@@ -45,6 +56,10 @@
 
 /* obstacles:10 */
 .arvore-2 {
+  --diff-min-top: 2;
+  --diff-max-top: 18;
+  --diff-min-left: -1;
+  --diff-max-left: 15;
   background-image: var(--img-obstacles);
   background-position: -280px -30px;
   height: 33px;
@@ -53,6 +68,10 @@
 
 /* obstacles:11 */
 .arvore-3 {
+  --diff-min-top: 2;
+  --diff-max-top: 18;
+  --diff-min-left: -1;
+  --diff-max-left: 15;
   background-image: var(--img-obstacles);
   background-position: -310px -30px;
   height: 33px;
@@ -61,6 +80,10 @@
 
 /* obstacles:12 */
 .arbusto {
+  --diff-min-top: -7;
+  --diff-max-top: 10;
+  --diff-min-left: -7;
+  --diff-max-left: 11;
   background-image: var(--img-obstacles);
   background-position: -1px -102px;
   height: 27px;
@@ -69,6 +92,10 @@
 
 /* obstacles:13 */
 .arbusto-chamas-1 {
+  --diff-min-top: -7;
+  --diff-max-top: 10;
+  --diff-min-left: -7;
+  --diff-max-left: 11;
   background-image: var(--img-obstacles);
   background-position: -24px -102px;
   height: 27px;
@@ -77,6 +104,10 @@
 
 /* obstacles:15 */
 .arbusto-chamas-2 {
+  --diff-min-top: -7;
+  --diff-max-top: 10;
+  --diff-min-left: -7;
+  --diff-max-left: 11;
   background-image: var(--img-obstacles);
   background-position: -48px -102px;
   height: 27px;
@@ -85,6 +116,10 @@
 
 /* obstacles:16 */
 .arbusto-chamas-3 {
+  --diff-min-top: -7;
+  --diff-max-top: 10;
+  --diff-min-left: -7;
+  --diff-max-left: 11;
   background-image: var(--img-obstacles);
   background-position: -71px -102px;
   height: 27px;
@@ -93,6 +128,10 @@
 
 /* obstacles:17 */
 .arvore-grande {
+  --diff-min-top: 29;
+  --diff-max-top: 48;
+  --diff-min-left: -3;
+  --diff-max-left: 21;
   background-image: var(--img-obstacles);
   background-position: -96px -66px;
   height: 63px;
