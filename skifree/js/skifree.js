@@ -91,7 +91,7 @@
 
     probEObstaculo.find(({ prob, tipo, zIndex }) => {
       if (random === prob) {
-        gerarObstaculos(1, { tabuleiro, tipo, zIndex, tolerancia: random });
+        gerarObstaculos(1, {tabuleiro, tipo, zIndex, tolerancia: random});
         return true;
       }
     });
@@ -104,8 +104,8 @@
 
     initInfoBox();
     initEventListeners();
-    gerarObstaculos(4, { tabuleiro, tipo: probEObstaculo[6].tipo, zIndex: probEObstaculo[6].zIndex, initialTop: TAMY-100 });
-    gerarObstaculos(2, { tabuleiro, tipo: probEObstaculo[4].tipo, zIndex: probEObstaculo[4].zIndex, initialTop: TAMY-100 });
+    gerarObstaculos(4, {tabuleiro, tipo: probEObstaculo[6].tipo, zIndex: probEObstaculo[6].zIndex, initialTop: TAMY-300});
+    gerarObstaculos(2, {tabuleiro, tipo: probEObstaculo[4].tipo, zIndex: probEObstaculo[4].zIndex, initialTop: TAMY-100});
     gameLoop = setInterval(gameRunner, 1000/FPS);
   }());
 
