@@ -9,11 +9,11 @@ function Obstaculo({ tipo, zIndex = 1, onCollision }) {
 }
 
 
-Obstaculo.prototype.spawn = function (tabuleiro, tolerancia, initialTop) {
+Obstaculo.prototype.spawn = function (tabuleiro, tolerancia, initialTop, initialLeft) {
   tabuleiro.element.appendChild(this.element);
 
   this.element.style.top = initialTop + 'px';
-  this.element.style.left = Math.floor(
+  this.element.style.left = (initialLeft || Math.floor(
     Math.random() * (tabuleiro.getWidth() - this.element.clientWidth + 1 + tolerancia)
   ) + this.element.clientWidth + 'px';
 }
