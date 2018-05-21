@@ -69,9 +69,19 @@
     });
   }
 
-  function gerarObstaculos(qtd, { tabuleiro, tipo, zIndex, tolerancia, initialTop = TAMY, initialLeft }) {
+  function gerarObstaculos(qtd, opts) {
+    const {
+      tabuleiro,
+      tipo,
+      zIndex,
+      tolerancia,
+      initialTop = TAMY,
+      initialLeft,
+      onColission = onCollisionObstaculoDestrutor
+    } = opts;
+
     for (let i = 1; i <= qtd; ++i) {
-      const novo = obstaculos.alloc({tipo, zIndex: qtd - i + zIndex|0});
+      const novo = obstaculos.alloc({tipo, zIndex: qtd - i + zIndex|0, onColission});
       novo.spawn(tabuleiro, tolerancia || i, initialTop / i, initialLeft);
     }
   }
