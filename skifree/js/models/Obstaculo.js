@@ -1,8 +1,9 @@
-function Obstaculo({ tipo, zIndex = 1 }) {
+function Obstaculo({ tipo, zIndex = 1, onColission }) {
   if (!this.element) {
     this.element = document.createElement('div');
   }
 
+  this.onColission = onColission;
   this.element.className = tipo;
   this.element.style.zIndex = zIndex;
 }
