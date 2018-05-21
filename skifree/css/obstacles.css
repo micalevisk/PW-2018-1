@@ -81,8 +81,8 @@
 .cogumelo {
   --diff-min-top: -21;
   --diff-max-top: -7;
-  --diff-min-left: 10;
-  --diff-max-left: 2;
+  --diff-min-left: -9;
+  --diff-max-left: 5;
   background-image: var(--img-obstacles);
   background-position: -270px -51px;
   height: 12px;
