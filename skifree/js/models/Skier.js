@@ -12,6 +12,7 @@ function Skier(tabuleiroWidth, posLeft, qtdVidas, posTop = 60) {
   this.element.style.position = 'absolute';
   this.element.style.top = posTop + 'px';
   this.element.style.left = posLeft + 'px';
+  this.element.style.zIndex = 2;
   this.element.className = PARADO[0];
 
 
