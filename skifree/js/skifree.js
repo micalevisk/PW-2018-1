@@ -1,6 +1,8 @@
 (function () {
 
   // ------------------------------------------------------------------ //
+  let skier, tabuleiro, gameLoop;
+
   const FPS  = 60;
   const TAMX = 400; // largura do tabuleiro (em pixels)
   const TAMY = 600; // altura do tabuleiro (em pixels)
@@ -8,9 +10,6 @@
   let gameOver = false;
   let jogoPausado = true;
   const obstaculos = new ObjectPool(Obstaculo);
-  let skier;
-  let tabuleiro;
-  let gameLoop;
   const probEObstaculo = [
     { prob: 2,  tipo: 'arvore-normal', zIndex: 3 },
     { prob: 3,  tipo: 'arvore-2', zIndex: 3 },
