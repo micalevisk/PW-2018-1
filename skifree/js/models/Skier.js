@@ -16,39 +16,6 @@ function Skier(tabuleiroWidth, posLeft, qtdVidas, posTop = 60) {
   this.element.className = PARADO[0];
 
 
-  this.iniciar = function () {
-    this.iniciou = true;
-    this.element.className = DIRECOES[ (this.direcao = 1) ];
-  };
-
-  this.setAndando = function (andando) {
-    return this.andando = andando;
-  };
-
-  this.perderVida = function (qtdVidasPerdidas = 1) {
-    return this.vidasRestantes -= qtdVidasPerdidas;
-  };
-
-  this.ganharVida = function (qtdVidasGanhas = 1) {
-    return this.vidasRestantes += qtdVidasGanhas;
-  };
-
-  this.mudarDirecao = function (sentido) {
-    if (!this.andando) {
-      if (!this.iniciou) {
-        if ((this.direcao + sentido >= 0)
-         && (this.direcao + sentido < PARADO.length))
-          this.element.className = PARADO[ (this.direcao += sentido) ];
-      }
-
-      return;
-    }
-
-    if ((this.direcao + sentido >= 0)
-     && (this.direcao + sentido < DIRECOES.length))
-      this.element.className = DIRECOES[ (this.direcao += sentido) ];
-  };
-
   this.andar = function () {
     if (!this.andando) return 0; // jogo pausado ou não iniciado
 
@@ -68,5 +35,38 @@ function Skier(tabuleiroWidth, posLeft, qtdVidas, posTop = 60) {
 
     // TODO: retornar quantidade de metros andados
     return this.metrosAndados += 0.05;
-  }
+  };
 }
+
+Skier.prototype.iniciar = function () {
+  this.iniciou = true;
+  this.element.className = DIRECOES[ (this.direcao = 1) ];
+};
+
+Skier.prototype.setAndando = function (andando) {
+  return this.andando = andando;
+};
+
+Skier.prototype.perderVida = function (qtdVidasPerdidas = 1) {
+  return this.vidasRestantes -= qtdVidasPerdidas;
+};
+
+Skier.prototype.ganharVida = function (qtdVidasGanhas = 1) {
+  return this.vidasRestantes += qtdVidasGanhas;
+};
+
+Skier.prototype.mudarDirecao = function (sentido) {
+  if (!this.andando) {
+    if (!this.iniciou) {
+      if ((this.direcao + sentido >= 0)
+       && (this.direcao + sentido < PARADO.length))
+        this.element.className = PARADO[ (this.direcao += sentido) ];
+    }
+
+    return;
+  }
+
+  if ((this.direcao + sentido >= 0)
+   && (this.direcao + sentido < DIRECOES.length))
+    this.element.className = DIRECOES[ (this.direcao += sentido) ];
+};
