@@ -15,8 +15,8 @@
 
 | HTML5 | CSS3 | JS  | PHP |
 |:-----:|:----:|:---:|:---:|
-| [`1` ~ slide 65](./HTML/exercicio1)  | [`1` ~ slide 71](./CSS1/) | [`1` ~ slide 47](./JS1/) | [`1` ~ slide 47](./PHP1/) | 
-| [`2` ~ slide 104](./HTML/exercicio2) | [`2` ~ slide 95](./CSS2/) | [`2` ~ slide 64](./JS2/) | | 
-|                                      | [`3` ~ slide 129](./CSS3/)| [`3` ~ slide 90](./JS3/) | [`3` ~ slide 105](./PHP3/) | 
+| [`1` ~ slide 65](./HTML/exercicio1)  | [`1` ~ slide 71](./CSS1/) | [`1` ~ slide 47](./JS1/)  | [`1` ~ slide 47](./PHP1/)  |
+| [`2` ~ slide 104](./HTML/exercicio2) | [`2` ~ slide 95](./CSS2/) | [`2` ~ slide 64](./JS2/)  | [`2` ~ slide 79](./PHP2/)  |
+|                                      | [`3` ~ slide 129](./CSS3/)| [`3` ~ slide 90](./JS3/)  | [`3` ~ slide 105](./PHP3/) |
 |                                      |                           | [`4` ~ slide 120](./JS4/) |
 |                                      |                           | [`5` ~ slide 133](./JS5/) |
