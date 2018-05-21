@@ -38,6 +38,14 @@ function Skier(tabuleiroWidth, posLeft, qtdVidas, posTop = 60) {
   };
 }
 
+
+Skier.prototype.getTopAndLeft = function () {
+  return [
+    parseInt(this.element.style.top),
+    parseInt(this.element.style.left)
+  ]
+}
+
 Skier.prototype.iniciar = function () {
   this.iniciou = true;
   this.element.className = DIRECOES[ (this.direcao = 1) ];
