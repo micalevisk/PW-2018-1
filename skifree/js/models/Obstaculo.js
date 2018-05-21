@@ -22,13 +22,13 @@ Obstaculo.prototype.spawn = function (tabuleiro, tolerancia, initialTop, initial
     const minLeft= parseInt( _.getCssProperty(this.element, '--diff-min-left') );
     const maxLeft= parseInt( _.getCssProperty(this.element, '--diff-max-left') );
 
-    const topEstaEntre = _.isNumberBetween(minTop, maxTop);
+    const topEstaEntre  = _.isNumberBetween(minTop, maxTop);
     const leftEstaEntre = _.isNumberBetween(minLeft, maxLeft);
 
     this.colidiu = function (targetTop, targetLeft) {
       return topEstaEntre(targetTop - parseInt(this.element.style.top))
           && leftEstaEntre(targetLeft - parseInt(this.element.style.left));
-    };
+    }
   } else {
     this.colidiu = function () { return false; } // nop
   }
