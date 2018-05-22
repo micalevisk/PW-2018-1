@@ -40,6 +40,15 @@ a:active {
   color: blue;
 }
 
+#infoBox .label.destaque-negativo {
+  color: red;
+  font-size: 1.3em;
+}
+
+#infoBox .label.destaque-positivo {
+  color: green;
+  font-size: 1.3em;
+}
 
 #infoBox {
   font-family: monospace;
