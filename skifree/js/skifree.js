@@ -32,25 +32,31 @@
         andadoEl: element.querySelector('#andado'),
         vidasEl: element.querySelector('#vidas'),
 
-        setAndado(metros) {
+        get andado() {
+          return this.andadoEl.innerHTML;
+        },
+
+        set andado(metros) {
           this.andadoEl.innerHTML = metros.toFixed(2);
         },
-        setFPS(fps) {
+
+        set fps(fps) {
           this.fpsEl.innerHTML = fps;
         },
-        setVidas(vidasRestantes, tipoDestaque) {
-          this.vidasEl.innerHTML = vidasRestantes;
-          this.vidasEl.classList.add('destaque-' + tipoDestaque);
-          setTimeout(() => this.vidasEl.classList.remove('destaque-' + tipoDestaque), 300);
+
+        set vidas([ valor, tipo ]) {
+          this.vidasEl.innerHTML = valor;
+          this.vidasEl.classList.add('destaque-' + tipo);
+          setTimeout(() => this.vidasEl.classList.remove('destaque-' + tipo), 300);
         }
     };
   }());
   // ------------------------------------------------------------------ //
 
   function initInfoBox() {
-    infoBox.setFPS(FPS);
-    infoBox.setAndado(0);
-    infoBox.setVidas(QTD_INICIAL_VIDAS_SKIER);
+    infoBox.fps = FPS;
+    infoBox.andado = 0;
+    infoBox.vidas = [QTD_INICIAL_VIDAS_SKIER];
   }
 
   function initEventListeners() {
@@ -90,7 +96,7 @@
   function gameRunner() {
     if (jogoPausado) return;
 
-    infoBox.setAndado( skier.andar() );
+    infoBox.andado = skier.andar();
 
     let random = Math.floor(Math.random() * 1000);
 
@@ -113,7 +119,7 @@
 
 
   function onCollisionObstaculoNaoDestrutor(obstaculo) {
-    infoBox.setVidas( skier.ganharVida(), 'positivo' );
+    infoBox.vidas = [skier.ganharVida(), 'positivo'];
     obstaculo.element.classList.add('animado-spin');
     setTimeout(() => {
       obstaculo.sairDoTabuleiro();
@@ -122,9 +128,9 @@
 
   function onCollisionObstaculoDestrutor() {
     console.error('colidiu')
-    infoBox.setVidas( skier.perderVida(), 'negativo' );
-
     // TODO: verificar vida do skier e dar GAME OVER
+    const skierVidasRestantes = skier.perderVida();
+    infoBox.vidas = [skierVidasRestantes, 'negativo'];
   }
 
   (function __init__() {
