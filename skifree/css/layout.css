@@ -67,7 +67,7 @@ a:active {
 	line-height: 1.4em;
 }
 
-.label::before {
+#infoBox .label::before {
   content: attr(data-identifier);
   font-weight: bold;
 }
