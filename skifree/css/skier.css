@@ -66,6 +66,14 @@
   width: 24px;
 }
 
+/* skier:14 */
+.parado-bracos-abertos-esquerda {
+  background-image: url("../img/skier.png");
+  background-position: -180px -38px;
+  height: 33px;
+  width: 30px;
+}
+
 /* skier:15 */
 .caido-sentado {
   background-image: var(--img-skier);
@@ -74,12 +82,12 @@
   width: 33px;
 }
 
-/* skier:14 */
-.parado-bracos-abertos-esquerda {
-  background-image: var(--img-skier);
-  background-position: -180px -38px;
-  height: 33px;
-  width: 30px;
+/* skier:18 */
+.caido-frente {
+  background-image: url("../img/skier.png");
+  background-position: -83px -84px;
+  height: 24px;
+  width: 32px;
 }
 
 /* skier:20 */
