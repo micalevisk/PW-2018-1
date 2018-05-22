@@ -68,7 +68,7 @@ a:active {
 }
 
 #infoBox .label::before {
-  content: attr(data-identifier);
+  content: attr(data-identifier) ": ";
   font-weight: bold;
 }
 
