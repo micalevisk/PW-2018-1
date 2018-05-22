@@ -118,6 +118,18 @@
   }
 
 
+  function onGameOver() {
+    clearInterval(gameLoop);
+    skier.setAndando(false);
+
+    // TODO: se skier foi comido, deixar o yeti se animando
+
+    setTimeout(() => {
+      const reiniciar = confirm(`Game Over :(\nVocê Andou: ${infoBox.andado} metros!\nDeseja reiniciar o jogo?`);
+      if (reiniciar) location.reload();
+    }, 500);
+  }
+
   function onCollisionObstaculoNaoDestrutor(obstaculo) {
     infoBox.vidas = [skier.ganharVida(), 'positivo'];
     obstaculo.element.classList.add('animado-spin');
@@ -127,10 +139,9 @@
   }
 
   function onCollisionObstaculoDestrutor() {
-    console.error('colidiu')
-    // TODO: verificar vida do skier e dar GAME OVER
     const skierVidasRestantes = skier.perderVida();
     infoBox.vidas = [skierVidasRestantes, 'negativo'];
+    if (skierVidasRestantes <= 0) onGameOver();
   }
 
   (function __init__() {
