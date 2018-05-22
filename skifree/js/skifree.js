@@ -21,7 +21,7 @@
     { prob: 31, tipo: 'neve-pequena' },
     { prob: 37, tipo: 'arbusto', zIndex: 3 },
     // { prob: 41, tipo: 'arbusto-chamas-1' }, // animado
-    { prob: 43, tipo: 'cogumelo', zIndex: 3 },
+    { prob: 43, tipo: 'cogumelo', zIndex: 3, onColission: onCollisionObstaculoNaoDestrutor },
   ];
 
   const infoBox = (function () {
@@ -108,6 +108,14 @@
     });
   }
 
+
+  function onCollisionObstaculoNaoDestrutor(obstaculo) {
+    infoBox.setVidas( skier.ganharVida(), 'positivo' );
+    obstaculo.element.classList.add('animado-spin');
+    setTimeout(() => {
+      obstaculo.sairDoTabuleiro();
+    }, 500);
+  }
 
   (function __init__() {
     tabuleiro = new Tabuleiro(TAMX, TAMY, 5);
