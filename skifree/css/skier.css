@@ -1,10 +1,6 @@
-:root {
-  --img-skier: url("../img/skier.png");
-}
-
 /* skier:1 */
 .parado-direita {
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: 0px -6px;
   height: 28px;
   width: 25px;
@@ -12,7 +8,7 @@
 
 /* skier:2 */
 .para-direita {
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: -25px -4px;
   height: 30px;
   width: 24px;
@@ -20,7 +16,7 @@
 
 /* skier:4 */
 .para-frente {
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: -66px -4px;
   height: 30px;
   width: 17px;
@@ -28,7 +24,7 @@
 
 /* skier:5 */
 .pulando {
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: -84px 0px;
   height: 34px;
   width: 34px;
@@ -36,7 +32,7 @@
 
 /* skier:8 */
 .parado-bracos-abertos-direita {
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: -180px 0px;
   height: 34px;
   width: 30px;
@@ -44,7 +40,7 @@
 
 /* skier:10 */
 .caido-soterrado {
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: -240px 0px;
   height: 33px;
   width: 34px;
@@ -52,7 +48,7 @@
 
 /* skier:11 */
 .parado-esquerda {
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: 0px -43px;
   height: 28px;
   width: 25px;
@@ -60,7 +56,7 @@
 
 /* skier:12 */
 .para-esquerda {
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: -25px -41px;
   height: 30px;
   width: 24px;
@@ -76,7 +72,7 @@
 
 /* skier:15 */
 .caido-sentado {
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: 0px -85px;
   height: 24px;
   width: 33px;
@@ -96,7 +92,7 @@
   --diff-max-top: 26;
   --diff-min-left: -4;
   --diff-max-left: 18;
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: 0px -112px;
   height: 43px;
   width: 33px;
@@ -108,7 +104,7 @@
   --diff-max-top: 26;
   --diff-min-left: -4;
   --diff-max-left: 18;
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: -33px -112px;
   height: 43px;
   width: 30px;
@@ -120,7 +116,7 @@
   --diff-max-top: 30;
   --diff-min-left: -13;
   --diff-max-left: 13;
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: -63px -112px;
   height: 43px;
   width: 28px;
@@ -132,7 +128,7 @@
   --diff-max-top: 26;
   --diff-min-left: -4;
   --diff-max-left: 18;
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: -90px -112px;
   height: 43px;
   width: 32px;
@@ -140,7 +136,7 @@
 
 /* skier:24 */
 .yeti-tentando-1 {
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: -122px -112px;
   height: 43px;
   width: 35px;
@@ -148,7 +144,7 @@
 
 /* skier:25 */
 .yeti-tentando-2 {
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: -156px -112px;
   height: 43px;
   width: 31px;
@@ -156,7 +152,7 @@
 
 /* skier:26 */
 .yeti-comendo-1 {
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: -186px -112px;
   height: 43px;
   width: 33px;
@@ -164,7 +160,7 @@
 
 /* skier:27 */
 .yeti-comendo-2 {
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: -218px -112px;
   height: 43px;
   width: 25px;
@@ -172,7 +168,7 @@
 
 /* skier:28 */
 .yeti-comendo-3 {
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: -242px -112px;
   height: 43px;
   width: 29px;
@@ -180,7 +176,7 @@
 
 /* skier:29 */
 .yeti-comendo-4 {
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: 0px -159px;
   height: 42px;
   width: 29px;
@@ -192,7 +188,7 @@
   --diff-max-top: 26;
   --diff-min-left: -4;
   --diff-max-left: 18;
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: -63px -158px;
   height: 42px;
   width: 28px;
@@ -204,7 +200,7 @@
   --diff-max-top: 2;
   --diff-min-left: -15;
   --diff-max-left: 12;
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: 0px -208px;
   height: 14px;
   width: 21px;
@@ -216,7 +212,7 @@
   --diff-max-top: 2;
   --diff-min-left: -15;
   --diff-max-left: 12;
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: -23px -208px;
   height: 14px;
   width: 21px;
@@ -228,7 +224,7 @@
   --diff-max-top: 2;
   --diff-min-left: -15;
   --diff-max-left: 12;
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: -47px -204px;
   height: 18px;
   width: 19px;
@@ -240,7 +236,7 @@
   --diff-max-top: 2;
   --diff-min-left: -15;
   --diff-max-left: 12;
-  background-image: var(--img-skier);
+  background-image: url("../img/skier.png");
   background-position: -67px -204px;
   height: 18px;
   width: 19px;
