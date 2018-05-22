@@ -95,9 +95,12 @@
     let random = Math.floor(Math.random() * 1000);
 
     obstaculos.forEach((obstaculo, idx) => {
-      if (!obstaculo.subir()) {
-        obstaculos.freeAt(idx); // "libera" o elemento alocado
+      if ( obstaculo.subir() ) {
+        return obstaculo.colidiu(...skier.getTopAndLeft())
+            && obstaculo.onColission();
       }
+
+        obstaculos.freeAt(idx); // "libera" o elemento alocado
     });
 
     probEObstaculo.find(({ prob, ...obstaculosParams }) => {
@@ -115,6 +118,13 @@
     setTimeout(() => {
       obstaculo.sairDoTabuleiro();
     }, 500);
+  }
+
+  function onCollisionObstaculoDestrutor() {
+    console.error('colidiu')
+    infoBox.setVidas( skier.perderVida(), 'negativo' );
+
+    // TODO: verificar vida do skier e dar GAME OVER
   }
 
   (function __init__() {

@@ -3,9 +3,18 @@ function Obstaculo({ tipo, zIndex = 1, onColission }) {
     this.element = document.createElement('div');
   }
 
-  this.onColission = onColission;
+  this.colisaoJaRegistrada = false;
   this.element.className = tipo;
   this.element.style.zIndex = zIndex;
+
+  this.onColission = () => {
+    // só executa se ainda não colidiu
+    if (!this.colisaoJaRegistrada) {
+      this.colisaoJaRegistrada = true;
+      this.element.style.zIndex = 0; // vai para trás do skier
+      onColission(this);
+    }
+  };
 }
 
 
