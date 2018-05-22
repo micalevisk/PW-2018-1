@@ -33,13 +33,15 @@
         vidasEl: element.querySelector('#vidas'),
 
         setAndado(metros) {
-          this.andadoEl.innerHTML = metros.toFixed(2) + 'm';
+          this.andadoEl.innerHTML = metros.toFixed(2);
         },
         setFPS(fps) {
           this.fpsEl.innerHTML = fps;
         },
-        setVidas(vidasRestantes) {
+        setVidas(vidasRestantes, tipoDestaque) {
           this.vidasEl.innerHTML = vidasRestantes;
+          this.vidasEl.classList.add('destaque-' + tipoDestaque);
+          setTimeout(() => this.vidasEl.classList.remove('destaque-' + tipoDestaque), 300);
         }
     };
   }());
