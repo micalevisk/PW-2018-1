@@ -3,7 +3,7 @@ const _ = {
 
   isNumeric: (n) => !isNaN( parseFloat(n) ) && isFinite(n),
 
-  getCssProperty: function (elem, property) {
+  getCSSProperty: function (elem, property) {
     return window.
               getComputedStyle(elem, null).
               getPropertyValue(property);

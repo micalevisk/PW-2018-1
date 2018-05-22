@@ -26,11 +26,11 @@ Obstaculo.prototype.spawn = function (tabuleiro, tolerancia, initialTop, initial
     Math.random() * (tabuleiro.getWidth() - this.element.clientWidth + 1 + tolerancia)
   ) + this.element.clientWidth) + 'px';
 
-  const minTop = parseInt( _.getCssProperty(this.element, '--diff-min-top') );
+  const minTop = parseInt( _.getCSSProperty(this.element, '--diff-min-top') );
   if ( _.isNumeric(minTop) ) {
-    const maxTop = parseInt( _.getCssProperty(this.element, '--diff-max-top') );
-    const minLeft= parseInt( _.getCssProperty(this.element, '--diff-min-left') );
-    const maxLeft= parseInt( _.getCssProperty(this.element, '--diff-max-left') );
+    const maxTop = parseInt( _.getCSSProperty(this.element, '--diff-max-top') );
+    const minLeft= parseInt( _.getCSSProperty(this.element, '--diff-min-left') );
+    const maxLeft= parseInt( _.getCSSProperty(this.element, '--diff-max-left') );
 
     const topEstaEntre  = _.isNumberBetween(minTop, maxTop);
     const leftEstaEntre = _.isNumberBetween(minLeft, maxLeft);
