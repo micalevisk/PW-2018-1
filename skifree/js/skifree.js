@@ -109,9 +109,9 @@
       obstaculos.freeAt(idx); // "libera" o elemento alocado
     });
 
-    probEObstaculo.find(({ prob, ...obstaculosParams }) => {
+    probEObstaculo.find(({ prob, tipo, zIndex, onColission }) => {
       if (random === prob) {
-        gerarObstaculos(1, {tabuleiro, ...obstaculosParams});
+        gerarObstaculos(1, {tabuleiro, tipo, zIndex, tolerancia: random, onColission});
         return true;
       }
     });
@@ -150,8 +150,8 @@
 
     initInfoBox();
     initEventListeners();
-    gerarObstaculos(4, {tabuleiro, initialTop: TAMY-300, ...probEObstaculo[6]});
-    gerarObstaculos(4, {tabuleiro, initialTop: TAMY-300, ...probEObstaculo[4]});
+    gerarObstaculos(4, {tabuleiro, tipo: probEObstaculo[6].tipo, zIndex: probEObstaculo[6].zIndex, initialTop: TAMY-300});
+    gerarObstaculos(2, {tabuleiro, tipo: probEObstaculo[4].tipo, zIndex: probEObstaculo[4].zIndex, initialTop: TAMY-100});
     gameLoop = setInterval(gameRunner, 1000/FPS);
   }());
 
