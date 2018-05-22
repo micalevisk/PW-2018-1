@@ -106,7 +106,7 @@
             && obstaculo.onColission();
       }
 
-        obstaculos.freeAt(idx); // "libera" o elemento alocado
+      obstaculos.freeAt(idx); // "libera" o elemento alocado
     });
 
     probEObstaculo.find(({ prob, ...obstaculosParams }) => {
