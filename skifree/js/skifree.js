@@ -141,7 +141,7 @@
   function onCollisionObstaculoDestrutor() {
     const skierVidasRestantes = skier.perderVida();
     infoBox.vidas = [skierVidasRestantes, 'negativo'];
-    if (skierVidasRestantes > 0) skier.caiu();
+    if (skierVidasRestantes > 0) skier.caido();
   }
 
   (function __init__() {
