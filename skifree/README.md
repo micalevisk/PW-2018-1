@@ -10,5 +10,5 @@
 5. [ ] Além da árvore usada na implementação inicial, deverão ser implementados os seguintes obstáculos: (i) arbusto em chamas; (ii) rocha; (iii) toco de árvore; (iv) árvore grande; (v) cachorro. Os outros obstáculos disponíveis nos assets são opcionais. A frequência de aparecimento de cada obstáculo é uma decisão particular.
 6. [ ] Durante um jogo, o esquiador pode bater em apenas `3` obstáculos (i.e., o jogador inicia com essa quantia de vidas). Sempre que o esquiador bater em um obstáculo, ele deverá cair e logo depois levantar (usando a imagem citada na especificação).
 7. [ ] Se o jogador perder todas as suas vidas, o esquiador morre e o jogo termina. A imagem que será usada está citada na especificação.
-8. [ ] Da mesma forma que os obstáculos, de vez em quando irá aparecer um cogumelo na montanha. Se o jogador pegar esse cogumelo, ele irá ganhar uma vida adicional.
+8. [x] Da mesma forma que os obstáculos, de vez em quando irá aparecer um cogumelo na montanha. Se o jogador pegar esse cogumelo, ele irá ganhar uma vida adicional.
 9. [ ] As vidas do jogador não valem de nada se ele for pego pelo abominável monstro das neves. Caso o jogador seja pego por ele, o jogo termina imediatamente.
