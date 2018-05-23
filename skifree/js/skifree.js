@@ -142,6 +142,10 @@
     const skierVidasRestantes = skier.perderVida();
     infoBox.vidas = [skierVidasRestantes, 'negativo'];
     if (skierVidasRestantes > 0) skier.caido();
+    else {
+      skier.naNeve();
+      onGameOver();
+    }
   }
 
   (function __init__() {
