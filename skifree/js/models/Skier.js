@@ -84,3 +84,7 @@ Skier.prototype.caido = function () {
   this.element.className = 'caido-frente';
   setTimeout(() => this.element.className = lastSprite, 400);
 }
+
+Skier.prototype.soterrado = function () {
+  this.element.className = 'caido-soterrado';
+}
