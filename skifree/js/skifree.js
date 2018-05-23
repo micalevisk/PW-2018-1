@@ -143,7 +143,7 @@
     infoBox.vidas = [skierVidasRestantes, 'negativo'];
     if (skierVidasRestantes > 0) skier.caido();
     else {
-      skier.naNeve();
+      skier.soterrado();
       onGameOver();
     }
   }
