@@ -78,3 +78,9 @@ Skier.prototype.mudarDirecao = function (sentido) {
    && (this.direcao + sentido < DIRECOES.length))
     this.element.className = DIRECOES[ (this.direcao += sentido) ];
 };
+
+Skier.prototype.caido = function () {
+  const lastSprite = this.element.className;
+  this.element.className = 'caido-frente';
+  setTimeout(() => this.element.className = lastSprite, 400);
+}
