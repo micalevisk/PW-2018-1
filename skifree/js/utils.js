@@ -8,4 +8,8 @@ const _ = Object.freeze({
               getComputedStyle(elem, null).
               getPropertyValue(property);
   },
+
+  changeRootVariable: function (cssVarName, newValue) {
+    document.documentElement.style.setProperty(cssVarName, newValue);
+  },
 });
