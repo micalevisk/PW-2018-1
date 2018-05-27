@@ -108,7 +108,7 @@
 }
 
 /* obstacles:13 */
-.arbusto-chamas-1 {
+.gif-arbusto-chamas {
   --diff-min-top: -7;
   --diff-max-top: 10;
   --diff-min-left: -7;
@@ -117,30 +117,11 @@
   background-position: -24px -102px;
   height: 27px;
   width: 23px;
-}
 
-/* obstacles:15 */
-.arbusto-chamas-2 {
-  --diff-min-top: -7;
-  --diff-max-top: 10;
-  --diff-min-left: -7;
-  --diff-max-left: 11;
-  background-image: url("../img/obstacles.png");
-  background-position: -48px -102px;
-  height: 27px;
-  width: 23px;
-}
-
-/* obstacles:16 */
-.arbusto-chamas-3 {
-  --diff-min-top: -7;
-  --diff-max-top: 10;
-  --diff-min-left: -7;
-  --diff-max-left: 11;
-  background-image: url("../img/obstacles.png");
-  background-position: -71px -102px;
-  height: 27px;
-  width: 24px;
+  animation-name: arbusto-chamas;
+  animation-duration: .4s;
+  animation-timing-function: steps(2);
+  animation-iteration-count: infinite;
 }
 
 /* obstacles:17 */
