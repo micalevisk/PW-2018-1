@@ -3,6 +3,8 @@ const _ = Object.freeze({
 
   isNumeric: (n) => !isNaN( parseFloat(n) ) && isFinite(n),
 
+  randomRange: (min, max) => Math.random() * (max - min) + min,
+
   getCSSProperty: function (elem, property) {
     return window.
               getComputedStyle(elem, null).
