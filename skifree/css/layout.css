@@ -88,3 +88,8 @@ a:active {
 #tabuleiro > div {
   position: absolute;
 }
+
+[class^="gif-"] {
+  -webkit-animation-play-state: var(--game-state, paused);
+          animation-play-state: var(--game-state, paused);
+}
