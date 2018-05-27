@@ -71,8 +71,8 @@
         return;
       }
 
-      if (e.keyCode === 37 || e.key === 'a')      skier.mudarDirecao(-1);
-      else if (e.keyCode === 39 || e.key === 'd') skier.mudarDirecao(+1);
+      if (e.keyCode === 37 || e.key.toLocaleLowerCase() === 'a')      skier.mudarDirecao(-1);
+      else if (e.keyCode === 39 || e.key.toLocaleLowerCase() === 'd') skier.mudarDirecao(+1);
     });
   }
 
