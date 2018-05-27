@@ -9,6 +9,7 @@
   const QTD_INICIAL_VIDAS_SKIER = 3;
   let gameOver = false;
   let jogoPausado = true;
+  const GAME_STATES = ['running', 'paused'];
   const obstaculos = new ObjectPool(Obstaculo);
   const probEObstaculo = [
     { prob: 2,  tipo: 'arvore-normal', zIndex: 3 },
@@ -65,6 +66,7 @@
 
       if (e.keyCode === 32) {
         jogoPausado = !jogoPausado;
+        _.changeRootVariable('--game-state', GAME_STATES[+jogoPausado]);
 
         if (!skier.iniciou) skier.iniciar();
         skier.setAndando(!jogoPausado);
