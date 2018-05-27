@@ -149,13 +149,18 @@
   }
 
   (function __init__() {
+    const posInicialSkier = { x: parseInt(TAMX/2), y: 60 };
+
     tabuleiro = new Tabuleiro(TAMX, TAMY, 5);
-    skier = new Skier(tabuleiro.getWidth(), parseInt(TAMX/2), QTD_INICIAL_VIDAS_SKIER);
+    skier = new Skier(tabuleiro.getWidth(), posInicialSkier.x, posInicialSkier.y, QTD_INICIAL_VIDAS_SKIER);
 
     initInfoBox();
     initEventListeners();
-    gerarObstaculos(4, {tabuleiro, tipo: probEObstaculo[6].tipo, zIndex: probEObstaculo[6].zIndex, initialTop: TAMY-300});
-    gerarObstaculos(2, {tabuleiro, tipo: probEObstaculo[4].tipo, zIndex: probEObstaculo[4].zIndex, initialTop: TAMY-100});
+
+    gerarObstaculos(1, {tabuleiro, tipo: 'placa-start', initialLeft: posInicialSkier.x - 50, initialTop: posInicialSkier.y });
+    gerarObstaculos(4, {tabuleiro, tipo: probEObstaculo[7].tipo, zIndex: probEObstaculo[7].zIndex, initialTop: TAMY-300});
+    gerarObstaculos(2, {tabuleiro, tipo: probEObstaculo[6].tipo, initialTop: TAMY-100});
+
     gameLoop = setInterval(gameRunner, 1000/FPS);
   }());
 
