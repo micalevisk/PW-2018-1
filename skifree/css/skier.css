@@ -1,3 +1,16 @@
+/* ============== animações ============== */
+@keyframes cachorro-latindo {
+  0% { background-position-x: -45px }
+  100% { background-position-x: -88px }
+}
+
+@keyframes cachorro-andando {
+  0% { background-position-x: 0px; }
+  100% { background-position-x: -46px; }
+}
+/* ======================================= */
+
+
 /* skier:1 */
 .parado-direita {
   background-image: url("../img/skier.png");
