@@ -207,50 +207,19 @@
   width: 28px;
 }
 
-/* skier:31 */
-.cachorro-1 {
-  --diff-min-top: -18;
-  --diff-max-top: 2;
-  --diff-min-left: -15;
-  --diff-max-left: 12;
-  background-image: url("../img/skier.png");
-  background-position: 0px -208px;
-  height: 14px;
-  width: 21px;
-}
-
-/* skier:32 */
-.cachorro-2 {
-  --diff-min-top: -18;
-  --diff-max-top: 2;
-  --diff-min-left: -15;
-  --diff-max-left: 12;
-  background-image: url("../img/skier.png");
-  background-position: -23px -208px;
-  height: 14px;
-  width: 21px;
-}
-
 /* skier:33 */
-.cachorro-3 {
+.gif-cachorro {
   --diff-min-top: -18;
   --diff-max-top: 2;
   --diff-min-left: -15;
   --diff-max-left: 12;
   background-image: url("../img/skier.png");
-  background-position: -47px -204px;
-  height: 18px;
-  width: 19px;
-}
+  background-position: -45px -204px;
+  width: 22px;
+  height: 19px;
 
-/* skier:34 */
-.cachorro-4 {
-  --diff-min-top: -18;
-  --diff-max-top: 2;
-  --diff-min-left: -15;
-  --diff-max-left: 12;
-  background-image: url("../img/skier.png");
-  background-position: -67px -204px;
-  height: 18px;
-  width: 19px;
+  animation-name: cachorro-latindo;
+  animation-duration: .5s;
+  animation-timing-function: steps(2);
+  animation-iteration-count: infinite;
 }
