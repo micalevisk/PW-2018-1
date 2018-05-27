@@ -10,6 +10,12 @@
   60% { transform: scale(0.8); }
   100% { transform: scale(0); }
 }
+
+@keyframes arbusto-chamas {
+  0% { background-position-x: 0px; }
+  50% { background-position-x: -48px; }
+  100% { background-position-x: -96px; }
+}
 /* ======================================= */
 
 
