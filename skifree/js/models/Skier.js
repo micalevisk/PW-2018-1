@@ -1,7 +1,7 @@
 const PARADO   = ['parado-esquerda', 'parado-direita'];
 const DIRECOES = ['para-esquerda','para-frente','para-direita'];
 
-function Skier(tabuleiroWidth, posLeft, qtdVidas, posTop = 60) {
+function Skier(tabuleiroWidth, posLeft, posTop, qtdVidas) {
   this.direcao = 0;
   this.andando = false;
   this.iniciou = false;
