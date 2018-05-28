@@ -92,28 +92,23 @@
   }
 
   function afterSpawnCachorro(obstaculo) {
-    let incremento, saiuDaTela;
-
     // para tratar as versões do cachorro olhando para direita e para esquerda
-    if (obstaculo.element.className.includes('esquerda')) {
-      incremento = -1;
-      saiuDaTela = left => left <= - parseInt(obstaculo.element.clientWidth);
-    } else {
-      incremento = 1;
-      saiuDaTela = left => left >= TAMX;
-    }
+    const incremento = (obstaculo.element.className.includes('esquerda')) ? -1 : 1;
 
     // FIXME: ignora o estado do jogo, i.e., mesmo pausado, a alteração (abaixo) será realizada
-    _.alterarAnimationNameApos(_.randomRange(2000, 7000),
-      'cachorro-andando', obstaculo.element, () => {
-      const idIntervalObstaculo = setInterval(function (){
+    _.alterarAnimationNameApos(
+      _.randomRange(2000, 7000),
+      'cachorro-andando',
+      obstaculo.element
+    ).then(function () {
+        const idIntervalObstaculo = setInterval(function () {
         if (jogoPausado) return;
 
         const leftCorrente = parseInt(obstaculo.element.style.left);
         const novoLeft = leftCorrente + incremento;
 
         obstaculo.element.style.left = novoLeft + 'px';
-        if ( saiuDaTela(novoLeft) ) {
+          if ( obstaculo.saiuDoTabuleiro() ) {
           _.removerAnimationName(obstaculo.element);
           obstaculo.sairDoTabuleiro();
           clearInterval(idIntervalObstaculo);

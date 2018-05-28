@@ -8,12 +8,13 @@ const _ = Object.freeze({
   // mantém animações já iniciadas
   removerAnimationName: (el) => el.style.setProperty('animation-name', ''),
 
-  alterarAnimationNameApos: function (timeMs, novoNome, el, cbDepoisDeAlterar) {
-    setTimeout(function () {
+  alterarAnimationNameApos: function (timeMs, novoNome, el) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
       el.style.setProperty('animation-name', novoNome);
-      if (typeof cbDepoisDeAlterar === 'function')
-        cbDepoisDeAlterar();
+        resolve();
     }, timeMs);
+    });
   },
 
   getCSSProperty: function (elem, property) {

@@ -21,6 +21,8 @@ function Obstaculo({ tipo, zIndex = 1, onColission }) {
 Obstaculo.prototype.spawn = function (tabuleiro, tolerancia, initialTop, initialLeft) {
   tabuleiro.element.appendChild(this.element);
 
+  this.larguraTabuleiro = tabuleiro.getWidth();
+
   this.element.style.top = initialTop + 'px';
   this.element.style.left = (initialLeft || Math.floor(
     Math.random() * (tabuleiro.getWidth() - this.element.clientWidth + 1 + tolerancia)
@@ -44,17 +46,22 @@ Obstaculo.prototype.spawn = function (tabuleiro, tolerancia, initialTop, initial
   }
 }
 
-Obstaculo.prototype.subir = function () {
-  const top = parseInt(this.element.style.top) - 1;
-
-  if (top < -this.element.clientHeight) return false;
-
+Obstaculo.prototype.subir = function (decremento) {
+  const top = parseInt(this.element.style.top) - decremento;
   this.element.style.top = top + 'px';
-  return true;
+  return (top > -this.element.clientHeight);
 }
 
 Obstaculo.prototype.sairDoTabuleiro = function () {
   this.element.style.top = - this.element.clientHeight + 'px';
+}
+
+Object.prototype.saiuDoTabuleiro = function () {
+  const top  = parseInt(this.element.style.top);
+  const left = parseInt(this.element.style.left);
+
+  return (top <= -this.element.clientHeight)
+      || (left >= this.larguraTabuleiro || left <= -this.element.clientWidth)
 }
 
 // função construtora https://goo.gl/Wo5JS4
