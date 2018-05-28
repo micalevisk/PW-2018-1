@@ -4,15 +4,15 @@
   // ======================== VALUES ======================== //
   // ======================================================== //
 
-  let skier, tabuleiro, gameLoop;
+  let skier, yeti, tabuleiro, gameLoop;
 
   const FPS  = 60;
   const TAMX = 400; // largura do tabuleiro (em pixels)
   const TAMY = 600; // altura do tabuleiro (em pixels)
   const QTD_INICIAL_VIDAS_SKIER = 3;
+  const GAME_STATES = ['running', 'paused'];
   let gameOver = false;
   let jogoPausado = true;
-  const GAME_STATES = ['running', 'paused'];
   const obstaculos = new ObjectPool(Obstaculo);
   const probEObstaculo = [
     { prob: 1,  tipo: 'cogumelo', onColission: onCollisionObstaculoNaoDestrutor },
@@ -65,12 +65,10 @@
     clearInterval(gameLoop);
     skier.setAndando(false);
 
-    // TODO: se skier foi comido, deixar o yeti se animando
-
     setTimeout(() => {
       const reiniciar = confirm(`Game Over :(\nVocê Andou: ${infoBox.andado} metros!\nDeseja reiniciar o jogo?`);
       if (reiniciar) location.reload();
-    }, 500);
+    }, 3010);
   }
 
   function onCollisionObstaculoNaoDestrutor(obstaculo) {
@@ -184,6 +182,16 @@
 
     infoBox.andado = skier.andar();
 
+    if ( yeti.descer() // FIXME: não leva em consideração a velocidade do skier
+      && yeti.colidiu(...skier.getTopAndLeft()) ) {
+        skier.element.style.zIndex = -1;
+        yeti.onColission();
+        onGameOver();
+    }
+
+    if (Math.ceil(infoBox.andado || 1) % 2001 === 0) // a cada 2km
+      yeti.spawn(...skier.getTopAndLeft())
+
     obstaculos.forEach((obstaculo, idx) => {
       if ( obstaculo.subir(skier.getVelocidade() / 10) ) {
         return obstaculo.colidiu(...skier.getTopAndLeft())
@@ -205,10 +213,11 @@
 
 
   (function __init__() {
-    const posInicialSkier = { x: parseInt(TAMX/2), y: 60 };
+    const posInicialSkier = { x: parseInt(TAMX/2), y: TAMY/4 };
 
     tabuleiro = new Tabuleiro(TAMX, TAMY, 5);
     skier = new Skier(tabuleiro.getWidth(), posInicialSkier.x, posInicialSkier.y, QTD_INICIAL_VIDAS_SKIER);
+    yeti = new Yeti(tabuleiro, posInicialSkier);
 
     initInfoBox();
     initEventListeners();
