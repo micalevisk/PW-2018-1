@@ -160,7 +160,7 @@
 }
 
 /* skier:20 */
-.yeti {
+.gif-yeti {
   --diff-min-top: 2;
   --diff-max-top: 26;
   --diff-min-left: -4;
@@ -170,6 +170,24 @@
   height: 43px;
   width: 33px;
 
+  /* animation-name: yeti-comendo-1; */
+  animation-duration: .5s;
+  animation-timing-function: steps(2);
+  animation-fill-mode: forwards;
+}
+
+.gif-yeti-comemorando {
+  --diff-min-top: 2;
+  --diff-max-top: 26;
+  --diff-min-left: -4;
+  --diff-max-left: 18;
+
+  background-image: url("../img/skier.png");
+  background-position: 0px -112px;
+  height: 43px;
+  width: 33px;
+
+  animation-name: yeti-nervoso;
   animation-duration: .5s;
   animation-timing-function: steps(2);
   animation-iteration-count: infinite;
