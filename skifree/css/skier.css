@@ -208,7 +208,8 @@
 }
 
 /* skier:33 */
-.gif-cachorro {
+.gif-cachorro-direita,
+.gif-cachorro-esquerda {
   --diff-min-top: -18;
   --diff-max-top: 2;
   --diff-min-left: -15;
@@ -222,4 +223,8 @@
   animation-duration: .5s;
   animation-timing-function: steps(2);
   animation-iteration-count: infinite;
+}
+
+.gif-cachorro-esquerda {
+  transform: scaleX(-1);
 }
