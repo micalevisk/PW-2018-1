@@ -5,6 +5,17 @@ const _ = Object.freeze({
 
   randomRange: (min, max) => Math.random() * (max - min) + min,
 
+  // mantém animações já iniciadas
+  removerAnimationName: (el) => el.style.setProperty('animation-name', ''),
+
+  alterarAnimationNameApos: function (timeMs, novoNome, el, cbDepoisDeAlterar) {
+    setTimeout(function () {
+      el.style.setProperty('animation-name', novoNome);
+      if (typeof cbDepoisDeAlterar === 'function')
+        cbDepoisDeAlterar();
+    }, timeMs);
+  },
+
   getCSSProperty: function (elem, property) {
     return window.
               getComputedStyle(elem, null).
