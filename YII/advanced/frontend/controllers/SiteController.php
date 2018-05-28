@@ -140,7 +140,9 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        return $this->render('about');
+        return $this->render('about', [
+          'hora' => date("d-m-Y H:i:s")
+        ]);
     }
 
     /**
