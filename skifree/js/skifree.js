@@ -101,24 +101,24 @@
       'cachorro-andando',
       obstaculo.element
     ).then(function () {
-        const idIntervalObstaculo = setInterval(function () {
+      const idIntervalObstaculo = setInterval(function () {
         if (jogoPausado) return;
-          if (!obstaculo.element.className.startsWith('gif')) { // gambiarra
-            _.removerAnimationName(obstaculo.element);
-            return;
-          }
+        if (!obstaculo.element.className.startsWith('gif')) { // gambiarra
+          _.removerAnimationName(obstaculo.element);
+          return;
+        }
 
         const leftCorrente = parseInt(obstaculo.element.style.left);
         const novoLeft = leftCorrente + incremento;
 
         obstaculo.element.style.left = novoLeft + 'px';
-          if ( obstaculo.saiuDoTabuleiro() ) {
+        if ( obstaculo.saiuDoTabuleiro() ) {
           _.removerAnimationName(obstaculo.element);
           obstaculo.sairDoTabuleiro();
           clearInterval(idIntervalObstaculo);
         }
       }, 1000/FPS);
-    });
+      });
   }
 
 
