@@ -21,11 +21,11 @@
     { prob: 4,  tipo: 'gif-cachorro-direita', zIndex: 2, afterSpawn: afterSpawnCachorro },
     { prob: 5,  tipo: 'gif-cachorro-esquerda', zIndex: 2, afterSpawn: afterSpawnCachorro },
     { prob: 7,  tipo: 'arvore-3' },
-    { prob: 11, tipo: 'rocha' },
+    { prob: 11, tipo: 'rocha', zIndex: 2 },
     { prob: 13, tipo: 'arvore-grande' },
     { prob: 29, tipo: 'neve-grande',  zIndex: 0 },
     { prob: 31, tipo: 'neve-pequena', zIndex: 0 },
-    { prob: 41, tipo: 'gif-arbusto-chamas' }
+    { prob: 41, tipo: 'gif-arbusto-chamas', zIndex: 2 }
   ];
 
   const infoBox = (function () {
