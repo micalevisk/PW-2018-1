@@ -10,6 +10,8 @@ const _ = Object.freeze({
 
   incrementarCircular: (i, max) => (i + 1) % max,
 
+  criarConstante: (o) => Object.freeze(o),
+
   alterarAnimationNameApos: function (timeMs, novoNome, el) {
     return new Promise((resolve) => {
       setTimeout(() => {
