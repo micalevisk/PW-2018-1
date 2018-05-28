@@ -1,6 +1,6 @@
 const PARADO      = _.criarConstante(['parado-esquerda', 'parado-direita']);
 const DIRECOES    = _.criarConstante(['para-esquerda', 'para-frente', 'para-direita']);
-const VELOCIDADES = _.criarConstante([20, 30]); // em metros por segundo
+const VELOCIDADES = _.criarConstante([20, 50]); // em metros por segundo
 
 const incrementoParaVelocidade = (velocidade) => (16 / 1000) * velocidade;
 //                                               ^^^^^^^^^^^ ~ 1000/60
