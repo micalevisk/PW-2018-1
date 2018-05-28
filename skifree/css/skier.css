@@ -8,6 +8,66 @@
   0% { background-position-x: 0px; }
   100% { background-position-x: -46px; }
 }
+
+@keyframes yeti-nervoso {
+  0% {
+    background-position: 0px -112px;
+    height: 43px;
+    width: 33px;
+    /* top: 0px; */
+  }
+
+  100% {
+    background-position: -64px -112px;
+    height: 43px;
+    width: 30px;
+    /* top: -5px; */
+  }
+}
+
+@keyframes yeti-andando-direita {
+  0% {
+    background-position: -63px -112px;
+    height: 43px;
+    width: 28px;
+  }
+
+  100% {
+    background-position: -124px -112px;
+    height: 43px;
+    width: 32px;
+  }
+}
+
+@keyframes yeti-andando-esquerda {
+  0% {
+    background-position: -63px -158px;
+    height: 42px;
+    width: 28px;
+  }
+
+  100% {
+    background-position: -120px -158px;
+    height: 42px;
+    width: 32px;
+  }
+}
+
+@keyframes yeti-comendo-1 {
+  0% {
+    background-position: -122px -112px;
+    width: 35px;
+  }
+
+  99% {
+    background-position-x: -250px;
+    width: 31px;
+  }
+
+  100% {
+    background-position: -242px -112px;
+  }
+}
 /* ======================================= */
 
 
