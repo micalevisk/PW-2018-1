@@ -103,6 +103,10 @@
     ).then(function () {
         const idIntervalObstaculo = setInterval(function () {
         if (jogoPausado) return;
+          if (!obstaculo.element.className.startsWith('gif')) { // gambiarra
+            _.removerAnimationName(obstaculo.element);
+            return;
+          }
 
         const leftCorrente = parseInt(obstaculo.element.style.left);
         const novoLeft = leftCorrente + incremento;
