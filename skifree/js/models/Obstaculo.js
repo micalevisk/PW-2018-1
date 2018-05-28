@@ -24,9 +24,10 @@ Obstaculo.prototype.spawn = function (tabuleiro, tolerancia, initialTop, initial
   this.larguraTabuleiro = tabuleiro.getWidth();
 
   this.element.style.top = initialTop + 'px';
-  this.element.style.left = (initialLeft || Math.floor(
-    Math.random() * (tabuleiro.getWidth() - this.element.clientWidth + 1 + tolerancia)
-  ) + this.element.clientWidth) + 'px';
+  this.element.style.left = (
+       initialLeft
+    || Math.floor( _.randomRange(this.larguraTabuleiro, this.element.clientWidth + tolerancia) )
+  ) + 'px';
 
   const minTop = parseInt( _.getCSSProperty(this.element, '--diff-min-top') );
   if ( _.isNumeric(minTop) ) {
