@@ -12,17 +12,17 @@
   const GAME_STATES = ['running', 'paused'];
   const obstaculos = new ObjectPool(Obstaculo);
   const probEObstaculo = [
-    { prob: 2,  tipo: 'arvore-normal', zIndex: 3 },
-    { prob: 3,  tipo: 'arvore-2', zIndex: 3 },
-    { prob: 7,  tipo: 'arvore-3', zIndex: 3 },
+    { prob: 1,  tipo: 'cogumelo', onColission: onCollisionObstaculoNaoDestrutor },
+    { prob: 2,  tipo: 'arvore-normal' },
+    { prob: 3,  tipo: 'arvore-2' },
+    { prob: 4,  tipo: 'gif-cachorro-direita', zIndex: 2, afterSpawn: afterSpawnCachorro },
+    { prob: 5,  tipo: 'gif-cachorro-esquerda', zIndex: 2, afterSpawn: afterSpawnCachorro },
+    { prob: 7,  tipo: 'arvore-3' },
     { prob: 11, tipo: 'rocha' },
-    { prob: 13, tipo: 'arvore-grande', zIndex: 3 },
-    // { prob: 17, tipo: 'cachorro' }, // animado
-    { prob: 29, tipo: 'neve-grande' },
-    { prob: 31, tipo: 'neve-pequena' },
-    { prob: 37, tipo: 'arbusto', zIndex: 3 },
-    // { prob: 41, tipo: 'arbusto-chamas-1' }, // animado
-    { prob: 43, tipo: 'cogumelo', zIndex: 3, onColission: onCollisionObstaculoNaoDestrutor },
+    { prob: 13, tipo: 'arvore-grande' },
+    { prob: 29, tipo: 'neve-grande',  zIndex: 0 },
+    { prob: 31, tipo: 'neve-pequena', zIndex: 0 },
+    { prob: 41, tipo: 'gif-arbusto-chamas' }
   ];
 
   const infoBox = (function () {
@@ -82,16 +82,20 @@
     const {
       tabuleiro,
       tipo,
-      zIndex,
+      zIndex = 3,
       tolerancia,
       initialTop = TAMY,
       initialLeft,
-      onColission = onCollisionObstaculoDestrutor
+      onColission = onCollisionObstaculoDestrutor,
+      afterSpawn
     } = opts;
 
     for (let i = 1; i <= qtd; ++i) {
-      const novo = obstaculos.alloc({tipo, zIndex: qtd - i + zIndex|0, onColission});
-      novo.spawn(tabuleiro, tolerancia || i, initialTop / i, initialLeft);
+      const novo = obstaculos.alloc({tipo, zIndex: zIndex|0, onColission});
+      if (novo) {
+        novo.spawn(tabuleiro, tolerancia|0, initialTop / i, initialLeft);
+        if (typeof afterSpawn === 'function') afterSpawn(novo);
+      }
     }
   }
 
@@ -110,9 +114,11 @@
       obstaculos.freeAt(idx); // "libera" o elemento alocado
     });
 
-    probEObstaculo.find(({ prob, tipo, zIndex, onColission }) => {
-      if (random === prob) {
-        gerarObstaculos(1, {tabuleiro, tipo, zIndex, tolerancia: random, onColission});
+    probEObstaculo.find(({ prob, tipo, zIndex, onColission, afterSpawn }) => {
+      if (random == prob) {
+        gerarObstaculos(1, {tabuleiro, tipo,
+                            zIndex, tolerancia: random/10,
+                            onColission, afterSpawn});
         return true;
       }
     });
@@ -149,6 +155,38 @@
     }
   }
 
+  function afterSpawnCachorro(obstaculo) {
+    let incremento, saiuDaTela;
+
+    // para tratar as versões do cachorro olhando para direita e para esquerda
+    if (obstaculo.element.className.includes('esquerda')) {
+      incremento = -1;
+      saiuDaTela = left => left <= - parseInt(obstaculo.element.clientWidth);
+    } else {
+      incremento = 1;
+      saiuDaTela = left => left >= TAMX;
+    }
+
+    // FIXME: ignora o estado do jogo, i.e., mesmo pausado, a alteração (abaixo) será realizada
+    _.alterarAnimationNameApos(_.randomRange(2000, 7000),
+      'cachorro-andando', obstaculo.element, () => {
+      const idIntervalObstaculo = setInterval(function (){
+        if (jogoPausado) return;
+
+        const leftCorrente = parseInt(obstaculo.element.style.left);
+        const novoLeft = leftCorrente + incremento;
+
+        obstaculo.element.style.left = novoLeft + 'px';
+        if ( saiuDaTela(novoLeft) ) {
+          _.removerAnimationName(obstaculo.element);
+          obstaculo.sairDoTabuleiro();
+          clearInterval(idIntervalObstaculo);
+        }
+      }, 1000/FPS);
+    });
+  }
+
+
   (function __init__() {
     const posInicialSkier = { x: parseInt(TAMX/2), y: 60 };
 
@@ -159,8 +197,8 @@
     initEventListeners();
 
     gerarObstaculos(1, {tabuleiro, tipo: 'placa-start', initialLeft: posInicialSkier.x - 50, initialTop: posInicialSkier.y });
-    gerarObstaculos(4, {tabuleiro, tipo: probEObstaculo[7].tipo, zIndex: probEObstaculo[7].zIndex, initialTop: TAMY-300});
-    gerarObstaculos(2, {tabuleiro, tipo: probEObstaculo[6].tipo, initialTop: TAMY-100});
+    gerarObstaculos(4, {tabuleiro, tipo: probEObstaculo[8].tipo, zIndex: probEObstaculo[8].zIndex, initialTop: TAMY-300});
+    gerarObstaculos(2, {tabuleiro, tipo: probEObstaculo[7].tipo, initialTop: TAMY-100});
 
     gameLoop = setInterval(gameRunner, 1000/FPS);
   }());
