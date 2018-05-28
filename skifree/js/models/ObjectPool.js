@@ -1,3 +1,5 @@
+const QTD_MAX_OBJECTS_IN_USE = 20;
+
 function ObjectPool(type) {
   this.objType = type;
   this._poolFree = []; // guarda as instâncias que não estão sendo usadas
@@ -12,6 +14,7 @@ function ObjectPool(type) {
 ObjectPool.prototype.alloc = function (params) {
   if (this._poolFree.length <= 0) {
     // nenhum objeto a ser re-utilizado, então alocar um
+    if (this._poolInUse.length >= QTD_MAX_OBJECTS_IN_USE) return; // definir um máximo de alocações
     this._poolInUse.push( new this.objType(params) )
     return this._poolInUse[ this._poolInUse.length - 1 ];
   }
