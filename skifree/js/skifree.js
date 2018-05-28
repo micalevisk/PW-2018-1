@@ -97,7 +97,7 @@
 
     // FIXME: ignora o estado do jogo, i.e., mesmo pausado, a alteração (abaixo) será realizada
     _.alterarAnimationNameApos(
-      _.randomRange(2000, 7000),
+      _.randomRange(1000, 3000),
       'cachorro-andando',
       obstaculo.element
     ).then(function () {
