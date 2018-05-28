@@ -207,6 +207,18 @@
   width: 28px;
 }
 
+/* skier:31 */
+.yeti-4-esquerda {
+  --diff-min-top: 2;
+  --diff-max-top: 26;
+  --diff-min-left: -4;
+  --diff-max-left: 18;
+  background-image: url("../img/skier.png");
+  background-position: -91px -158px;
+  height: 42px;
+  width: 28px;
+}
+
 /* skier:33 */
 .gif-cachorro-direita,
 .gif-cachorro-esquerda {
