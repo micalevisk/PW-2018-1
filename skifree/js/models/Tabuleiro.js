@@ -5,5 +5,6 @@ function Tabuleiro(largura, altura, borda = '2') {
   this.element.style.borderWidth = borda + 'px';
 
 
-  this.getWidth = () => largura;
+  this.getWidth = () => parseInt(this.element.style.width);
+  this.getHeight = () => parseInt(this.element.style.height);
 }
