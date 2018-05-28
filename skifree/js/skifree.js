@@ -1,6 +1,9 @@
 (function () {
 
-  // ------------------------------------------------------------------ //
+  // ======================================================== //
+  // ======================== VALUES ======================== //
+  // ======================================================== //
+
   let skier, tabuleiro, gameLoop;
 
   const FPS  = 60;
@@ -52,78 +55,11 @@
         }
     };
   }());
-  // ------------------------------------------------------------------ //
 
-  function initInfoBox() {
-    infoBox.fps = FPS;
-    infoBox.andado = 0;
-    infoBox.vidas = [QTD_INICIAL_VIDAS_SKIER];
-  }
 
-  function initEventListeners() {
-    window.addEventListener('keydown', e => {
-      e.preventDefault();
-
-      if (e.keyCode === 32) {
-        jogoPausado = !jogoPausado;
-        _.changeRootVariable('--game-state', GAME_STATES[+jogoPausado]);
-
-        if (!skier.iniciou) skier.iniciar();
-        skier.setAndando(!jogoPausado);
-        return;
-      }
-
-      if (e.keyCode === 37 || e.key.toLocaleLowerCase() === 'a')      skier.mudarDirecao(-1);
-      else if (e.keyCode === 39 || e.key.toLocaleLowerCase() === 'd') skier.mudarDirecao(+1);
-    });
-  }
-
-  function gerarObstaculos(qtd, opts) {
-    const {
-      tabuleiro,
-      tipo,
-      zIndex = 3,
-      tolerancia,
-      initialTop = TAMY,
-      initialLeft,
-      onColission = onCollisionObstaculoDestrutor,
-      afterSpawn
-    } = opts;
-
-    for (let i = 1; i <= qtd; ++i) {
-      const novo = obstaculos.alloc({tipo, zIndex: zIndex|0, onColission});
-      if (novo) {
-        novo.spawn(tabuleiro, tolerancia|0, initialTop / i, initialLeft);
-        if (typeof afterSpawn === 'function') afterSpawn(novo);
-      }
-    }
-  }
-
-  function gameRunner() {
-    if (jogoPausado) return;
-    let random = Math.floor( _.randomRange(0, 1000) );
-
-    infoBox.andado = skier.andar();
-
-    obstaculos.forEach((obstaculo, idx) => {
-      if ( obstaculo.subir() ) {
-        return obstaculo.colidiu(...skier.getTopAndLeft())
-            && obstaculo.onColission();
-      }
-
-      obstaculos.freeAt(idx); // "libera" o elemento alocado
-    });
-
-    probEObstaculo.find(({ prob, tipo, zIndex, onColission, afterSpawn }) => {
-      if (random == prob) {
-        gerarObstaculos(1, {tabuleiro, tipo,
-                            zIndex, tolerancia: random/10,
-                            onColission, afterSpawn});
-        return true;
-      }
-    });
-  }
-
+  // ======================================================== //
+  // ======================== EVENTS ======================== //
+  // ======================================================== //
 
   function onGameOver() {
     clearInterval(gameLoop);
@@ -183,6 +119,86 @@
           clearInterval(idIntervalObstaculo);
         }
       }, 1000/FPS);
+    });
+  }
+
+
+  // ======================================================= //
+  // ======================== INITS ======================== //
+  // ======================================================= //
+
+  function initInfoBox() {
+    infoBox.fps = FPS;
+    infoBox.andado = 0;
+    infoBox.vidas = [QTD_INICIAL_VIDAS_SKIER];
+  }
+
+  function initEventListeners() {
+    window.addEventListener('keydown', e => {
+      e.preventDefault();
+
+      if (e.keyCode === 32) {
+        jogoPausado = !jogoPausado;
+        _.changeRootVariable('--game-state', GAME_STATES[+jogoPausado]);
+
+        if (!skier.iniciou) skier.iniciar();
+        skier.setAndando(!jogoPausado);
+        return;
+      }
+
+      if (e.keyCode === 37 || e.key.toLocaleLowerCase() === 'a')      skier.mudarDirecao(-1);
+      else if (e.keyCode === 39 || e.key.toLocaleLowerCase() === 'd') skier.mudarDirecao(+1);
+    });
+  }
+
+
+  // ======================================================== //
+  // ======================== OUTROS ======================== //
+  // ======================================================== //
+
+  function gerarObstaculos(qtd, opts) {
+    const {
+      tabuleiro,
+      tipo,
+      zIndex = 3,
+      tolerancia,
+      initialTop = TAMY,
+      initialLeft,
+      onColission = onCollisionObstaculoDestrutor,
+      afterSpawn
+    } = opts;
+
+    for (let i = 1; i <= qtd; ++i) {
+      const novo = obstaculos.alloc({tipo, zIndex: zIndex|0, onColission});
+      if (novo) {
+        novo.spawn(tabuleiro, tolerancia|0, initialTop / i, initialLeft);
+        if (typeof afterSpawn === 'function') afterSpawn(novo);
+      }
+    }
+  }
+
+  function gameRunner() {
+    if (jogoPausado) return;
+    let random = Math.floor( _.randomRange(0, 1000) );
+
+    infoBox.andado = skier.andar();
+
+    obstaculos.forEach((obstaculo, idx) => {
+      if ( obstaculo.subir() ) {
+        return obstaculo.colidiu(...skier.getTopAndLeft())
+            && obstaculo.onColission();
+      }
+
+      obstaculos.freeAt(idx); // "libera" o elemento alocado
+    });
+
+    probEObstaculo.find(({ prob, tipo, zIndex, onColission, afterSpawn }) => {
+      if (random == prob) {
+        gerarObstaculos(1, {tabuleiro, tipo,
+                            zIndex, tolerancia: random/10,
+                            onColission, afterSpawn});
+        return true;
+      }
     });
   }
 
