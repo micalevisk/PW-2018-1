@@ -8,6 +8,8 @@ const _ = Object.freeze({
   // mantém animações já iniciadas
   removerAnimationName: (el) => el.style.setProperty('animation-name', ''),
 
+  incrementarCircular: (i, max) => (i + 1) % max,
+
   alterarAnimationNameApos: function (timeMs, novoNome, el) {
     return new Promise((resolve) => {
       setTimeout(() => {
