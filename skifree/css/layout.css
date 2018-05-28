@@ -1,0 +1,95 @@
+* { margin: 0; padding: 0; }
+
+body {
+  background: #eceff3;
+}
+
+div {
+  background-repeat: no-repeat;
+}
+
+kbd {
+	display: inline-block;
+	padding: 3px 5px;
+	font-size: 11px;
+	line-height: 10px;
+	color: #444d56;
+	vertical-align: middle;
+	background-color: #fafbfc;
+	border: solid 1px #c6cbd1;
+	border-bottom-color: #959da5;
+	border-radius: 3px;
+	box-shadow: inset 0 -1px 0 #959da5;
+}
+
+a:link {
+  color: #107d9c;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #12835d;
+}
+
+a:hover {
+  color: #2a109c;
+  text-decoration: underline;
+}
+
+a:active {
+  color: blue;
+}
+
+#infoBox .label.destaque-negativo {
+  color: red;
+  font-size: 1.3em;
+}
+
+#infoBox .label.destaque-positivo {
+  color: green;
+  font-size: 1.3em;
+}
+
+#infoBox {
+  font-family: monospace;
+  background: white;
+  left: 432px;
+  position: absolute;
+	border-radius: 4px;
+	margin-bottom: 20px;
+	padding: 10px;
+  box-shadow: 0 2px 5px #32325a1a;
+}
+
+#infoBox p {
+	color: #6B7C93;
+	font-size: 1em;
+	line-height: 1.4em;
+}
+
+#infoBox .label::before {
+  content: attr(data-identifier) ": ";
+  font-weight: bold;
+}
+
+#infoBox .label::after {
+  content: attr(data-sufix);
+}
+
+#tabuleiro {
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+  margin: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+#tabuleiro > div {
+  position: absolute;
+}
+
+[class^="gif-"] {
+  -webkit-animation-play-state: var(--game-state, paused);
+          animation-play-state: var(--game-state, paused);
+}
