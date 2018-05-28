@@ -54,7 +54,7 @@ Obstaculo.prototype.subir = function () {
 }
 
 Obstaculo.prototype.sairDoTabuleiro = function () {
-  this.element.style.top = - this.element.clientHeight;
+  this.element.style.top = - this.element.clientHeight + 'px';
 }
 
 // função construtora https://goo.gl/Wo5JS4
