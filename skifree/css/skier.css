@@ -100,7 +100,7 @@
 }
 
 /* skier:20 */
-.yeti-1 {
+.yeti {
   --diff-min-top: 2;
   --diff-max-top: 26;
   --diff-min-left: -4;
@@ -109,6 +109,10 @@
   background-position: 0px -112px;
   height: 43px;
   width: 33px;
+
+  animation-duration: .5s;
+  animation-timing-function: steps(2);
+  animation-iteration-count: infinite;
 }
 
 /* skier:21 */
