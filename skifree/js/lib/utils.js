@@ -15,9 +15,9 @@ const _ = Object.freeze({
   alterarAnimationNameApos: function (timeMs, novoNome, el) {
     return new Promise((resolve) => {
       setTimeout(() => {
-      el.style.setProperty('animation-name', novoNome);
+        el.style.setProperty('animation-name', novoNome);
         resolve();
-    }, timeMs);
+      }, timeMs);
     });
   },
 
