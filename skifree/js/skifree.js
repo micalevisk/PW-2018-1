@@ -97,10 +97,9 @@
 
   function gameRunner() {
     if (jogoPausado) return;
+    let random = Math.floor( _.randomRange(0, 1000) );
 
     infoBox.andado = skier.andar();
-
-    let random = Math.floor(Math.random() * 1000);
 
     obstaculos.forEach((obstaculo, idx) => {
       if ( obstaculo.subir() ) {
