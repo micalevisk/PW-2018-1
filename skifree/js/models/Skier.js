@@ -1,5 +1,10 @@
-const PARADO   = ['parado-esquerda', 'parado-direita'];
-const DIRECOES = ['para-esquerda','para-frente','para-direita'];
+const PARADO      = _.criarConstante(['parado-esquerda', 'parado-direita']);
+const DIRECOES    = _.criarConstante(['para-esquerda', 'para-frente', 'para-direita']);
+const VELOCIDADES = _.criarConstante([20, 30]); // em metros por segundo
+
+const incrementoParaVelocidade = (velocidade) => (16 / 1000) * velocidade;
+//                                               ^^^^^^^^^^^ ~ 1000/60
+
 
 function Skier(tabuleiroWidth, posLeft, posTop, qtdVidas) {
   this.direcao = 0;
@@ -7,6 +12,7 @@ function Skier(tabuleiroWidth, posLeft, posTop, qtdVidas) {
   this.iniciou = false;
   this.metrosAndados = 0;
   this.vidasRestantes = qtdVidas;
+  this.velocidade = { i: 0, value: VELOCIDADES[0] };
 
   this.element = document.getElementById('skier');
   this.element.style.position = 'absolute';
@@ -33,8 +39,7 @@ function Skier(tabuleiroWidth, posLeft, posTop, qtdVidas) {
       else
         this.mudarDirecao(-1);
 
-    // TODO: retornar quantidade de metros andados
-    return this.metrosAndados += 0.05;
+    return this.metrosAndados += incrementoParaVelocidade(this.velocidade.value);
   };
 }
 
@@ -87,4 +92,17 @@ Skier.prototype.caido = function () {
 
 Skier.prototype.soterrado = function () {
   this.element.className = 'caido-soterrado';
+}
+
+Skier.prototype.getVelocidade = function () {
+  return this.velocidade.value;
+}
+
+Skier.prototype.toggleVelocidade = function () {
+  this.velocidade.i = _.incrementarCircular(
+    this.velocidade.i,
+    VELOCIDADES.length
+  );
+
+  this.velocidade.value = VELOCIDADES[this.velocidade.i];
 }

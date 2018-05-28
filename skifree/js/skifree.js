@@ -179,7 +179,7 @@
     infoBox.andado = skier.andar();
 
     obstaculos.forEach((obstaculo, idx) => {
-      if ( obstaculo.subir() ) {
+      if ( obstaculo.subir(skier.getVelocidade() / 10) ) {
         return obstaculo.colidiu(...skier.getTopAndLeft())
             && obstaculo.onColission();
       }
