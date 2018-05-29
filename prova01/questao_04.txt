@@ -1,3 +1,6 @@
+Conceito de hoisting e código corretos.
+Nota: 2.0
+
 O hoisting, ou "içamento", presente na linguagem JavaScript, é a propriedade que
 o interpretor da linguagem possui de "ajustar" o código para que todas as funções
 e variáveis (declaradas com `var`) sejam posicionadas no início do escopo onde

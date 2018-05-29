@@ -1,3 +1,6 @@
+Todos os erros foram identificados corretamente.
+Nota: 2.0
+
 Os 4 erros sintáticos são:
 
 --------------------------------------------------------------------------------

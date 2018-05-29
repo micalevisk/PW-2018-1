@@ -1,3 +1,7 @@
+Logs e conceitos reportados corretamente.
+Nota: 2.0
+
+
 $ git log
 commit 3eb5c1e53c7768ae715b6037c27353133c570131
 Author: Micael-lab21 <mllc@icomp.ufam.edu.br>
