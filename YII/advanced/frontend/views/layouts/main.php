@@ -37,12 +37,15 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
+        //                            /{controlador}/{action}
+        ['label' => 'Usuários', 'url' => ['/user/index']],
+        ['label' => 'Cursos', 'url' => ['/curso/index']],
+        ['label' => 'Sobre', 'url' => ['/site/about']],
+        ['label' => 'Contato', 'url' => ['/site/contact']],
     ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+        $menuItems[] = ['label' => 'Cadastrar', 'url' => ['/site/signup']];
+        $menuItems[] = ['label' => 'Entrar', 'url' => ['/site/login']];
     } else {
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
@@ -65,7 +68,7 @@ AppAsset::register($this);
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= Alert::widget() ?>
-        <?= $content ?>
+        <?= $content ?> <!-- define o conteúdo específico de cada view -->
     </div>
 </div>
 
