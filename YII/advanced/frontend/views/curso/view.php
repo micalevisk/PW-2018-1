@@ -10,6 +10,13 @@ $this->title = $model->nome;
 
 $this->params['breadcrumbs'][] = ['label' => 'Cursos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+// carrega apenas nesta view; inline script
+// https://www.yiiframework.com/doc/api/2.0/yii-web-view#registerJs()-detail
+$this->registerJs(
+  "console.log('opaaaaaa')",
+  $this::POS_HEAD
+);
 ?>
 <div class="curso-view">
 
