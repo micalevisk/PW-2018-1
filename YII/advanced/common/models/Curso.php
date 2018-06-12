@@ -59,4 +59,19 @@ class Curso extends \yii\db\ActiveRecord
         Users::className(), ['id_curso' => 'id']
       );
     }
+
+    /**
+     * Executa antes do modelo ser salvo no banco.
+     * Normalizar a sigla do curso.
+     *
+     * @param bool $insert whether this method called while inserting a record.
+     * If `false`, it means the method is called while updating a record.
+     * @return bool whether the insertion or updating should continue.
+     * If `false`, the insertion or updating will be cancelled.
+     */
+    public function beforeSave($tipo)
+    {
+      $this->sigla = strtoupper($this->sigla);
+      return parent::beforeSave($tipo); // executar o mesmo método do pai
+    }
 }
