@@ -47,4 +47,16 @@ class Curso extends \yii\db\ActiveRecord
             'descricao' => 'Descrição',
         ];
     }
+
+
+    /**
+     *
+     * @return bool
+     */
+    public function getUsers()
+    {
+      return $this->hasMany(
+        Users::className(), ['id_curso' => 'id']
+      );
+    }
 }
