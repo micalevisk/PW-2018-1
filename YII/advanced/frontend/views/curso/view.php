@@ -7,6 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Curso */
 
 $this->title = $model->nome;
+
 $this->params['breadcrumbs'][] = ['label' => 'Cursos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
