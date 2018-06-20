@@ -12,6 +12,8 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use common\models\Curso;
+use yii\helpers\ArrayHelper;
 
 /**
  * Site controller
@@ -153,6 +155,9 @@ class SiteController extends Controller
     public function actionSignup()
     {
         $model = new SignupForm();
+        $cursos = Curso::find()->all();
+        $cursosArray = ArrayHelper::map($cursos, 'id', 'nome');
+
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
@@ -163,6 +168,7 @@ class SiteController extends Controller
 
         return $this->render('signup', [
             'model' => $model,
+            'cursosarray' => $cursosArray
         ]);
     }
 
