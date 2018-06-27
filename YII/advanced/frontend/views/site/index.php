@@ -3,8 +3,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 
-/* $this->title = YII::$app->name; */
-$this->title = "SkiFree - Micael";
+$this->title = YII::$app->name;
 ?>
 <div class="site-index">
 

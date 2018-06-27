@@ -1,5 +1,6 @@
 <?php
 return [
+    'name' => 'Skifree - by Micael',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
