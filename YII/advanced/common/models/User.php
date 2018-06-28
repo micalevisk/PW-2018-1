@@ -199,10 +199,6 @@ class User extends ActiveRecord implements IdentityInterface
     }
 
 
-    /**
-     *
-     * @return bool
-     */
     public function getCurso()
     {
       return $this->hasOne(
