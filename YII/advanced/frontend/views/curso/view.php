@@ -39,6 +39,10 @@ $this->registerJs(
             'nome',
             'sigla',
             'descricao:ntext',
+            [
+                'label' => 'Número de Alunos',
+                'value' => $model->qtdUsuarios()
+            ]
         ],
     ]) ?>
 

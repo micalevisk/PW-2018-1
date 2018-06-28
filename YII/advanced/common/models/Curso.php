@@ -43,20 +43,23 @@ class Curso extends \yii\db\ActiveRecord
         return [
             'nome' => 'Nome',
             'sigla' => 'Sigla',
-            'descricao' => 'Descrição',
+            'descricao' => 'Descrição'
         ];
     }
 
 
-    /**
-     *
-     * @return bool
-     */
     public function getUsers()
     {
       return $this->hasMany(
-        Users::className(), ['id_curso' => 'id']
+        User::className(), ['id_curso' => 'id']
       );
+    }
+
+    public function qtdUsuarios()
+    {
+        return User::find()
+                    ->where(['id_curso' => $this->id])
+                    ->count();
     }
 
     /**
