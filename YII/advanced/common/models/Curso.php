@@ -73,4 +73,11 @@ class Curso extends \yii\db\ActiveRecord
       $this->sigla = strtoupper($this->sigla);
       return parent::beforeSave($tipo); // executar o mesmo método do pai
     }
+
+    public function getPrefixoTitle()
+    {
+        return (YII::$app->user->isGuest)
+             ? '' // se for um usuário não logado, não tem prefixo
+             : '(seu curso) <br>'; // senão, mostrar indica que é o "seu curso"
+    }
 }

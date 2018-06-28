@@ -20,7 +20,7 @@ $this->registerJs(
 ?>
 <div class="curso-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><small><?= $model->prefixoTitle ?></small><?= Html::encode($this->title) ?></h1>
 
     <p>
         <?= Html::a('Atualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>

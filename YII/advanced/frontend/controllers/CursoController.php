@@ -122,6 +122,8 @@ class CursoController extends Controller
             return $model;
         }
 
-        throw new NotFoundHttpException('The requested page does not exist.');
+        return (YII::$app->user->isGuest)
+             ? Curso::findOne(1) // se for um usuário não logado, mostar o curso 1
+             : Curso::findOne( YII::$app->user->identity->id_curso ); // senão, mostrar o curso registrado pelo usuário logado
     }
 }
