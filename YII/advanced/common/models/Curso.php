@@ -41,7 +41,6 @@ class Curso extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
             'nome' => 'Nome',
             'sigla' => 'Sigla',
             'descricao' => 'Descrição',

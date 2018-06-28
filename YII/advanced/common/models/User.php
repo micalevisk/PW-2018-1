@@ -60,10 +60,10 @@ class User extends ActiveRecord implements IdentityInterface
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
             'username' => 'Nome de Usuário',
             'email' => 'E-mail',
-            'created_at' => 'Criado em'
+            'created_at' => 'Adicionado em',
+            'id_curso' => 'Curso'
         ];
     }
 
@@ -208,5 +208,12 @@ class User extends ActiveRecord implements IdentityInterface
       return $this->hasOne(
         Curso::className(), ['id' => 'id_curso']
       );
+    }
+
+    public function afterFind()
+    {
+      $this->created_at = date('d-m-Y H:i:s', $this->created_at);
+      $this->updated_at = date('d-m-Y H:i:s', $this->updated_at);
+      $this->username = ucwords($this->username);
     }
 }
