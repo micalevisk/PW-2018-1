@@ -79,8 +79,9 @@ class Curso extends \yii\db\ActiveRecord
 
     public function getPrefixoTitle()
     {
-        return (YII::$app->user->isGuest)
-             ? '' // se for um usuário não logado, não tem prefixo
-             : '(seu curso) <br>'; // senão, mostrar indica que é o "seu curso"
+        if (!YII::$app->user->isGuest
+        && YII::$app->user->identity->id_curso == $this->id) {
+            return  '(seu curso) <br>'; // senão, mostrar indica que é o "seu curso"
+        }
     }
 }
