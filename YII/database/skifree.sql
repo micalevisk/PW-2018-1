@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 26, 2018 at 11:58 AM
--- Server version: 5.7.17-0ubuntu0.16.04.1
--- PHP Version: 7.0.15-0ubuntu0.16.04.4
+-- Generation Time: Jun 28, 2018 at 02:47 AM
+-- Server version: 5.7.22-0ubuntu0.16.04.1
+-- PHP Version: 7.2.7-1+ubuntu16.04.1+deb.sury.org+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -38,7 +38,9 @@ CREATE TABLE `curso` (
 --
 
 INSERT INTO `curso` (`id`, `nome`, `sigla`, `descricao`) VALUES
-(1, 'Ciência da Computação', 'CB01', 'um cursin aí');
+(1, 'Ciência da Computação', 'CC', 'um cursin aí'),
+(2, 'Engenharia de Software', 'ES', 'novo rolÊ'),
+(3, 'Engenharia da Computação', 'EC', 'galera da FT');
 
 -- --------------------------------------------------------
 
@@ -138,7 +140,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `curso`
 --
 ALTER TABLE `curso`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `jogada`
 --
