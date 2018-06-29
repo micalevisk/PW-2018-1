@@ -19,6 +19,7 @@ $this->params['breadcrumbs'][] = 'Usuários';
         <?= Html::a('Cadastrar Usuário', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
+    <!-- https://www.yiiframework.com/doc/guide/2.0/en/output-data-widgets#grid-columns -->
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -27,10 +28,14 @@ $this->params['breadcrumbs'][] = 'Usuários';
 
             'username',
             'email:email',
-            // 'id_curso',
-            //'status',
+            [
+                'attribute' => 'id_curso',
+                'class' => 'yii\grid\DataColumn', // o `data` será o modelo User
+                'value' => function ($data) {
+                    return $data->curso->nome;
+                },
+            ],
             'created_at',
-            //'updated_at',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
