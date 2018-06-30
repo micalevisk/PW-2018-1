@@ -30,6 +30,6 @@ ObjectPool.prototype.freeAt = function (idx) {
   this._poolFree.push(removedObj);
 }
 
-Object.prototype.forEach = function (cb) {
+ObjectPool.prototype.forEach = function (cb) {
   this._poolInUse.forEach(cb);
 }

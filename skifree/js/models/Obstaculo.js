@@ -57,7 +57,7 @@ Obstaculo.prototype.sairDoTabuleiro = function () {
   this.element.style.top = - this.element.clientHeight + 'px';
 }
 
-Object.prototype.saiuDoTabuleiro = function () {
+Obstaculo.prototype.saiuDoTabuleiro = function () {
   const top  = parseInt(this.element.style.top);
   const left = parseInt(this.element.style.left);
 
