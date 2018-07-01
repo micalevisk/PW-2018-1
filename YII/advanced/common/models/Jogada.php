@@ -49,4 +49,28 @@ class Jogada extends \yii\db\ActiveRecord
             'created_at' => 'Adicionado em',
         ];
     }
+
+    public function getPontuacao()
+    {
+        return $this->pontuacao;
+    }
+
+    public function getUser()
+    {
+        return $this->hasOne(
+            User::className(), ['id' => 'id_user']
+        );
+    }
+
+    public function beforeSave($tipo)
+    {
+        // $this->created_at = (new DateTime())->getTimestamp();
+        $this->created_at = time();
+        return parent::beforeSave($tipo);
+    }
+
+    public function afterFind()
+    {
+      $this->created_at = date('d-m-Y H:i:s', $this->created_at);
+    }
 }
