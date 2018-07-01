@@ -8,9 +8,19 @@ use common\models\Jogada;
 
 class JogoController extends \yii\web\Controller
 {
+    const SKIFREE_PATHS = [
+        'css' => '@web/skifree/css/',
+
+        'lib' => '@web/skifree/js/lib/',
+        'models' => '@web/skifree/js/models/',
+        'root' => '@web/skifree/js/'
+    ];
+
     public function actionIndex()
     {
-        return $this->render('index');
+        return $this->render('index', [
+            'skifreepaths' => self::SKIFREE_PATHS
+        ]);
     }
 
     public function actionRanking()
@@ -19,18 +29,42 @@ class JogoController extends \yii\web\Controller
     }
 
     /**
+     * Salva a pontuação na tabela `jogada` do BD.
      * @param integer $pontuacao
+     * @return integer
      */
     public function actionSave($pontuacao)
     {
-        // $jogada = new Jogada();
-        // $jogada->id_user = Yii::$app->user->id;
-        // $jogada->pontuacao = $pontuacao;
-        // $jogada->save();
-        // return "Deu certo " . Yii::$app->user->getCurso->nome;
-        return "Deu certo " . Yii::$app->user->id;
+        if (Yii::$app->user->isGuest) return 0;
+        // return "Deu certo " . Yii::$app->user->identity->username;
 
-        // return $this->render('save');
+        $user_id = Yii::$app->user->id; // classe \yii\web\User
+        $jogada = Jogada::findOne(['id_user' => $user_id]);
+
+        if ($jogada !== null) {
+            // manter apenas a pontuação mais alta do usuário
+            if ($pontuacao > $jogada->pontuacao) {
+                $jogada->pontuacao = $pontuacao;
+                $jogada->created_at = time();
+
+                if (!$jogada->update()) {
+                    var_dump($jogada->errors);
+                    die();
+                }
+            }
+        } else {
+            $jogada = new Jogada();
+            $jogada->id_user = $user_id;
+            $jogada->pontuacao = $pontuacao;
+
+            if (!$jogada->save()) {
+                var_dump($jogada->errors);
+                die();
+            }
+        }
+
+        // return "Pontuação " . $jogada->pontuacao;
+        return "deu certo";
     }
 
 }
