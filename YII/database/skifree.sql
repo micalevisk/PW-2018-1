@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 28, 2018 at 02:47 AM
+-- Generation Time: Jul 01, 2018 at 11:46 AM
 -- Server version: 5.7.22-0ubuntu0.16.04.1
 -- PHP Version: 7.2.7-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -38,8 +38,8 @@ CREATE TABLE `curso` (
 --
 
 INSERT INTO `curso` (`id`, `nome`, `sigla`, `descricao`) VALUES
-(1, 'Ciência da Computação', 'CC', 'um cursin aí'),
-(2, 'Engenharia de Software', 'ES', 'novo rolÊ'),
+(1, 'Ciência da Computação', 'CC', 'um cursin aí maroto'),
+(2, 'Engenharia de Software', 'ES', 'novo rolÊ hu3'),
 (3, 'Engenharia da Computação', 'EC', 'galera da FT');
 
 -- --------------------------------------------------------
@@ -52,7 +52,7 @@ CREATE TABLE `jogada` (
   `id` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `pontuacao` int(11) NOT NULL DEFAULT '0',
-  `data_hora` varchar(45) NOT NULL
+  `data_hora` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -98,8 +98,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `id_curso`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'micalevisk', 'd1FIOQnXlgtxXZZ_w5rv_PHSdUVPLGJh', '$2y$13$b26xj1GWMyf.3Z58Mt23Qe2X0jN8klJhuGTjNbfeFWNlXj0ZDZIVi', NULL, 'mllc@icomp.ufam.edu.br', 1, 10, 1529496104, 1529496104),
-(2, 'joao', '0WwFX8ZiiXPL5O52x-wmBKahAWNT1iTv', '$2y$13$KUdkiRsrvX1TuavVboJVkOgCI2FoBx5dBa.2mG.Ij.HxQyrK4IIbW', NULL, 'joao@byte.com', 1, 10, 1529498874, 1529498874);
+(2, 'joao', '0WwFX8ZiiXPL5O52x-wmBKahAWNT1iTv', '$2y$13$KUdkiRsrvX1TuavVboJVkOgCI2FoBx5dBa.2mG.Ij.HxQyrK4IIbW', NULL, 'joao@byte.com', 1, 10, 1529498874, 1529498874),
+(3, 'micalevisk', 'HGJbjlxoEzcxUnQlcqywglYzAiQr0cDT', '$2y$13$RK.8hxTHdOMzoIT.gMZjme/wwbdn8qxK4XMX.QBFC8iCiYUNNB9A2', NULL, 'mllc@icomp.ufam.edu.br', 1, 10, 1530310781, 1530310781),
+(4, 'joao_byte', 'TlcpsEdNHFE52UCa9moCA61lYuqiyqdm', '$2y$13$TNcYIcGMu7LZSchnSrb2LOCphllhOZpcriZx3WtvOD1PprEstsUa.', NULL, 'byte@gmail.com', 2, 10, 1530420606, 1530420606);
 
 --
 -- Indexes for dumped tables
@@ -150,7 +151,7 @@ ALTER TABLE `jogada`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
