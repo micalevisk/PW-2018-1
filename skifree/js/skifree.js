@@ -11,7 +11,6 @@
   const TAMY = 600; // altura do tabuleiro (em pixels)
   const QTD_INICIAL_VIDAS_SKIER = 3;
   const GAME_STATES = ['running', 'paused'];
-  let gameOver = false;
   let jogoPausado = true;
   const obstaculos = new ObjectPool(Obstaculo);
   const probEObstaculo = [
