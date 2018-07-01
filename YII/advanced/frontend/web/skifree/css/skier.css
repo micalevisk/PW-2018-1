@@ -1,0 +1,324 @@
+/* ============== animações ============== */
+@keyframes cachorro-latindo {
+  0% { background-position-x: -45px }
+  100% { background-position-x: -88px }
+}
+
+@keyframes cachorro-andando {
+  0% { background-position-x: 0px; }
+  100% { background-position-x: -46px; }
+}
+
+@keyframes yeti-nervoso {
+  0% {
+    background-position: 0px -112px;
+    height: 43px;
+    width: 33px;
+    /* top: 0px; */
+  }
+
+  100% {
+    background-position: -64px -112px;
+    height: 43px;
+    width: 30px;
+    /* top: -5px; */
+  }
+}
+
+@keyframes yeti-andando-direita {
+  0% {
+    background-position: -63px -112px;
+    height: 43px;
+    width: 28px;
+  }
+
+  100% {
+    background-position: -124px -112px;
+    height: 43px;
+    width: 32px;
+  }
+}
+
+@keyframes yeti-andando-esquerda {
+  0% {
+    background-position: -63px -158px;
+    height: 42px;
+    width: 28px;
+  }
+
+  100% {
+    background-position: -120px -158px;
+    height: 42px;
+    width: 32px;
+  }
+}
+
+@keyframes yeti-comendo-1 {
+  0% {
+    background-position: -122px -112px;
+    width: 35px;
+  }
+
+  99% {
+    background-position-x: -250px;
+    width: 31px;
+  }
+
+  100% {
+    background-position: -242px -112px;
+  }
+}
+/* ======================================= */
+
+
+/* skier:1 */
+.parado-direita {
+  background-image: url("../img/skier.png");
+  background-position: 0px -6px;
+  height: 28px;
+  width: 25px;
+}
+
+/* skier:2 */
+.para-direita {
+  background-image: url("../img/skier.png");
+  background-position: -25px -4px;
+  height: 30px;
+  width: 24px;
+}
+
+/* skier:4 */
+.para-frente {
+  background-image: url("../img/skier.png");
+  background-position: -66px -4px;
+  height: 30px;
+  width: 17px;
+}
+
+/* skier:5 */
+.pulando {
+  background-image: url("../img/skier.png");
+  background-position: -84px 0px;
+  height: 34px;
+  width: 34px;
+}
+
+/* skier:8 */
+.parado-bracos-abertos-direita {
+  background-image: url("../img/skier.png");
+  background-position: -180px 0px;
+  height: 34px;
+  width: 30px;
+}
+
+/* skier:10 */
+.caido-soterrado {
+  background-image: url("../img/skier.png");
+  background-position: -240px 0px;
+  height: 33px;
+  width: 34px;
+}
+
+/* skier:11 */
+.parado-esquerda {
+  background-image: url("../img/skier.png");
+  background-position: 0px -43px;
+  height: 28px;
+  width: 25px;
+}
+
+/* skier:12 */
+.para-esquerda {
+  background-image: url("../img/skier.png");
+  background-position: -25px -41px;
+  height: 30px;
+  width: 24px;
+}
+
+/* skier:14 */
+.parado-bracos-abertos-esquerda {
+  background-image: url("../img/skier.png");
+  background-position: -180px -38px;
+  height: 33px;
+  width: 30px;
+}
+
+/* skier:15 */
+.caido-sentado {
+  background-image: url("../img/skier.png");
+  background-position: 0px -85px;
+  height: 24px;
+  width: 33px;
+}
+
+/* skier:18 */
+.caido-frente {
+  background-image: url("../img/skier.png");
+  background-position: -83px -84px;
+  height: 24px;
+  width: 32px;
+}
+
+/* skier:20 */
+.gif-yeti {
+  --diff-min-top: 2;
+  --diff-max-top: 26;
+  --diff-min-left: -4;
+  --diff-max-left: 18;
+  background-image: url("../img/skier.png");
+  background-position: 0px -112px;
+  height: 43px;
+  width: 33px;
+
+  /* animation-name: yeti-comendo-1; */
+  animation-duration: .5s;
+  animation-timing-function: steps(2);
+  animation-fill-mode: forwards;
+}
+
+.gif-yeti-comemorando {
+  --diff-min-top: 2;
+  --diff-max-top: 26;
+  --diff-min-left: -4;
+  --diff-max-left: 18;
+
+  background-image: url("../img/skier.png");
+  background-position: 0px -112px;
+  height: 43px;
+  width: 33px;
+
+  animation-name: yeti-nervoso;
+  animation-duration: .5s;
+  animation-timing-function: steps(2);
+  animation-iteration-count: infinite;
+}
+
+/* skier:21 */
+.yeti-2 {
+  --diff-min-top: 2;
+  --diff-max-top: 26;
+  --diff-min-left: -4;
+  --diff-max-left: 18;
+  background-image: url("../img/skier.png");
+  background-position: -33px -112px;
+  height: 43px;
+  width: 30px;
+}
+
+/* skier:22 */
+.yeti-3-direita {
+  --diff-min-top: 10;
+  --diff-max-top: 30;
+  --diff-min-left: -13;
+  --diff-max-left: 13;
+  background-image: url("../img/skier.png");
+  background-position: -63px -112px;
+  height: 43px;
+  width: 28px;
+}
+
+/* skier:23 */
+.yeti-4-direita {
+  --diff-min-top: 2;
+  --diff-max-top: 26;
+  --diff-min-left: -4;
+  --diff-max-left: 18;
+  background-image: url("../img/skier.png");
+  background-position: -90px -112px;
+  height: 43px;
+  width: 32px;
+}
+
+/* skier:24 */
+.yeti-tentando-1 {
+  background-image: url("../img/skier.png");
+  background-position: -122px -112px;
+  height: 43px;
+  width: 35px;
+}
+
+/* skier:25 */
+.yeti-tentando-2 {
+  background-image: url("../img/skier.png");
+  background-position: -156px -112px;
+  height: 43px;
+  width: 31px;
+}
+
+/* skier:26 */
+.yeti-comendo-1 {
+  background-image: url("../img/skier.png");
+  background-position: -186px -112px;
+  height: 43px;
+  width: 33px;
+}
+
+/* skier:27 */
+.yeti-comendo-2 {
+  background-image: url("../img/skier.png");
+  background-position: -218px -112px;
+  height: 43px;
+  width: 25px;
+}
+
+/* skier:28 */
+.yeti-comendo-3 {
+  background-image: url("../img/skier.png");
+  background-position: -242px -112px;
+  height: 43px;
+  width: 29px;
+}
+
+/* skier:29 */
+.yeti-comendo-4 {
+  background-image: url("../img/skier.png");
+  background-position: 0px -159px;
+  height: 42px;
+  width: 29px;
+}
+
+/* skier:30 */
+.yeti-3-esquerda {
+  --diff-min-top: 2;
+  --diff-max-top: 26;
+  --diff-min-left: -4;
+  --diff-max-left: 18;
+  background-image: url("../img/skier.png");
+  background-position: -63px -158px;
+  height: 42px;
+  width: 28px;
+}
+
+/* skier:31 */
+.yeti-4-esquerda {
+  --diff-min-top: 2;
+  --diff-max-top: 26;
+  --diff-min-left: -4;
+  --diff-max-left: 18;
+  background-image: url("../img/skier.png");
+  background-position: -91px -158px;
+  height: 42px;
+  width: 28px;
+}
+
+/* skier:33 */
+.gif-cachorro-direita,
+.gif-cachorro-esquerda {
+  --diff-min-top: -18;
+  --diff-max-top: 2;
+  --diff-min-left: -15;
+  --diff-max-left: 12;
+  background-image: url("../img/skier.png");
+  background-position: -45px -204px;
+  width: 22px;
+  height: 19px;
+
+  animation-name: cachorro-latindo;
+  animation-duration: .5s;
+  animation-timing-function: steps(2);
+  animation-iteration-count: infinite;
+}
+
+.gif-cachorro-esquerda {
+  transform: scaleX(-1);
+}
