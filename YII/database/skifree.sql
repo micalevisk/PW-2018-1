@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 01, 2018 at 11:46 AM
+-- Generation Time: Jul 01, 2018 at 01:35 PM
 -- Server version: 5.7.22-0ubuntu0.16.04.1
 -- PHP Version: 7.2.7-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -51,9 +51,16 @@ INSERT INTO `curso` (`id`, `nome`, `sigla`, `descricao`) VALUES
 CREATE TABLE `jogada` (
   `id` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `pontuacao` int(11) NOT NULL DEFAULT '0',
-  `data_hora` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `pontuacao` float NOT NULL DEFAULT '0',
+  `created_at` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `jogada`
+--
+
+INSERT INTO `jogada` (`id`, `id_user`, `pontuacao`, `created_at`) VALUES
+(1, 3, 22.08, 1530462650);
 
 -- --------------------------------------------------------
 
@@ -146,7 +153,7 @@ ALTER TABLE `curso`
 -- AUTO_INCREMENT for table `jogada`
 --
 ALTER TABLE `jogada`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 --
 -- AUTO_INCREMENT for table `user`
 --
