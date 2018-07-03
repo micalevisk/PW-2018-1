@@ -47,35 +47,17 @@ class JogoController extends \yii\web\Controller
     public function actionSave($pontuacao)
     {
         if (Yii::$app->user->isGuest) return 0;
-        // return "Deu certo " . Yii::$app->user->identity->username;
 
-        $user_id = Yii::$app->user->id; // classe \yii\web\User
-        $jogada = Jogada::findOne(['id_user' => $user_id]);
+        $jogada = new Jogada();
+        $jogada->id_user = Yii::$app->user->id; // classe \yii\web\User
+        $jogada->pontuacao = $pontuacao;
 
-        if ($jogada !== null) {
-            // manter apenas a pontuação mais alta do usuário
-            if ($pontuacao > $jogada->pontuacao) {
-                $jogada->pontuacao = $pontuacao;
-                $jogada->created_at = time();
-
-                if (!$jogada->update()) {
-                    var_dump($jogada->errors);
-                    die();
-                }
-            }
-        } else {
-            $jogada = new Jogada();
-            $jogada->id_user = $user_id;
-            $jogada->pontuacao = $pontuacao;
-
-            if (!$jogada->save()) {
-                var_dump($jogada->errors);
-                die();
-            }
+        if (!$jogada->save()) {
+            var_dump($jogada->errors);
+            die();
         }
 
-        // return "Pontuação " . $jogada->pontuacao;
-        return "deu certo";
+        return 1;
     }
 
 }
