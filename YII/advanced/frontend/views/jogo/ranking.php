@@ -1,9 +1,18 @@
 <?php
-/* @var $this yii\web\View */
-?>
-<h1>jogo/ranking</h1>
 
-<p>
-    You may change the content of this page by modifying
-    the file <code><?= __FILE__; ?></code>.
-</p>
+use yii\helpers\Html;
+use yii\grid\GridView;
+
+/* @var $this yii\web\View */
+
+$this->title = 'Placar Geral';
+$this->params['breadcrumbs'][] = ['label' => 'Skifree', 'url' => ['index']];
+$this->params['breadcrumbs'][] = $this->title;
+?>
+
+<h1><?= $this->title ?></h1>
+
+<div class="ranking-index">
+
+
+</div>
