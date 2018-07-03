@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 01, 2018 at 01:35 PM
--- Server version: 5.7.22-0ubuntu0.16.04.1
--- PHP Version: 7.2.7-1+ubuntu16.04.1+deb.sury.org+1
+-- Tempo de geração: 03/07/2018 às 17:50
+-- Versão do servidor: 5.7.17-0ubuntu0.16.04.1
+-- Versão do PHP: 7.0.15-0ubuntu0.16.04.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `skifree`
+-- Banco de dados: `skifree`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `curso`
+-- Estrutura para tabela `curso`
 --
 
 CREATE TABLE `curso` (
@@ -34,7 +34,7 @@ CREATE TABLE `curso` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `curso`
+-- Fazendo dump de dados para tabela `curso`
 --
 
 INSERT INTO `curso` (`id`, `nome`, `sigla`, `descricao`) VALUES
@@ -45,7 +45,7 @@ INSERT INTO `curso` (`id`, `nome`, `sigla`, `descricao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jogada`
+-- Estrutura para tabela `jogada`
 --
 
 CREATE TABLE `jogada` (
@@ -56,16 +56,17 @@ CREATE TABLE `jogada` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `jogada`
+-- Fazendo dump de dados para tabela `jogada`
 --
 
 INSERT INTO `jogada` (`id`, `id_user`, `pontuacao`, `created_at`) VALUES
-(1, 3, 22.08, 1530462650);
+(1, 3, 22.08, 1530462650),
+(2, 2, 123, 1530462650);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migration`
+-- Estrutura para tabela `migration`
 --
 
 CREATE TABLE `migration` (
@@ -74,7 +75,7 @@ CREATE TABLE `migration` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `migration`
+-- Fazendo dump de dados para tabela `migration`
 --
 
 INSERT INTO `migration` (`version`, `apply_time`) VALUES
@@ -84,7 +85,7 @@ INSERT INTO `migration` (`version`, `apply_time`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Estrutura para tabela `user`
 --
 
 CREATE TABLE `user` (
@@ -101,7 +102,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `user`
+-- Fazendo dump de dados para tabela `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `id_curso`, `status`, `created_at`, `updated_at`) VALUES
@@ -110,29 +111,29 @@ INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_res
 (4, 'joao_byte', 'TlcpsEdNHFE52UCa9moCA61lYuqiyqdm', '$2y$13$TNcYIcGMu7LZSchnSrb2LOCphllhOZpcriZx3WtvOD1PprEstsUa.', NULL, 'byte@gmail.com', 2, 10, 1530420606, 1530420606);
 
 --
--- Indexes for dumped tables
+-- Índices de tabelas apagadas
 --
 
 --
--- Indexes for table `curso`
+-- Índices de tabela `curso`
 --
 ALTER TABLE `curso`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `jogada`
+-- Índices de tabela `jogada`
 --
 ALTER TABLE `jogada`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migration`
+-- Índices de tabela `migration`
 --
 ALTER TABLE `migration`
   ADD PRIMARY KEY (`version`);
 
 --
--- Indexes for table `user`
+-- Índices de tabela `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
@@ -141,21 +142,21 @@ ALTER TABLE `user`
   ADD UNIQUE KEY `password_reset_token` (`password_reset_token`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas apagadas
 --
 
 --
--- AUTO_INCREMENT for table `curso`
+-- AUTO_INCREMENT de tabela `curso`
 --
 ALTER TABLE `curso`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT for table `jogada`
+-- AUTO_INCREMENT de tabela `jogada`
 --
 ALTER TABLE `jogada`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT de tabela `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
