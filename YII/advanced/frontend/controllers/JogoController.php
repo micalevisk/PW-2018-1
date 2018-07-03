@@ -4,7 +4,7 @@ namespace frontend\controllers;
 
 use Yii;
 use common\models\Jogada;
-
+use yii\data\ActiveDataProvider;
 
 class JogoController extends \yii\web\Controller
 {
@@ -25,7 +25,17 @@ class JogoController extends \yii\web\Controller
 
     public function actionRanking()
     {
-        return $this->render('ranking');
+        $qtdMaxima = 5;
+        $jogadas = new ActiveDataProvider([
+            // 'query' => User::find()->where(['id_curso' => $id]),
+            // 'query' => Jogada::find()->orderBy(['pontuacao' => SORT_ASC])->limit(1) // FIXME: limitar 5
+            'query' => Jogada::find(['limit' => 1])->orderBy(['pontuacao' => SORT_ASC])
+        ]);
+
+        return $this->render('ranking', [
+            'jogadas' => $jogadas,
+            'qtdMaxima' => $qtdMaxima
+        ]);
     }
 
     /**

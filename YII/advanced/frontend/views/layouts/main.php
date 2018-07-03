@@ -48,7 +48,7 @@ AppAsset::register($this);
                  ['label' => '<i class="glyphicon glyphicon-screenshot"></i> Jogar', 'url' => Url::to(['jogo/index'])],
                  '<li class="divider"></li>',
                 //  '<li class="dropdown-header">Informações Extras</li>',
-                 ['label' => '<i class="glyphicon glyphicon-stats"></i> Placar Geral', 'url' => Url::to(['jogo/ranking'])],
+                 ['label' => '<i class="glyphicon glyphicon-stats"></i> Ver Placar', 'url' => Url::to(['jogo/ranking'])],
             ],
         ],
     ];
