@@ -27,9 +27,10 @@ class JogoController extends \yii\web\Controller
     {
         $qtdMaxima = 5;
         $jogadas = new ActiveDataProvider([
-            // 'query' => User::find()->where(['id_curso' => $id]),
-            // 'query' => Jogada::find()->orderBy(['pontuacao' => SORT_ASC])->limit(1) // FIXME: limitar 5
-            'query' => Jogada::find(['limit' => 1])->orderBy(['pontuacao' => SORT_ASC])
+            'pagination' => false,
+            'query' => Jogada::find()
+                              ->orderBy(['pontuacao' => SORT_DESC])
+                              ->limit($qtdMaxima)
         ]);
 
         return $this->render('ranking', [
