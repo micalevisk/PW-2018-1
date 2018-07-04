@@ -7,7 +7,7 @@
   let skier, yeti, tabuleiro, gameLoop;
 
   const FPS  = 60;
-  const TAMX = 400; // largura do tabuleiro (em pixels)
+  const TAMX = 700; // largura do tabuleiro (em pixels)
   const TAMY = 600; // altura do tabuleiro (em pixels)
   const QTD_INICIAL_VIDAS_SKIER = 3;
   const GAME_STATES = ['running', 'paused'];
@@ -36,7 +36,7 @@
         vidasEl: element.querySelector('#vidas'),
 
         get andado() {
-          return this.andadoEl.innerHTML;
+          return Number(this.andadoEl.innerHTML);
         },
 
         set andado(metros) {
@@ -63,9 +63,12 @@
   function onGameOver() {
     clearInterval(gameLoop);
     skier.setAndando(false);
+    const pontuacaoFinal = infoBox.andado;
+
+    registrarPontuacao(pontuacaoFinal);
 
     setTimeout(() => {
-      const reiniciar = confirm(`Game Over :(\nVocê Andou: ${infoBox.andado} metros!\nDeseja reiniciar o jogo?`);
+      const reiniciar = confirm(`Game Over\nVocê andou ${pontuacaoFinal} metros!\nDeseja reiniciar o jogo?`);
       if (reiniciar) location.reload();
     }, 3010);
   }
@@ -131,7 +134,7 @@
 
   function initEventListeners() {
     window.addEventListener('keydown', e => {
-      e.preventDefault();
+      // e.preventDefault();
 
       if (e.keyCode === 32) {
         jogoPausado = !jogoPausado;
@@ -222,7 +225,7 @@
     initEventListeners();
 
     gerarObstaculos(1, {tabuleiro, tipo: 'placa-start', initialLeft: posInicialSkier.x - 50, initialTop: posInicialSkier.y });
-    gerarObstaculos(4, {tabuleiro, tipo: probEObstaculo[8].tipo, zIndex: probEObstaculo[8].zIndex, initialTop: TAMY-300});
+    gerarObstaculos(10, {tabuleiro, tipo: probEObstaculo[8].tipo, zIndex: probEObstaculo[8].zIndex, initialTop: TAMY-300});
     gerarObstaculos(2, {tabuleiro, tipo: probEObstaculo[7].tipo, initialTop: TAMY-100});
 
     gameLoop = setInterval(gameRunner, 1000/FPS);

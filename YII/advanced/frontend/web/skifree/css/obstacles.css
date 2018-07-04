@@ -1,0 +1,153 @@
+/* ============== animações ============== */
+.animado-spin {
+  -webkit-animation: spin 0.4s forwards;
+     -moz-animation: spin 0.4s forwards;
+          animation: spin 0.4s forwards;
+}
+
+@keyframes spin {
+  50% { transform: rotate(360deg); }
+  60% { transform: scale(0.8); }
+  100% { transform: scale(0); }
+}
+
+@keyframes arbusto-chamas {
+  0% { background-position-x: 0px; }
+  50% { background-position-x: -48px; }
+  100% { background-position-x: -96px; }
+}
+/* ======================================= */
+
+
+/* obstacles:1 */
+.arvore-normal {
+  --diff-min-top: 2;
+  --diff-max-top: 18;
+  --diff-min-left: -1;
+  --diff-max-left: 15;
+  background-image: url("../img/obstacles.png");
+  background-position: 0px -28px;
+  height: 34px;
+  width: 30px;
+}
+
+/* obstacles:2 */
+.rocha {
+  --diff-min-top: -20;
+  --diff-max-top: -6;
+  --diff-min-left: -11;
+  --diff-max-left: 16;
+  background-image: url("../img/obstacles.png");
+  background-position: -28px -50px;
+  height: 13px;
+  width: 25px;
+}
+
+/* obstacles:6 */
+.neve-pequena {
+  background-image: url("../img/obstacles.png");
+  background-position: -142px -55px;
+  height: 8px;
+  width: 44px;
+}
+
+/* obstacles:7 */
+.neve-grande {
+  background-image: url("../img/obstacles.png");
+  background-position: -186px -30px;
+  height: 33px;
+  width: 66px;
+}
+
+/* obstacles:9 */
+.cogumelo {
+  --diff-min-top: -21;
+  --diff-max-top: -7;
+  --diff-min-left: -9;
+  --diff-max-left: 5;
+  background-image: url("../img/obstacles.png");
+  background-position: -270px -51px;
+  height: 12px;
+  width: 10px;
+}
+
+/* obstacles:10 */
+.arvore-2 {
+  --diff-min-top: 2;
+  --diff-max-top: 18;
+  --diff-min-left: -1;
+  --diff-max-left: 15;
+  background-image: url("../img/obstacles.png");
+  background-position: -280px -30px;
+  height: 33px;
+  width: 30px;
+}
+
+/* obstacles:11 */
+.arvore-3 {
+  --diff-min-top: 2;
+  --diff-max-top: 18;
+  --diff-min-left: -1;
+  --diff-max-left: 15;
+  background-image: url("../img/obstacles.png");
+  background-position: -310px -30px;
+  height: 33px;
+  width: 27px;
+}
+
+/* obstacles:12 */
+.arbusto {
+  --diff-min-top: -7;
+  --diff-max-top: 10;
+  --diff-min-left: -7;
+  --diff-max-left: 11;
+  background-image: url("../img/obstacles.png");
+  background-position: -1px -102px;
+  height: 27px;
+  width: 23px;
+}
+
+/* obstacles:13 */
+.gif-arbusto-chamas {
+  --diff-min-top: -7;
+  --diff-max-top: 10;
+  --diff-min-left: -7;
+  --diff-max-left: 11;
+  background-image: url("../img/obstacles.png");
+  background-position: -24px -102px;
+  height: 27px;
+  width: 23px;
+
+  animation-name: arbusto-chamas;
+  animation-duration: .4s;
+  animation-timing-function: steps(2);
+  animation-iteration-count: infinite;
+}
+
+/* obstacles:17 */
+.arvore-grande {
+  --diff-min-top: 29;
+  --diff-max-top: 48;
+  --diff-min-left: -3;
+  --diff-max-left: 21;
+  background-image: url("../img/obstacles.png");
+  background-position: -96px -66px;
+  height: 63px;
+  width: 33px;
+}
+
+/* obstacles:22 */
+.placa-start {
+  background-image: url("../img/obstacles.png");
+  background-position: 0px -134px;
+  height: 29px;
+  width: 43px;
+}
+
+/* obstacles:27 */
+.placa-finish {
+  background-image: url("../img/obstacles.png");
+  background-position: -100px -134px;
+  height: 29px;
+  width: 50px;
+}

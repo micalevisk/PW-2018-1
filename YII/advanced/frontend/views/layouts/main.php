@@ -9,6 +9,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 ?>
@@ -36,16 +37,24 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => 'Página Inicial', 'url' => ['/site/index']],
         //                            /{controlador}/{action}
         ['label' => 'Usuários', 'url' => ['/user/index']],
         ['label' => 'Cursos', 'url' => ['/curso/index']],
         ['label' => 'Sobre', 'url' => ['/site/about']],
-        ['label' => 'Jogo', 'url' => ['/jogo/index']],
+        [
+            'label' => '<i class="glyphicon glyphicon-knight"></i> Skifree',
+            'items' => [
+                 ['label' => '<i class="glyphicon glyphicon-screenshot"></i> Jogar', 'url' => Url::to(['jogo/index'])],
+                 '<li class="divider"></li>',
+                //  '<li class="dropdown-header">Informações Extras</li>',
+                 ['label' => '<i class="glyphicon glyphicon-stats"></i> Hall da Fama', 'url' => Url::to(['jogo/ranking'])],
+            ],
+        ],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Cadastrar', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Entrar', 'url' => ['/site/login']];
+        $menuItems[] = ['label' => '<i class="glyphicon glyphicon-user"></i> Entrar', 'url' => ['/site/login']];
     } else {
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
@@ -59,6 +68,7 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
+        'encodeLabels' => false,
     ]);
     NavBar::end();
     ?>
@@ -74,7 +84,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
+        <p class="pull-left">&copy; <b>Micael Levi</b> <?= date('Y') ?></p>
 
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>

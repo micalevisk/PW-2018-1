@@ -1,5 +1,4 @@
 <?php
-
 namespace common\models;
 
 use Yii;
@@ -7,10 +6,10 @@ use Yii;
 /**
  * This is the model class for table "jogada".
  *
- * @property int $id
- * @property int $id_user
- * @property int $pontuacao
- * @property string $data_hora
+ * @property integer $id
+ * @property integer $id_user
+ * @property float   $pontuacao
+ * @property integer $created_at
  */
 class Jogada extends \yii\db\ActiveRecord
 {
@@ -28,9 +27,13 @@ class Jogada extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_user', 'data_hora'], 'required'],
-            [['id_user', 'pontuacao'], 'integer'],
-            [['data_hora'], 'string', 'max' => 45],
+            [['id_user', 'pontuacao'], 'required'],
+            [['id_user', 'created_at'], 'integer'],
+            // [['created_at'], 'safe'],
+            [['id_user'], 'exist',
+                          'skipOnError' => true,
+                          'targetClass' => User::className(),
+                          'targetAttribute' => ['id_user' => 'id']]
         ];
     }
 
@@ -40,10 +43,33 @@ class Jogada extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'id_user' => 'Id User',
-            'pontuacao' => 'Pontuacao',
-            'data_hora' => 'Data Hora',
+            'id_user' => 'Usuário',
+            'pontuacao' => 'Pontuação',
+            'created_at' => 'Registrado em',
         ];
+    }
+
+    public function getPontuacao()
+    {
+        return $this->pontuacao;
+    }
+
+    public function getUser()
+    {
+        return $this->hasOne(
+            User::className(), ['id' => 'id_user']
+        );
+    }
+
+    public function beforeSave($tipo)
+    {
+        // $this->created_at = (new DateTime())->getTimestamp();
+        $this->created_at = time();
+        return parent::beforeSave($tipo);
+    }
+
+    public function afterFind()
+    {
+      $this->created_at = date('d-m-Y H:i:s', $this->created_at);
     }
 }

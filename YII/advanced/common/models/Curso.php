@@ -80,7 +80,7 @@ class Curso extends \yii\db\ActiveRecord
     public function getPrefixoTitle()
     {
         if (!YII::$app->user->isGuest
-        && YII::$app->user->identity->id_curso == $this->id) {
+          && YII::$app->user->identity->id_curso == $this->id) {
             return  '(seu curso) <br>'; // senão, mostrar indica que é o "seu curso"
         }
     }
