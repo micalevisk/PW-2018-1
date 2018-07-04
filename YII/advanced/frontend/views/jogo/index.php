@@ -3,6 +3,8 @@
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */
+/* @var $generatedCSRFToken string */
+/* @var $skifreepaths */
 
 $this->title = 'Skifree';
 
