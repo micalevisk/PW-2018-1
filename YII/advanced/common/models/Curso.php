@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "curso".
@@ -60,6 +61,12 @@ class Curso extends \yii\db\ActiveRecord
         return User::find()
                     ->where(['id_curso' => $this->id])
                     ->count();
+    }
+
+    public static function cursos()
+    {
+        $cursos = Curso::find()->all();
+        return ArrayHelper::map($cursos, 'id', 'nome');
     }
 
     /**
