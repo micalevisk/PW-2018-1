@@ -23,7 +23,7 @@ function registrarPontuacao(pontuacao) {
 
   return $.ajax({
     type: 'GET',
-    data: {'pontuacao': pontuacao},
+    data: {'pontuacao': pontuacao, '_csrf-app': '" . $generatedCSRFToken . "'},
     error: onError,
     success: onSuccess,
     url: '" . Url::to(['jogo/save']) . "'

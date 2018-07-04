@@ -18,8 +18,11 @@ class JogoController extends \yii\web\Controller
 
     public function actionIndex()
     {
+        $generatedCSRFToken = Yii::$app->request->csrfToken;
+
         return $this->render('index', [
-            'skifreepaths' => self::SKIFREE_PATHS
+            'skifreepaths' => self::SKIFREE_PATHS,
+            'generatedCSRFToken' => $generatedCSRFToken
         ]);
     }
 
@@ -46,7 +49,8 @@ class JogoController extends \yii\web\Controller
      */
     public function actionSave($pontuacao)
     {
-        if (Yii::$app->user->isGuest) return 0;
+        if (Yii::$app->user->isGuest
+         || !isset($_GET['_csrf-app'])) return 0;
 
         $jogada = new Jogada();
         $jogada->id_user = Yii::$app->user->id; // classe \yii\web\User
