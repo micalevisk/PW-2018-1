@@ -4,6 +4,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\User */
+/* @var $cursosarray common\models\Curso */
 
 $this->title = 'Atualizar o Usuário "' . $model->username . '"';
 $this->params['breadcrumbs'][] = ['label' => 'Usuários', 'url' => ['index']];
@@ -16,6 +17,7 @@ $this->params['breadcrumbs'][] = 'Atualizar';
 
     <?= $this->render('_form', [
         'model' => $model,
+        'cursosarray' => $cursosarray
     ]) ?>
 
 </div>
