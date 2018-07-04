@@ -7,9 +7,9 @@
   let skier, yeti, tabuleiro, gameLoop;
 
   const FPS  = 60;
-  const TAMX = 400; // largura do tabuleiro (em pixels)
+  const TAMX = 700; // largura do tabuleiro (em pixels)
   const TAMY = 600; // altura do tabuleiro (em pixels)
-  const QTD_INICIAL_VIDAS_SKIER = 1;
+  const QTD_INICIAL_VIDAS_SKIER = 3;
   const GAME_STATES = ['running', 'paused'];
   let jogoPausado = true;
   const obstaculos = new ObjectPool(Obstaculo);
@@ -225,7 +225,7 @@
     initEventListeners();
 
     gerarObstaculos(1, {tabuleiro, tipo: 'placa-start', initialLeft: posInicialSkier.x - 50, initialTop: posInicialSkier.y });
-    gerarObstaculos(4, {tabuleiro, tipo: probEObstaculo[8].tipo, zIndex: probEObstaculo[8].zIndex, initialTop: TAMY-300});
+    gerarObstaculos(10, {tabuleiro, tipo: probEObstaculo[8].tipo, zIndex: probEObstaculo[8].zIndex, initialTop: TAMY-300});
     gerarObstaculos(2, {tabuleiro, tipo: probEObstaculo[7].tipo, initialTop: TAMY-100});
 
     gameLoop = setInterval(gameRunner, 1000/FPS);
