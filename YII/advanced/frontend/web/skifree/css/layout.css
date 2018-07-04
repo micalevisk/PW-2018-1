@@ -1,51 +1,30 @@
 * { margin: 0; padding: 0; }
 
 body {
-  background: #144c96;
-}
-
-div {
-  background-repeat: no-repeat;
+  background: #e6f2f9 !important;
+  background: linear-gradient(to bottom right, white, #e6f2f9) !important;
 }
 
 kbd {
-	display: inline-block;
-	padding: 3px 5px;
-	font-size: 11px;
-	line-height: 10px;
-	color: #444d56;
-	vertical-align: middle;
-	background-color: #fafbfc;
-	border: solid 1px #c6cbd1;
-	border-bottom-color: #959da5;
-	border-radius: 3px;
-	box-shadow: inset 0 -1px 0 #959da5;
+  display: inline-block;
+  padding: 3px 5px !important;
+  font-size: 11px !important;
+  line-height: 10px !important;
+  color: #444d56 !important;
+  vertical-align: middle !important;
+  background-color: #fafbfc !important;
+  border: solid 1px #c6cbd1 !important;
+  border-bottom-color: #959da5 !important;
+  border-radius: 3px !important;
+  box-shadow: inset 0 -1px 0 #959da5 !important;
 }
 
-a:link {
-  color: #107d9c;
-  text-decoration: none;
-}
-
-a:visited {
-  color: #12835d;
-}
-
-a:hover {
-  color: #2a109c;
-  text-decoration: underline;
-}
-
-a:active {
-  color: blue;
-}
-
-#infoBox .label.destaque-negativo {
+#infoBox .infolabel.destaque-negativo {
   color: red;
   font-size: 1.3em;
 }
 
-#infoBox .label.destaque-positivo {
+#infoBox .infolabel.destaque-positivo {
   color: green;
   font-size: 1.3em;
 }
@@ -53,35 +32,27 @@ a:active {
 #infoBox {
   font-family: monospace;
   background: white;
-  left: 432px;
-  position: absolute;
-  /* position: relative; */
-	border-radius: 4px;
-	margin-bottom: 20px;
-	padding: 10px;
-  box-shadow: 0 2px 5px #32325a1a;
+  position: relative;
 }
 
 #infoBox p {
-	color: #6B7C93;
-	font-size: 1em;
-	line-height: 1.4em;
+  color: #6B7C93;
+  font-size: 1em;
+  line-height: 1.4em;
+  margin-bottom: 0.2%;
 }
 
-#infoBox .label::before {
+#infoBox .infolabel::before {
   content: attr(data-identifier) ": ";
   font-weight: bold;
 }
 
-#infoBox .label::after {
+#infoBox .infolabel::after {
   content: attr(data-sufix);
 }
 
 #tabuleiro {
   background-color: white;
-  border-style: solid;
-  border-color: black;
-  margin: 10px;
   overflow: hidden;
   position: relative;
 }
@@ -90,7 +61,12 @@ a:active {
   position: absolute;
 }
 
+.panel-footer {
+  font-weight: bold;
+  text-align: center;
+}
+
 [class^="gif-"] {
   -webkit-animation-play-state: var(--game-state, paused);
-          animation-play-state: var(--game-state, paused);
+  animation-play-state: var(--game-state, paused);
 }
