@@ -68,6 +68,6 @@ $this->registerJsFile( $skifreepaths['models'] . 'Obstaculo.js');
 $this->registerJsFile( $skifreepaths['models'] . 'Yeti.js');
 $this->registerJsFile( $skifreepaths['models'] . 'Skier.js');
 $this->registerJsFile( $skifreepaths['models'] . 'Tabuleiro.js');
-$this->registerJsFile( $skifreepaths['root'] . 'skifree.js', [ 'depends'  => 'yii\web\JqueryAsset' ]);
+$this->registerJsFile( $skifreepaths['root'] . 'skifree.js');
 
 ?>
