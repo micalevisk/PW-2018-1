@@ -48,7 +48,7 @@ AppAsset::register($this);
                  ['label' => '<i class="glyphicon glyphicon-screenshot"></i> Jogar', 'url' => Url::to(['jogo/index'])],
                  '<li class="divider"></li>',
                 //  '<li class="dropdown-header">Informações Extras</li>',
-                 ['label' => '<i class="glyphicon glyphicon-stats"></i> Ver Placar', 'url' => Url::to(['jogo/ranking'])],
+                 ['label' => '<i class="glyphicon glyphicon-stats"></i> Hall da Fama', 'url' => Url::to(['jogo/ranking'])],
             ],
         ],
     ];
@@ -84,7 +84,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
+        <p class="pull-left">&copy; <b>Micael Levi</b> <?= date('Y') ?></p>
 
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
