@@ -155,8 +155,6 @@ class SiteController extends Controller
     public function actionSignup()
     {
         $model = new SignupForm();
-        $cursos = Curso::find()->all();
-        $cursosArray = ArrayHelper::map($cursos, 'id', 'nome');
 
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
@@ -168,7 +166,7 @@ class SiteController extends Controller
 
         return $this->render('signup', [
             'model' => $model,
-            'cursosarray' => $cursosArray
+            'cursosarray' => Curso::cursos()
         ]);
     }
 
