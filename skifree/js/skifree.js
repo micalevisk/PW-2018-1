@@ -189,7 +189,7 @@
     }
 
     if (Math.ceil(infoBox.andado || 1) % 2001 === 0) // a cada 2km
-      yeti.spawn(...skier.getTopAndLeft())
+      yeti.spawn(...skier.getTopAndLeft());
 
     obstaculos.forEach((obstaculo, idx) => {
       if ( obstaculo.subir(skier.getVelocidade() / 10) ) {
