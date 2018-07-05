@@ -1,6 +1,6 @@
 const DIRECOES_YETI = _.criarConstante(['direita', 'esquerda']);
 
-function Yeti(tabuleiro, aposComer) {
+function Yeti(tabuleiro) {
   this.element = document.createElement('div');
   this.spawnRealizado = false;
   this.colisaoJaRegistrada = false;
