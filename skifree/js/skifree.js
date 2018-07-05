@@ -216,7 +216,7 @@
 
     tabuleiro = new Tabuleiro(TAMX, TAMY, 5);
     skier = new Skier(tabuleiro.getWidth(), posInicialSkier.x, posInicialSkier.y, QTD_INICIAL_VIDAS_SKIER);
-    yeti = new Yeti(tabuleiro, posInicialSkier);
+    yeti = new Yeti(tabuleiro);
 
     initInfoBox();
     initEventListeners();
