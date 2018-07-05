@@ -142,6 +142,7 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
+        date_default_timezone_set('America/Manaus');
         return $this->render('about', [
           'hora' => date("d-m-Y H:i:s")
         ]);
