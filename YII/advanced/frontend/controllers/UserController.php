@@ -73,6 +73,7 @@ class UserController extends Controller
 
         return $this->render('create', [
             'model' => $model,
+            'cursosarray' => Curso::cursos()
         ]);
     }
 
