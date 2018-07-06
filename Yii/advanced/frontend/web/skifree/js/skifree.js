@@ -11,6 +11,9 @@
   const TAMY = 600; // altura do tabuleiro (em pixels)
   const QTD_INICIAL_VIDAS_SKIER = 3;
   const GAME_STATES = ['running', 'paused'];
+  const GAME_SPLASH_BLUR = [0, 1.5];
+  const GAME_SPLASH_VISIBILITY = ['hidden', 'visible'];
+
   let jogoPausado = true;
   const obstaculos = new ObjectPool(Obstaculo);
   const probEObstaculo = [
@@ -55,6 +58,12 @@
     };
   }());
 
+
+  function atualizarVariaveisCSS(index) {
+    _.changeRootVariable(_.CSS_VARIABLES.gameState, GAME_STATES[index]);
+    _.changeRootVariable(_.CSS_VARIABLES.splashBlur, GAME_SPLASH_BLUR[index]);
+    _.changeRootVariable(_.CSS_VARIABLES.splashVisibility, GAME_SPLASH_VISIBILITY[index]);
+  }
 
   // ======================================================== //
   // ======================== EVENTS ======================== //
@@ -138,7 +147,7 @@
 
       if (e.keyCode === 32) {
         jogoPausado = !jogoPausado;
-        _.changeRootVariable('--game-state', GAME_STATES[+jogoPausado]);
+        atualizarVariaveisCSS(+jogoPausado);
 
         if (!skier.iniciou) skier.iniciar();
         skier.setAndando(!jogoPausado);
@@ -217,10 +226,11 @@
   (function __init__() {
     const posInicialSkier = { x: parseInt(TAMX/2), y: TAMY/4 };
 
-    tabuleiro = new Tabuleiro(TAMX, TAMY, 5);
+    tabuleiro = new Tabuleiro(TAMX, TAMY);
     skier = new Skier(tabuleiro.getWidth(), posInicialSkier.x, posInicialSkier.y, QTD_INICIAL_VIDAS_SKIER);
     yeti = new Yeti(tabuleiro);
 
+    atualizarVariaveisCSS(+jogoPausado);
     initInfoBox();
     initEventListeners();
 

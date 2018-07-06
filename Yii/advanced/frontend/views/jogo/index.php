@@ -41,13 +41,8 @@ function registrarPontuacao(pontuacao) {
   <div class="row">
     <div class="col-sm-4 col-sm-push-8" style="padding:0%;">
 
-      <div class="panel panel-primary" id="infoBox">
+      <div class="panel panel-primary caixa" id="infoBox">
         <div class="panel-body">
-          <p>Use o <kbd>space</kbd> para pausar/despausar/iniciar o jogo.</p>
-          <p>Use o <kbd>F</kbd> para aumentar/diminuir a velocidade do esquiador.</p>
-          <p>Use <kbd>&larr;</kbd> e <kbd>&rarr;</kbd>  ou <kbd>A</kbd> e <kbd>D</kbd> para controlar o esquiador.</p>
-
-          <br>
           <p class="infolabel" data-identifier="FPS" id="fps"></p>
           <p class="infolabel" data-identifier="Andou" data-sufix="m" id="andado"></p>
           <p class="infolabel" data-identifier="Vidas Restantes" id="vidas"></p>
@@ -62,8 +57,22 @@ function registrarPontuacao(pontuacao) {
     </div>
     <div class="col-sm-8 col-sm-pull-4">
 
-    <div class="panel panel-primary" id="tabuleiro">
-      <div id="skier"></div>
+    <div class="panel panel-primary caixa" id="tabuleiro">
+
+      <div id="container-jogo">
+        <div id="skier"></div>
+      </div>
+
+      <div id="container-splash">
+        <div>
+          <panel class="info-box">
+            <p>Use a tecla <kbd>ESPAÇO</kbd> para (des)pausar o jogo.</p>
+            <p>Use o <kbd>F</kbd> para aumentar ou diminuir a velocidade do esquiador.</p>
+            <p>Use as setas ou <kbd>A</kbd> e <kbd>D</kbd> para controlar o esquiador.</p>
+          </panel>
+        </div>
+      </div>
+
     </div>
 
     </div>
