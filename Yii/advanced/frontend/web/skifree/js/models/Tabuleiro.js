@@ -1,10 +1,17 @@
-function Tabuleiro(largura, altura, borda = '2') {
-  this.element = document.getElementById('tabuleiro');
-  this.element.style.width  = largura + 'px';
-  this.element.style.height = altura + 'px';
-  this.element.style.borderWidth = borda + 'px';
+function Tabuleiro(largura, altura) {
+  this.element = document.getElementById('container-jogo');
+  _.changeRootVariable(_.CSS_VARIABLES.tabuleiroLargura, largura);
+  _.changeRootVariable(_.CSS_VARIABLES.tabuleiroAltura, altura);
+}
 
+Tabuleiro.prototype.getWidth = function() {
+  return parseInt(
+    _.getRootVariable(_.CSS_VARIABLES.tabuleiroLargura)
+  );
+}
 
-  this.getWidth = () => parseInt(this.element.style.width);
-  this.getHeight = () => parseInt(this.element.style.height);
+Tabuleiro.prototype.getHeight = function() {
+  return parseInt(
+    _.getRootVariable(_.CSS_VARIABLES.tabuleiroAltura)
+  );
 }

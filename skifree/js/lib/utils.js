@@ -1,4 +1,14 @@
 const _ = Object.freeze({
+  //#region configs globais
+  CSS_VARIABLES: {
+    gameState: '--game-state',
+    tabuleiroLargura: '--tabuleiro-largura',
+    tabuleiroAltura: '--tabuleiro-altura',
+    splashBlur: '--splash-blur',
+    splashVisibility: '--splash-visibility',
+  },
+  //#endregion
+
   isNumberBetween: (min, max) => x => x > min == x < max,
 
   isNumeric: (n) => !isNaN( parseFloat(n) ) && isFinite(n),
@@ -29,5 +39,9 @@ const _ = Object.freeze({
 
   changeRootVariable: function (cssVarName, newValue) {
     document.documentElement.style.setProperty(cssVarName, newValue);
+  },
+
+  getRootVariable: function (cssVarName) {
+    return document.documentElement.style.getPropertyValue(cssVarName);
   },
 });
