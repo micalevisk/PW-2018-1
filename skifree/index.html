@@ -13,17 +13,27 @@
       <p><code>
         &copy; <a href="https://github.com/micalevisk/ProgWeb" target="_blank" rel="noopener">Micael Levi</a>
       </code></p><br>
-      <p>Use o <kbd>space</kbd> para pausar/despausar/iniciar o jogo.</p>
-      <p>Use o <kbd>F</kbd> para aumentar/diminuir a velocidade do esquiador.</p>
-      <p>Use <kbd>&larr;</kbd> e <kbd>&rarr;</kbd>  ou <kbd>A</kbd> e <kbd>D</kbd> para controlar o esquiador.</p>
-      <br>
       <p class="label" data-identifier="FPS"   data-sufix="" id="fps"></p>
       <p class="label" data-identifier="Andou" data-sufix="m" id="andado"></p>
       <p class="label" data-identifier="Vidas" data-sufix=" restantes" id="vidas"></p>
     </panel>
+
     <div id="tabuleiro">
-      <!-- TODO: adicionar botão de PLAY  -->
-      <div id="skier"></div>
+
+      <div id="container-jogo">
+        <div id="skier"></div>
+      </div>
+
+      <div id="container-splash">
+        <div>
+          <panel class="info-box">
+            <p>Use o <kbd>space</kbd> para (des)pausar o jogo.</p>
+            <p>Use o <kbd>F</kbd> para aumentar ou diminuir a velocidade do esquiador.</p>
+            <p>Use <kbd>&larr;</kbd> e <kbd>&rarr;</kbd> ou <kbd>A</kbd> e <kbd>D</kbd> para controlar o esquiador.</p>
+          </panel>
+        </div>
+      </div>
+
     </div>
 
     <script type="text/javascript" src="js/lib/utils.js"></script>
