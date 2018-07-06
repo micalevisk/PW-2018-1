@@ -9,17 +9,17 @@ div {
 }
 
 kbd {
-	display: inline-block;
-	padding: 3px 5px;
-	font-size: 11px;
-	line-height: 10px;
-	color: #444d56;
-	vertical-align: middle;
-	background-color: #fafbfc;
-	border: solid 1px #c6cbd1;
-	border-bottom-color: #959da5;
-	border-radius: 3px;
-	box-shadow: inset 0 -1px 0 #959da5;
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #444d56;
+  vertical-align: middle;
+  background-color: #fafbfc;
+  border: solid 1px #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
 }
 
 a:link {
@@ -55,16 +55,16 @@ a:active {
   background: white;
   left: 432px;
   position: absolute;
-	border-radius: 4px;
-	margin-bottom: 20px;
-	padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 10px;
   box-shadow: 0 2px 5px #32325a1a;
 }
 
 #infoBox p {
-	color: #6B7C93;
-	font-size: 1em;
-	line-height: 1.4em;
+  color: #6B7C93;
+  font-size: 1em;
+  line-height: 1.4em;
 }
 
 #infoBox .label::before {
@@ -76,17 +76,60 @@ a:active {
   content: attr(data-sufix);
 }
 
+.info-box p {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 1.4em;
+}
+
 #tabuleiro {
   background-color: white;
   border-style: solid;
   border-color: black;
+  border-width: 5px;
   margin: 10px;
   overflow: hidden;
   position: relative;
+  width: calc( var(--tabuleiro-largura, 600) * 1px );
+  height: calc( var(--tabuleiro-altura, 600) * 1px );
+
+  cursor: none; /* esconder cursor */
+  /* desabilitar a seleção do texto */
+  -webkit-user-select: none; /* Safari */
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome and Opera */
 }
 
 #tabuleiro > div {
+  width: 100%;
+  height: 100%;
   position: absolute;
+}
+
+#container-jogo > div {
+  position: absolute;
+
+  -webkit-filter: blur( calc( var(--splash-blur) * 1px ) );
+     -moz-filter: blur( calc( var(--splash-blur) * 1px ) );
+       -o-filter: blur( calc( var(--splash-blur) * 1px ) );
+      -ms-filter: blur( calc( var(--splash-blur) * 1px ) );
+          filter: blur( calc( var(--splash-blur) * 1px ) );
+}
+
+#container-splash {
+  text-align: center;
+  visibility: var(--splash-visibility, hidden);
+  z-index: 1000;
+  background: rgba(232, 232, 238, 0.692);
+}
+
+#container-splash > div {
+  position: relative;
+  top: 40%;
+  padding: 1%;
 }
 
 [class^="gif-"] {
