@@ -127,6 +127,22 @@
       });
   }
 
+  function onKeydown(e) {
+    e.preventDefault();
+
+    if (e.keyCode === 32) {
+      jogoPausado = !jogoPausado;
+
+      atualizarVariaveisCSS(+jogoPausado);
+      skier.setAndando(!jogoPausado);
+      return;
+    }
+
+    if (e.keyCode === 37 || e.key.toLocaleLowerCase() === 'a')      skier.mudarDirecao(-1);
+    else if (e.keyCode === 39 || e.key.toLocaleLowerCase() === 'd') skier.mudarDirecao(+1);
+
+    if (e.key.toLocaleLowerCase() == 'f') skier.toggleVelocidade();
+  }
 
   // ======================================================= //
   // ======================== INITS ======================== //
@@ -139,23 +155,19 @@
   }
 
   function initEventListeners() {
-    window.addEventListener('keydown', e => {
-      e.preventDefault();
-
+    const primeiroOnKeydown = (e) => {
       if (e.keyCode === 32) {
-        jogoPausado = !jogoPausado;
-        atualizarVariaveisCSS(+jogoPausado);
+        window.removeEventListener('keydown', primeiroOnKeydown);
+        window.addEventListener('keydown', onKeydown);
 
-        if (!skier.iniciou) skier.iniciar();
-        skier.setAndando(!jogoPausado);
-        return;
+        // Iniciar o jogo
+        gameLoop = setInterval(gameRunner, 1000/FPS);
+        skier.iniciar();
+        onKeydown(e);
       }
+    };
 
-      if (e.keyCode === 37 || e.key.toLocaleLowerCase() === 'a')      skier.mudarDirecao(-1);
-      else if (e.keyCode === 39 || e.key.toLocaleLowerCase() === 'd') skier.mudarDirecao(+1);
-
-      if (e.key.toLocaleLowerCase() == 'f') skier.toggleVelocidade();
-    });
+    window.addEventListener('keydown', primeiroOnKeydown);
   }
 
 
@@ -234,8 +246,6 @@
     gerarObstaculos(1, {tabuleiro, tipo: 'placa-start', initialLeft: posInicialSkier.x - 50, initialTop: posInicialSkier.y });
     gerarObstaculos(4, {tabuleiro, tipo: probEObstaculo[8].tipo, zIndex: probEObstaculo[8].zIndex, initialTop: TAMY-300});
     gerarObstaculos(2, {tabuleiro, tipo: probEObstaculo[7].tipo, initialTop: TAMY-100});
-
-    gameLoop = setInterval(gameRunner, 1000/FPS);
   }());
 
 }());
