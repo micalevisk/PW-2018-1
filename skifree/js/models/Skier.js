@@ -48,7 +48,7 @@ Skier.prototype.getTopAndLeft = function () {
   return [
     parseInt(this.element.style.top),
     parseInt(this.element.style.left)
-  ]
+  ];
 }
 
 Skier.prototype.iniciar = function () {
